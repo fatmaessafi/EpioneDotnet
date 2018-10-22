@@ -1,0 +1,16 @@
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\Service.dll.config
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\Service.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\Service.pdb
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\Data.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\Domain.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\EntityFramework.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\ServicePattern.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\Data.pdb
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\Domain.pdb
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\ServicePattern.pdb
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\EntityFramework.xml
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\obj\Debug\Service.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Service\obj\Debug\Service.pdb

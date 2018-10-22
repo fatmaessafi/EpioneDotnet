@@ -1,0 +1,10 @@
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\bin\Debug\Domain.dll.config
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\bin\Debug\Domain.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\bin\Debug\Domain.pdb
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\bin\Debug\EntityFramework.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\bin\Debug\EntityFramework.xml
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\obj\Debug\Domain.dll
+c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\Domain\obj\Debug\Domain.pdb
