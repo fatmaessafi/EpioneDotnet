@@ -4,3 +4,8 @@
 *.cache
 *.cache
 .vs/PIDEV/v14/.suo
+*.config
+*.exe
+*.manifest
+*.cache
+*.cache
