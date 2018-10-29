@@ -9,7 +9,7 @@ namespace Data
 {
     public class Contexte: DbContext
     {
-        public Contexte(): base("name=DB")
+        public Contexte(): base("name=EpioneDB")
         {
 
         }
