@@ -13,7 +13,7 @@ namespace Data.Configuration
         public Analyconf()
         {
             HasRequired<Doctor>(a => a.DoctorAnalytics).WithMany(t => t.ListAnalytics)
-          .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
+          .HasForeignKey(e => e.DoctorAnalytics.DoctorId).WillCascadeOnDelete(true);
         }
     }
 }
