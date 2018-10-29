@@ -49,12 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Analytics.cs" />
+    <Compile Include="Entities\Appointment.cs" />
+    <Compile Include="Entities\DayOff.cs" />
+    <Compile Include="Entities\Doctor.cs" />
+    <Compile Include="Entities\Message.cs" />
+    <Compile Include="Entities\Patient.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\Report.cs" />
+    <Compile Include="Entities\Step.cs" />
+    <Compile Include="Entities\Treatment.cs" />
+    <Compile Include="Entities\VisitReason.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -9,3 +9,7 @@
 *.manifest
 *.cache
 *.cache
+*.exe
+Console/bin/Debug/Console.exe.config
+*.pdb
+*.dll

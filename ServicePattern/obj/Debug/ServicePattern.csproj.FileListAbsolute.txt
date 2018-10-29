@@ -10,3 +10,5 @@ c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\ServicePattern\bin\De
 c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\ServicePattern\obj\Debug\ServicePattern.csprojResolveAssemblyReference.cache
 c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\ServicePattern\obj\Debug\ServicePattern.dll
 c:\users\fatma\documents\visual studio 2015\Projects\PIDEV\ServicePattern\obj\Debug\ServicePattern.pdb
+C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\ServicePattern\bin\Debug\Domain.dll
+C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\ServicePattern\bin\Debug\Domain.pdb
