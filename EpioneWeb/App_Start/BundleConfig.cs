@@ -20,7 +20,7 @@ namespace EpioneWeb
                       "~/Content/css/vendors.css",
                       "~/Content/css/icon_fonts/css/all_icons_min.css",
                       "~/Content/css/style.css"));
-
+            
 
         }
     }
