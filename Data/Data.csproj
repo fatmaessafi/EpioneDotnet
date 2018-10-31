@@ -53,9 +53,11 @@
     <Compile Include="Configuration\AppointmentConfig.cs" />
     <Compile Include="Configuration\DayOffConfig.cs" />
     <Compile Include="Configuration\DoctorConfig.cs" />
-    <Compile Include="Configuration\PersonConfig.cs" />
+    <Compile Include="Configuration\MessageConfig.cs" />
     <Compile Include="Configuration\StepConfig.cs" />
+    <Compile Include="Configuration\VisitReasonConfig.cs" />
     <Compile Include="Contexte.cs" />
+    <Compile Include="Conventions\DateTimeConvention.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDatabaseFactory .cs" />
@@ -76,9 +78,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Conventions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

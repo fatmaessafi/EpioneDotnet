@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace Domain
 {
    public class Step
     {
+        [Key]
         public int StepId { get; set; }
         public string StepDescription { get; set; }
         public DateTime StepDate { get; set; }

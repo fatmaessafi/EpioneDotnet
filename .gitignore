@@ -13,3 +13,7 @@
 Console/bin/Debug/Console.exe.config
 *.pdb
 *.dll
+*.cache
+*.exe
+*.pdb
+*.dll

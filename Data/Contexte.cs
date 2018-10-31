@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using BibData.Conventions;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,6 +11,12 @@ namespace Data
 {
     public class Contexte : DbContext
     {
+        
+        public Contexte() : base("name=EpioneDB")
+        {
+               
+        }
+        //DbSets
         public DbSet<Patient> Patient { set; get; }
         public DbSet<Doctor> Doctor { get; set; }
         public DbSet<Analytics> Analytics { set; get; }
@@ -19,27 +26,24 @@ namespace Data
         public DbSet<Step> Step { set; get; }
         public DbSet<Treatment> Treatment { get; set; }
         public DbSet<VisitReason> VisitReason { set; get; }
-     
-        public Contexte() : base("name=EpioneDB")
-        {
-               
-        }
+
+        //On ModelCreating
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Table - per - Concrete - Type(TPC)
-            modelBuilder.Entity<Patient>().Map(a => { a.MapInheritedProperties(); a.ToTable("Patient"); });
-            modelBuilder.Entity<Doctor>().Map(a => { a.MapInheritedProperties(); a.ToTable("Doctor"); });
+            
 
             //Fluent API Configurations
             modelBuilder.Configurations.Add(new Configuration.AnalyticsConfig());
-            modelBuilder.Configurations.Add(new Configuration.DoctorConfig());
+            modelBuilder.Configurations.Add(new Configuration.AppointmentConfig());
             modelBuilder.Configurations.Add(new Configuration.DayOffConfig());
             modelBuilder.Configurations.Add(new Configuration.DoctorConfig());
             modelBuilder.Configurations.Add(new Configuration.MessageConfig());
-            modelBuilder.Configurations.Add(new Configuration.PersonConfig());
             modelBuilder.Configurations.Add(new Configuration.StepConfig());
             modelBuilder.Configurations.Add(new Configuration.VisitReasonConfig());
 
+            //Add Convention
+          
+            modelBuilder.Conventions.Add(new DateTimeConvention());
 
         }
     }
