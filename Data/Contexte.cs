@@ -26,8 +26,21 @@ namespace Data
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //Table - per - Concrete - Type(TPC)
             modelBuilder.Entity<Patient>().Map(a => { a.MapInheritedProperties(); a.ToTable("Patient"); });
             modelBuilder.Entity<Doctor>().Map(a => { a.MapInheritedProperties(); a.ToTable("Doctor"); });
+
+            //Fluent API Configurations
+            modelBuilder.Configurations.Add(new Configuration.AnalyticsConfig());
+            modelBuilder.Configurations.Add(new Configuration.DoctorConfig());
+            modelBuilder.Configurations.Add(new Configuration.DayOffConfig());
+            modelBuilder.Configurations.Add(new Configuration.DoctorConfig());
+            modelBuilder.Configurations.Add(new Configuration.MessageConfig());
+            modelBuilder.Configurations.Add(new Configuration.PersonConfig());
+            modelBuilder.Configurations.Add(new Configuration.StepConfig());
+            modelBuilder.Configurations.Add(new Configuration.VisitReasonConfig());
+
+
         }
     }
    

@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Data.Configuration
 {
-    class DoctorConfig : EntityTypeConfiguration<VisitReason>
+    class DoctorConfig : EntityTypeConfiguration<Doctor>
     {
         public DoctorConfig()
-        {
-            HasRequired<Doctor>(a => a.DoctorVisitReason).WithMany(t => t.ListVisitReason)
-             .HasForeignKey(e => e.DoctorVisitReason.DoctorId).WillCascadeOnDelete(true);
+        {   
+            
 
            
         }

@@ -49,12 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\Analyconf.cs" />
-    <Compile Include="Configuration\AppointmentConf.cs" />
-    <Compile Include="Configuration\DayOffconf.cs" />
+    <Compile Include="Configuration\AnalyticsConfig.cs" />
+    <Compile Include="Configuration\AppointmentConfig.cs" />
+    <Compile Include="Configuration\DayOffConfig.cs" />
     <Compile Include="Configuration\DoctorConfig.cs" />
-    <Compile Include="Configuration\PersonConf.cs" />
-    <Compile Include="Configuration\StepConf.cs" />
+    <Compile Include="Configuration\PersonConfig.cs" />
+    <Compile Include="Configuration\StepConfig.cs" />
     <Compile Include="Contexte.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />

@@ -8,14 +8,20 @@ using System.Threading.Tasks;
 
 namespace Data.Configuration
 {
-    class AppointmentConf : EntityTypeConfiguration<Appointment>
+    class AppointmentConfig : EntityTypeConfiguration<Appointment>
     {
-        public AppointmentConf()
-        {
+        public AppointmentConfig()
+        {   // Many to Many entre Appointment et Treatment
             HasMany<Treatment>(a => a.ListTreatment).WithMany(t => t.ListAppointment)
                 .Map(r => { r.ToTable("Treat");
                  r.MapLeftKey("TreatmentId");
                  r.MapRightKey("AppointmentId"); });
+
+            //Table porteuse
+            HasKey(a => new { a.AppointmentId, a.DoctorId, a.PatientId });
+            // Report
+            HasRequired<Report>(t => t.Report).WithRequiredPrincipal(t => t.Appointment);
+
         }
     }
 }

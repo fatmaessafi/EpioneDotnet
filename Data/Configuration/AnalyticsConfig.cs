@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Data.Configuration
 {
-    class Analyconf : EntityTypeConfiguration<Analytics>
+    class AnalyticsConfig : EntityTypeConfiguration<Analytics>
     {
-        public Analyconf()
-        {
+        public AnalyticsConfig()
+        {   // One to Many Doctor and Analytics
             HasRequired<Doctor>(a => a.DoctorAnalytics).WithMany(t => t.ListAnalytics)
-          .HasForeignKey(e => e.DoctorAnalytics.DoctorId).WillCascadeOnDelete(true);
+          .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
         }
     }
 }

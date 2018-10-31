@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace Data.Configuration
 {
-    public class PersonConf : EntityTypeConfiguration<Person>
+    class MessageConfig : EntityTypeConfiguration<Message>
     {
-        
-       public PersonConf()
+         public MessageConfig()
         {
-            Map<Doctor>(c => c.Requires("type").HasValue(0));
-            Map<Patient>(c => c.Requires("type").HasValue(1));
+            //Table porteuse
+            HasKey(a => new { a.MessageId, a.DoctorId, a.PatientId });
         }
-    }
+   
 }
+ }
+    
+

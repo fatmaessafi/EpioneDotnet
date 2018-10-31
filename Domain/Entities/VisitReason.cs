@@ -11,6 +11,7 @@ namespace Domain
         public int VRId { get; set; }
         public string VRDescription { get; set; }
         public Doctor DoctorVisitReason { get; set; }
+        public int DoctorId { get; set; }
 
 
     }

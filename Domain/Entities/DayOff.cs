@@ -13,6 +13,7 @@ namespace Domain
         public int StartHour { get; set; }
         public int EndHour { get; set; }
         public Doctor DoctorDayOff { get; set; }
+        public int DoctorId { get; set; }
 
     }
 }

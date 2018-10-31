@@ -13,7 +13,8 @@ namespace Domain
         public int NbPatients { get; set; }
         public float CancelingRate { get; set; }
         public Doctor DoctorAnalytics { get; set; }
-       
+        public int DoctorId { get; set; }
+
 
     }
 }
