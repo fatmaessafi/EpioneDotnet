@@ -10,3 +10,5 @@ C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\bin\Debug\Entity
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.dll
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.pdb
+C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.Migrations.f.resources
+C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.csproj.GenerateResource.Cache
