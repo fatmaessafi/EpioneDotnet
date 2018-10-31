@@ -159,6 +159,5 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Antlr3.Runtime.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EntityFramework.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EntityFramework.SqlServer.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\obj\Debug\EpioneWeb.csprojResolveAssemblyReference.cache
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\obj\Debug\EpioneWeb.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\obj\Debug\EpioneWeb.pdb
