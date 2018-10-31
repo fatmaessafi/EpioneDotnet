@@ -9,14 +9,13 @@ namespace Domain
 {
     public class Patient
     {
-
         [Key]
-        public int PatientId;
-        public int Cin;
-        public string LastName;
-        public string FirstName;
-        public string Gender;
-        public DateTime BirthDate;
+        public int PatientId { get; set; }
+        public int Cin { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string Gender { get; set; }
+        public DateTime BirthDate { get; set; }
         public string HomeAddress { get; set; }
         public string Email { get; set; }
         public int Phone { get; set; }

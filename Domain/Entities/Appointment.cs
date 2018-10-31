@@ -21,5 +21,6 @@ namespace Domain
         public Patient Patient { get; set; }
         public int PatientId { get; set; }
         public virtual ICollection<Treatment> ListTreatment { get; set; }
+
     }
 }

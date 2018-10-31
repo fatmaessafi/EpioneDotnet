@@ -17,3 +17,6 @@ Console/bin/Debug/Console.exe.config
 *.exe
 *.pdb
 *.dll
+*.dll
+*.pdb
+*.exe
