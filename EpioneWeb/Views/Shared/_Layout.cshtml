@@ -1,7 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
-
+@if (@User.Identity.IsAuthenticated)
+{
+    @Html.ActionLink("Hello " + @User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
+}
+else
+{
+    @Html.ActionLink("Login", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
+}
 <!-- Mirrored from www.ansonika.com/Epione/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Oct 2018 16:16:38 GMT -->
 <head>
     <meta charset="utf-8">
@@ -55,6 +62,8 @@
                         <ul id="top_access">
                             <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
                             <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
+                            <li><i class="hello_user"></i></a></li>
+
                         </ul>
                         <nav id="menu" class="main-menu">
                             <ul>
