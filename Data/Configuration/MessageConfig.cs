@@ -12,8 +12,13 @@ namespace Data.Configuration
     {
          public MessageConfig()
         {
-            //Table porteuse
-            HasKey(a => new { a.MessageId, a.DoctorId, a.PatientId });
+            // One to Many Doctor and Message
+            HasRequired<Doctor>(a => a.Doctor).WithMany(t => t.ListMsg)
+          .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
+
+            // One to Many Patient and Appointment
+            HasRequired<Patient>(a => a.Patient).WithMany(t => t.ListMsg)
+          .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
         }
    
 }

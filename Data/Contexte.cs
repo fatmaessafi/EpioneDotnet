@@ -1,5 +1,6 @@
 ﻿using BibData.Conventions;
 using Domain;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,8 +18,8 @@ namespace Data
                
         }
         //DbSets
-        public DbSet<Patient> Patient { set; get; }
-        public DbSet<Doctor> Doctor { get; set; }
+        public DbSet<User> User { set; get; }
+       
         public DbSet<Analytics> Analytics { set; get; }
         public DbSet<Appointment> Appointment { get; set; }
         public DbSet<DayOff> DayOff { set; get; }

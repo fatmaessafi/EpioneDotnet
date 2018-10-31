@@ -7,3 +7,13 @@ C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Domain\bin\Debug\Enti
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Domain\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Domain\obj\Debug\Domain.dll
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Domain\obj\Debug\Domain.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Domain.dll.config
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Domain.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Domain.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.pdb

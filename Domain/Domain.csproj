@@ -58,6 +58,7 @@
     <Compile Include="Entities\Report.cs" />
     <Compile Include="Entities\Step.cs" />
     <Compile Include="Entities\Treatment.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\VisitReason.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -17,10 +17,18 @@ namespace Data.Configuration
                    
                 });
 
-            ////Table porteuse
-            HasKey(a => new { a.AppointmentId, a.DoctorId, a.PatientId });
+           
             // Report
             HasRequired<Report>(t => t.Report).WithRequiredPrincipal(t => t.Appointment);
+
+               // One to Many Doctor and Appointment
+                HasRequired<Doctor>(a => a.Doctor).WithMany(t => t.ListAppointment)
+              .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
+
+            // One to Many Patient and Appointment
+            HasRequired<Patient>(a => a.Patient).WithMany(t => t.ListAppointment)
+          .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
+
 
         }
                 

@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class f : DbMigration
+    public partial class User : DbMigration
     {
         public override void Up()
         {
@@ -18,14 +18,14 @@ namespace Data.Migrations
                         DoctorId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.StatId)
-                .ForeignKey("dbo.Doctors", t => t.DoctorId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.DoctorId, cascadeDelete: true)
                 .Index(t => t.DoctorId);
             
             CreateTable(
-                "dbo.Doctors",
+                "dbo.Users",
                 c => new
                     {
-                        DoctorId = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false, identity: true),
                         Cin = c.Int(nullable: false),
                         LastName = c.String(),
                         FirstName = c.String(),
@@ -40,27 +40,29 @@ namespace Data.Migrations
                         Speciality = c.String(),
                         City = c.String(),
                         Location = c.String(),
-                        Surgeon = c.Boolean(nullable: false),
+                        Surgeon = c.Boolean(),
+                        Allergies = c.String(),
+                        Profession = c.String(),
+                        SpecialReq = c.String(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
-                .PrimaryKey(t => t.DoctorId);
+                .PrimaryKey(t => t.UserId);
             
             CreateTable(
                 "dbo.Appointments",
                 c => new
                     {
-                        AppointmentId = c.Int(nullable: false),
-                        DoctorId = c.Int(nullable: false),
-                        PatientId = c.Int(nullable: false),
+                        AppointmentId = c.Int(nullable: false, identity: true),
                         AppDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         AppRate = c.Int(nullable: false),
                         VisitReason = c.String(),
                         ReportId = c.Int(nullable: false),
+                        DoctorId = c.Int(nullable: false),
+                        PatientId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.AppointmentId, t.DoctorId, t.PatientId })
-                .ForeignKey("dbo.Doctors", t => t.DoctorId, cascadeDelete: true)
-                .ForeignKey("dbo.Patients", t => t.PatientId, cascadeDelete: true)
-                .Index(t => t.DoctorId)
-                .Index(t => t.PatientId);
+                .PrimaryKey(t => t.AppointmentId)
+                .ForeignKey("dbo.Users", t => t.DoctorId, cascadeDelete: true)
+                .Index(t => t.DoctorId);
             
             CreateTable(
                 "dbo.Treatments",
@@ -84,66 +86,40 @@ namespace Data.Migrations
                         LastModificationDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         ModificationReason = c.String(),
                         TreatmentId = c.Int(nullable: false),
+                        LastModificationBy_UserId = c.Int(),
                     })
                 .PrimaryKey(t => t.StepId)
-                .ForeignKey("dbo.Doctors", t => t.DoctorId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.LastModificationBy_UserId)
                 .ForeignKey("dbo.Treatments", t => t.TreatmentId, cascadeDelete: true)
-                .Index(t => t.DoctorId)
-                .Index(t => t.TreatmentId);
-            
-            CreateTable(
-                "dbo.Patients",
-                c => new
-                    {
-                        PatientId = c.Int(nullable: false, identity: true),
-                        Cin = c.Int(nullable: false),
-                        LastName = c.String(),
-                        FirstName = c.String(),
-                        Gender = c.String(),
-                        BirthDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        HomeAddress = c.String(),
-                        Email = c.String(),
-                        Phone = c.Int(nullable: false),
-                        CivilStatus = c.String(),
-                        Enabled = c.Boolean(nullable: false),
-                        RegistrationDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
-                        Allergies = c.String(),
-                        Profession = c.String(),
-                        SpecialReq = c.String(),
-                    })
-                .PrimaryKey(t => t.PatientId);
+                .Index(t => t.TreatmentId)
+                .Index(t => t.LastModificationBy_UserId);
             
             CreateTable(
                 "dbo.Messages",
                 c => new
                     {
-                        MessageId = c.Int(nullable: false),
-                        DoctorId = c.Int(nullable: false),
-                        PatientId = c.Int(nullable: false),
+                        MessageId = c.Int(nullable: false, identity: true),
                         MessageContent = c.String(),
                         MessageDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        DoctorId = c.Int(nullable: false),
+                        PatientId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.MessageId, t.DoctorId, t.PatientId })
-                .ForeignKey("dbo.Doctors", t => t.DoctorId, cascadeDelete: true)
-                .ForeignKey("dbo.Patients", t => t.PatientId, cascadeDelete: true)
-                .Index(t => t.DoctorId)
-                .Index(t => t.PatientId);
+                .PrimaryKey(t => t.MessageId)
+                .ForeignKey("dbo.Users", t => t.DoctorId, cascadeDelete: true)
+                .Index(t => t.DoctorId);
             
             CreateTable(
                 "dbo.Reports",
                 c => new
                     {
-                        ReportId = c.Int(nullable: false, identity: true),
+                        ReportId = c.Int(nullable: false),
                         ReportDescription = c.String(),
                         ReportDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         AppointmentId = c.Int(nullable: false),
-                        Appointment_AppointmentId = c.Int(nullable: false),
-                        Appointment_DoctorId = c.Int(nullable: false),
-                        Appointment_PatientId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ReportId)
-                .ForeignKey("dbo.Appointments", t => new { t.Appointment_AppointmentId, t.Appointment_DoctorId, t.Appointment_PatientId })
-                .Index(t => new { t.Appointment_AppointmentId, t.Appointment_DoctorId, t.Appointment_PatientId });
+                .ForeignKey("dbo.Appointments", t => t.ReportId)
+                .Index(t => t.ReportId);
             
             CreateTable(
                 "dbo.DayOffs",
@@ -156,7 +132,7 @@ namespace Data.Migrations
                         DoctorId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.DayOffId)
-                .ForeignKey("dbo.Doctors", t => t.DoctorId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.DoctorId, cascadeDelete: true)
                 .Index(t => t.DoctorId);
             
             CreateTable(
@@ -168,7 +144,7 @@ namespace Data.Migrations
                         DoctorId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.VRId)
-                .ForeignKey("dbo.Doctors", t => t.DoctorId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.DoctorId, cascadeDelete: true)
                 .Index(t => t.DoctorId);
             
             CreateTable(
@@ -176,42 +152,36 @@ namespace Data.Migrations
                 c => new
                     {
                         Appointment_AppointmentId = c.Int(nullable: false),
-                        Appointment_DoctorId = c.Int(nullable: false),
-                        Appointment_PatientId = c.Int(nullable: false),
                         Treatment_TreatmentId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Appointment_AppointmentId, t.Appointment_DoctorId, t.Appointment_PatientId, t.Treatment_TreatmentId })
-                .ForeignKey("dbo.Appointments", t => new { t.Appointment_AppointmentId, t.Appointment_DoctorId, t.Appointment_PatientId }, cascadeDelete: true)
+                .PrimaryKey(t => new { t.Appointment_AppointmentId, t.Treatment_TreatmentId })
+                .ForeignKey("dbo.Appointments", t => t.Appointment_AppointmentId, cascadeDelete: true)
                 .ForeignKey("dbo.Treatments", t => t.Treatment_TreatmentId, cascadeDelete: true)
-                .Index(t => new { t.Appointment_AppointmentId, t.Appointment_DoctorId, t.Appointment_PatientId })
+                .Index(t => t.Appointment_AppointmentId)
                 .Index(t => t.Treatment_TreatmentId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Analytics", "DoctorId", "dbo.Doctors");
-            DropForeignKey("dbo.VisitReasons", "DoctorId", "dbo.Doctors");
-            DropForeignKey("dbo.DayOffs", "DoctorId", "dbo.Doctors");
-            DropForeignKey("dbo.Reports", new[] { "Appointment_AppointmentId", "Appointment_DoctorId", "Appointment_PatientId" }, "dbo.Appointments");
-            DropForeignKey("dbo.Messages", "PatientId", "dbo.Patients");
-            DropForeignKey("dbo.Messages", "DoctorId", "dbo.Doctors");
-            DropForeignKey("dbo.Appointments", "PatientId", "dbo.Patients");
+            DropForeignKey("dbo.Analytics", "DoctorId", "dbo.Users");
+            DropForeignKey("dbo.VisitReasons", "DoctorId", "dbo.Users");
+            DropForeignKey("dbo.DayOffs", "DoctorId", "dbo.Users");
+            DropForeignKey("dbo.Reports", "ReportId", "dbo.Appointments");
+            DropForeignKey("dbo.Messages", "DoctorId", "dbo.Users");
             DropForeignKey("dbo.Treat", "Treatment_TreatmentId", "dbo.Treatments");
-            DropForeignKey("dbo.Treat", new[] { "Appointment_AppointmentId", "Appointment_DoctorId", "Appointment_PatientId" }, "dbo.Appointments");
+            DropForeignKey("dbo.Treat", "Appointment_AppointmentId", "dbo.Appointments");
             DropForeignKey("dbo.Steps", "TreatmentId", "dbo.Treatments");
-            DropForeignKey("dbo.Steps", "DoctorId", "dbo.Doctors");
-            DropForeignKey("dbo.Appointments", "DoctorId", "dbo.Doctors");
+            DropForeignKey("dbo.Steps", "LastModificationBy_UserId", "dbo.Users");
+            DropForeignKey("dbo.Appointments", "DoctorId", "dbo.Users");
             DropIndex("dbo.Treat", new[] { "Treatment_TreatmentId" });
-            DropIndex("dbo.Treat", new[] { "Appointment_AppointmentId", "Appointment_DoctorId", "Appointment_PatientId" });
+            DropIndex("dbo.Treat", new[] { "Appointment_AppointmentId" });
             DropIndex("dbo.VisitReasons", new[] { "DoctorId" });
             DropIndex("dbo.DayOffs", new[] { "DoctorId" });
-            DropIndex("dbo.Reports", new[] { "Appointment_AppointmentId", "Appointment_DoctorId", "Appointment_PatientId" });
-            DropIndex("dbo.Messages", new[] { "PatientId" });
+            DropIndex("dbo.Reports", new[] { "ReportId" });
             DropIndex("dbo.Messages", new[] { "DoctorId" });
+            DropIndex("dbo.Steps", new[] { "LastModificationBy_UserId" });
             DropIndex("dbo.Steps", new[] { "TreatmentId" });
-            DropIndex("dbo.Steps", new[] { "DoctorId" });
-            DropIndex("dbo.Appointments", new[] { "PatientId" });
             DropIndex("dbo.Appointments", new[] { "DoctorId" });
             DropIndex("dbo.Analytics", new[] { "DoctorId" });
             DropTable("dbo.Treat");
@@ -219,11 +189,10 @@ namespace Data.Migrations
             DropTable("dbo.DayOffs");
             DropTable("dbo.Reports");
             DropTable("dbo.Messages");
-            DropTable("dbo.Patients");
             DropTable("dbo.Steps");
             DropTable("dbo.Treatments");
             DropTable("dbo.Appointments");
-            DropTable("dbo.Doctors");
+            DropTable("dbo.Users");
             DropTable("dbo.Analytics");
         }
     }
