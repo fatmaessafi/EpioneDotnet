@@ -2,3 +2,5 @@ Console/bin/Debug/Console.exe.config
 .vs/PIDEV/v14/.suo
 *.exe
 *.cache
+.vs/config/applicationhost.config
+Console/obj/Debug/Console.csproj.FileListAbsolute.txt

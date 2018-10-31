@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BibData.Conventions
 {
     public class DateTimeConvention : Convention
-    {
+    {   //Date
         public DateTimeConvention()
         {
             this.Properties<DateTime>().Configure(t => t.HasColumnType("DateTime2"));
