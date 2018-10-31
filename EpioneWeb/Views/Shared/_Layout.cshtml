@@ -9,7 +9,6 @@ else
 {
     @Html.ActionLink("Login", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
 }
-<!-- Mirrored from www.ansonika.com/Epione/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Oct 2018 16:16:38 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,12 +59,19 @@ else
                     </div>
                     <div class="col-lg-9 col-6">
                         <ul id="top_access">
-                            <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
-                            <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
+                            
+                            @if (@User.Identity.IsAuthenticated)
+                            {
                             <li>
                                 <a href="@Url.Action("Logout", "Auth")"><i class="pe-7s-delete-user"></i>
                                 </a>
                             </li>
+                            }
+                            else
+                            {
+                            <li><a href="login.html"><i class="pe-7s-user"></i></a></li>
+                            <li><a href="register-doctor.html"><i class="pe-7s-add-user"></i></a></li>
+                            }
 
                         </ul>
                         <nav id="menu" class="main-menu">

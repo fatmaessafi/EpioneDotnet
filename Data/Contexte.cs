@@ -19,7 +19,6 @@ namespace Data
         }
         //DbSets
         public DbSet<User> User { set; get; }
-       
         public DbSet<Analytics> Analytics { set; get; }
         public DbSet<Appointment> Appointment { get; set; }
         public DbSet<DayOff> DayOff { set; get; }
