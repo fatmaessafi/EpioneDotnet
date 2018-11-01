@@ -97,6 +97,8 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EpioneWeb.dll.config
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EpioneWeb.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EpioneWeb.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Antlr3.Runtime.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Data.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Domain.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EntityFramework.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EntityFramework.SqlServer.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AI.Agent.Intercept.dll
@@ -130,12 +132,15 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\System.Web.WebPages.D
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\System.Web.WebPages.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\System.Web.WebPages.Razor.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\WebGrease.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Data.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Domain.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AI.Web.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.Owin.xml
@@ -158,6 +163,6 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\System.Web.WebPages.R
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Antlr3.Runtime.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EntityFramework.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\EntityFramework.SqlServer.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\obj\Debug\EpioneWeb.csprojResolveAssemblyReference.cache
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\obj\Debug\EpioneWeb.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\EpioneWeb\obj\Debug\EpioneWeb.pdb

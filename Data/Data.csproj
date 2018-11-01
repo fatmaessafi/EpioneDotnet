@@ -38,6 +38,14 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -58,6 +66,7 @@
     <Compile Include="Configuration\VisitReasonConfig.cs" />
     <Compile Include="Contexte.cs" />
     <Compile Include="Conventions\DateTimeConvention.cs" />
+    <Compile Include="CustomUserStore.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDatabaseFactory .cs" />
@@ -65,13 +74,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201810311542159_User.cs" />
-    <Compile Include="Migrations\201810311542159_User.Designer.cs">
-      <DependentUpon>201810311542159_User.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810311701468_Pwd.cs" />
-    <Compile Include="Migrations\201810311701468_Pwd.Designer.cs">
-      <DependentUpon>201810311701468_Pwd.cs</DependentUpon>
+    <Compile Include="Migrations\201811011014490_V1.cs" />
+    <Compile Include="Migrations\201811011014490_V1.Designer.cs">
+      <DependentUpon>201811011014490_V1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,11 +92,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810311542159_User.resx">
-      <DependentUpon>201810311542159_User.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810311701468_Pwd.resx">
-      <DependentUpon>201810311701468_Pwd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811011014490_V1.resx">
+      <DependentUpon>201811011014490_V1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

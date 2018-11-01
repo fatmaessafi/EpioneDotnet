@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BibData.Conventions
+namespace Data.Conventions
 {
     public class DateTimeConvention : Convention
     {   //Date

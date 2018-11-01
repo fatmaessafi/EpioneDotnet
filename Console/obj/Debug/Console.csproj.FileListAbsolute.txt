@@ -17,13 +17,13 @@ C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Console\obj\Debug\Con
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Console\obj\Debug\Console.exe
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Console\obj\Debug\Console.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Console.exe.config
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.exe
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Console.exe
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Console.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Domain.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\EntityFramework.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Service.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\ServicePattern.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Data.dll
@@ -32,5 +32,9 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\ServicePattern.pd
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Service.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\EntityFramework.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Data.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.exe
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.pdb

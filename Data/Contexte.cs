@@ -1,24 +1,35 @@
-﻿using BibData.Conventions;
+﻿using Data.Conventions;
 using Domain;
 using Domain.Entities;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Data
 {
-    public class Contexte : DbContext
+    public class Contexte :IdentityDbContext<User, CustomRole, int, CustomUserLogin, CustomUserRole, CustomUserClaim>
     {
-        
+        public static Contexte Create()
+        {
+            return new Contexte();
+        }
+        static Contexte()
+        {
+            Database.SetInitializer<Contexte>(null);
+        }
+
         public Contexte() : base("name=EpioneDB")
         {
-               
-        }
+                
+            }
         //DbSets
-        public DbSet<User> User { set; get; }
+        //public DbSet<User> User { set; get; }
         public DbSet<Analytics> Analytics { set; get; }
         public DbSet<Appointment> Appointment { get; set; }
         public DbSet<DayOff> DayOff { set; get; }

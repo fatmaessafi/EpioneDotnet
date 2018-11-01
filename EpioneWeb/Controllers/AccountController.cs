@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EpioneWeb.Models;
+using Domain;
+using Domain.Entities;
 
 namespace EpioneWeb.Controllers
 {
@@ -153,7 +155,7 @@ namespace EpioneWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new Patient { UserName = model.Email, Email = model.Email ,Password=model.Password  };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -177,7 +179,7 @@ namespace EpioneWeb.Controllers
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmail(string userId, string code)
+        public async Task<ActionResult> ConfirmEmail(int userId, string code)
         {
             if (userId == null || code == null)
             {
@@ -363,13 +365,13 @@ namespace EpioneWeb.Controllers
 
             if (ModelState.IsValid)
             {
-                // Get the information about the user from the external login provider
+                // Obtenez des informations sur l’utilisateur auprès du fournisseur de connexions externe
                 var info = await AuthenticationManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new User { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -386,6 +388,7 @@ namespace EpioneWeb.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View(model);
         }
+
 
         //
         // POST: /Account/LogOff

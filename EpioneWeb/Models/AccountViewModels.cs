@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace EpioneWeb.Models
@@ -75,10 +76,28 @@ namespace EpioneWeb.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
+        //[DataType(DataType.Password)]
+        //[Display(Name = "Confirm password")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+
+       // public string ConfirmPassword { get; set; }
+        public int Cin { get; set; }
+      
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+        [Display(Name = "Gender")]
+        public string Gender { get; set; }
+        [Display(Name = "Birth Date")]
+        [DataType(DataType.DateTime)]
+        public DateTime BirthDate { get; set; }
+        [Display(Name = "Home Address")]
+        public string HomeAddress { get; set; }
+        [Display(Name = "Phone")]
+        public int Phone { get; set; }
+        [Display(Name = "Civil Status")]
+        public string CivilStatus { get; set; }
     }
 
     public class ResetPasswordViewModel
