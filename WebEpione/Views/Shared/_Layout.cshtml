@@ -3,7 +3,7 @@
 
 @if (@User.Identity.IsAuthenticated)
 {
-    @Html.ActionLink("Hello " + @User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
+    @Html.ActionLink("Connected as " + @User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
 }
 else
 {
@@ -62,14 +62,17 @@ else
 
                             @if (@User.Identity.IsAuthenticated)
                             {
-                                <li>
-                                    <a href="@Url.Action("Logout", "Account")">
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                {   @Html.AntiForgeryToken()
+                                        <li>
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">
                                         <i class="pe-7s-delete-user"></i>
                                     </a>
                                 </li>
-                            }
-                            else
-                            {
+                                        }
+                                    }
+                                    else
+                                    {
                                 <li><a href=@Url.Action("Login","Account")><i class="pe-7s-user"></i></a></li>
                                 <li><a href=@Url.Action("Register","Account")><i class="pe-7s-add-user"></i></a></li>
                             }
