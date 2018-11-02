@@ -89,7 +89,15 @@
                                  htmlAttributes = new { @class = "form-control" }
                              })
                             </div>
+                            <!--Role-->
+                            <div class="form-group">
 
+                                @Html.DropDownList("Role",
+                    new SelectList(Enum.GetValues(typeof(Role))),
+                    "Select a role",
+                    new { @class = "form-control" })
+                            </div>
+                           
 
                             <div id="pass-info" class="clearfix"></div>
                            <!--Check box obligatoire-->

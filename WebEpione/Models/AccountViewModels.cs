@@ -8,6 +8,8 @@ namespace WebEpione.Models
     public enum Gender
     { Male, Female };
     public enum CivilStatus { Married, Single, Divorced, Engaged };
+    public enum Role
+    { Doctor, Patient };
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
@@ -110,6 +112,9 @@ namespace WebEpione.Models
         [Display(Name = "Terms and Conditions")]
         [Range(typeof(bool), "true", "true", ErrorMessage = "You gotta tick the box!")]
         public bool TermsAndConditions { get; set; }
+        [Display(Name = "Role")]
+        [EnumDataType(typeof(Role))]
+        public string Role { get; set; }
     }
 
     public class ResetPasswordViewModel
