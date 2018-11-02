@@ -107,6 +107,9 @@ namespace WebEpione.Models
 
         public Boolean Enabled { get; set; }
         public DateTime RegistrationDate { get; set; }
+        [Display(Name = "Terms and Conditions")]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "You gotta tick the box!")]
+        public bool TermsAndConditions { get; set; }
     }
 
     public class ResetPasswordViewModel
