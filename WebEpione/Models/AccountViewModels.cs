@@ -1,8 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Domain.Entities;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebEpione.Models
 {
+    public enum Gender
+    { Male, Female };
+    public enum CivilStatus { Married, Single, Divorced, Engaged };
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
@@ -62,9 +67,12 @@ namespace WebEpione.Models
         public bool RememberMe { get; set; }
     }
 
+   
+
     public class RegisterViewModel
-    {
+    {   [Display(Name ="First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Required]
         [EmailAddress]
@@ -81,6 +89,24 @@ namespace WebEpione.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+        [Display(Name = "Gender")]
+        [EnumDataType(typeof(Gender))]
+        public string Gender { get; set; }
+        [Display(Name = "Birth Date")]
+        
+        public DateTime BirthDate { get; set; }
+        [Display(Name = "Home Address (City or Town)")]
+
+        public string HomeAddress { get; set; }
+        [Display(Name = "Civil Status")]
+        [EnumDataType(typeof(CivilStatus))]
+        public string CivilStatus { get; set; }
+
+        public Boolean Enabled { get; set; }
+        public DateTime RegistrationDate { get; set; }
     }
 
     public class ResetPasswordViewModel

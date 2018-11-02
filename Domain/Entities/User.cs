@@ -29,7 +29,8 @@ public class CustomRole : IdentityRole<int, CustomUserRole>
 }
 namespace Domain.Entities
 {
-  public  class User : IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim> 
+   
+    public  class User : IdentityUser<int, CustomUserLogin, CustomUserRole, CustomUserClaim> 
     {
         public String LastName { get; set; }
         public String FirstName { get; set; }
@@ -38,6 +39,15 @@ namespace Domain.Entities
         [Required]
         [MinLength(8)]
         public String Password { get; set; }
+       
+        public string Gender { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string HomeAddress { get; set; }
+       
+        public string CivilStatus { get; set; }
+
+        public Boolean Enabled { get; set; }
+        public DateTime RegistrationDate { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User, int> manager)
         {
