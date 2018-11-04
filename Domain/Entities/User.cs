@@ -42,13 +42,14 @@ namespace Domain.Entities
        
         public string Gender { get; set; }
         public DateTime BirthDate { get; set; }
+        public string City { get; set; }
         public string HomeAddress { get; set; }
        
         public string CivilStatus { get; set; }
 
         public Boolean Enabled { get; set; }
         public DateTime RegistrationDate { get; set; }
-
+       
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User, int> manager)
         {
             // Note the authenticationType must match the one defined in

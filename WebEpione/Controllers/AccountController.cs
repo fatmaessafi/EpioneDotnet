@@ -17,13 +17,14 @@ namespace WebEpione.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+       
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public AccountController()
         {
         }
-
+       
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;
@@ -72,6 +73,7 @@ namespace WebEpione.Controllers
         {
             if (!ModelState.IsValid)
             {
+               
                 return View(model);
             }
 
@@ -155,7 +157,7 @@ namespace WebEpione.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new Patient { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date };
+                    var user = new Patient { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City=model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date, Profession=model.Profession, Allergies=model.Allergies, SpecialReq=model.SpecialReq };
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
@@ -176,11 +178,19 @@ namespace WebEpione.Controllers
                 // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
                 return View(model);
             }
-           else
+           else if(model.Role=="Doctor")
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date };
+                    var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress=model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date, Speciality=model.Speciality, Location=model.Location };
+                    if(model.Surgeon=="Yes")
+                    {
+                        user.Surgeon = true;
+                    }
+                    else if(model.Surgeon=="No")
+                    {
+                        user.Surgeon = false;
+                    }
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
@@ -201,7 +211,33 @@ namespace WebEpione.Controllers
                 // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
                 return View(model);
             }
-           
+            else 
+            {
+                if (ModelState.IsValid)
+                {
+                    var user = new User { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date };
+                   
+                    var result = await UserManager.CreateAsync(user, model.Password);
+                    if (result.Succeeded)
+                    {
+
+                        //  await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                        // Pour plus d'informations sur l'activation de la confirmation du compte et la réinitialisation du mot de passe, consultez http://go.microsoft.com/fwlink/?LinkID=320771
+                        // Envoyer un message électronique avec ce lien
+                        // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        // await UserManager.SendEmailAsync(user.Id, "Confirmez votre compte", "Confirmez votre compte en cliquant <a href=\"" + callbackUrl + "\">ici</a>");
+
+                        return RedirectToAction("Login", "Account");
+                    }
+                    AddErrors(result);
+                }
+
+                // Si nous sommes arrivés là, un échec s’est produit. Réafficher le formulaire
+                return View(model);
+            }
+
         }
 
         //
@@ -514,4 +550,5 @@ namespace WebEpione.Controllers
         }
         #endregion
     }
+  
 }
