@@ -3,7 +3,8 @@
 
 @if (@User.Identity.IsAuthenticated)
 {
-    @Html.ActionLink("Connected as " + @User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
+    @Html.ActionLink("Connected as " + User.Identity.Name    + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
+   
 }
 else
 {
