@@ -73,7 +73,10 @@ namespace WebEpione.Controllers
         {
             if (!ModelState.IsValid)
             {
-               
+                string currentUserId = User.Identity.GetUserId();
+
+
+
                 return View(model);
             }
 
@@ -117,6 +120,7 @@ namespace WebEpione.Controllers
         {
             if (!ModelState.IsValid)
             {
+
                 return View(model);
             }
 
@@ -424,6 +428,7 @@ namespace WebEpione.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
+
                 return RedirectToAction("Index", "Manage");
             }
 
