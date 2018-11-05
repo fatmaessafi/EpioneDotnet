@@ -15,12 +15,11 @@ namespace Domain
         public int AppRate { get; set; }
         public string VisitReason { get; set; }
         public Report Report { get; set; }
-        public int ReportId { get; set; }  
         public Doctor Doctor { get; set; }
         public int DoctorId { get; set; }
         public Patient Patient { get; set; }
-        public int PatientId { get; set; }
         public virtual ICollection<Treatment> ListTreatment { get; set; }
+        public Step Step { get; set; }
 
     }
 }
