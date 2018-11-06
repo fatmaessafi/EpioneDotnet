@@ -17,32 +17,32 @@ namespace WebEpione.Controllers
         
         
         public ActionResult Index()
-        {   
-            int currentUserId = Int32.Parse(User.Identity.GetUserId());
-            
-
-            UserService su = new UserService();
-            User user = new User();
-            ViewBag.id = currentUserId;
-            
-            string userstring=su.GetUserById(currentUserId).ToString();
-            ViewBag.userstring = userstring;
-            
-            if(userstring.Contains("Doctor")==true)
-            
+        {
+            if (User.Identity.GetUserId() != null)
             {
-                TempData["role"]= "Doctor";
-            }
-            else if(userstring.Contains("Patient") == true)
-            {
-                TempData["role"] = "Patient";
-            }
-            else
-            {
-                TempData["role"] = "No type";
-            }
+                int currentUserId = Int32.Parse(User.Identity.GetUserId());
+                TempData["currentid"] = currentUserId;
+                UserService su = new UserService();
+                User user = new User();
+                ViewBag.id = currentUserId;
+                string userstring = su.GetUserById(currentUserId).ToString();
+                ViewBag.userstring = userstring;
 
+                if (userstring.Contains("Doctor") == true)
 
+                {
+                    TempData["role"] = "Doctor";
+                }
+                else if (userstring.Contains("Patient") == true)
+                {
+                    TempData["role"] = "Patient";
+                }
+                else
+                {
+                    TempData["role"] = "No type";
+                }
+
+            }
             return View();
         }
 

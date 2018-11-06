@@ -50,9 +50,11 @@ namespace Data
             modelBuilder.Configurations.Add(new Configuration.MessageConfig());
             modelBuilder.Configurations.Add(new Configuration.StepConfig());
             modelBuilder.Configurations.Add(new Configuration.VisitReasonConfig());
+            modelBuilder.Configurations.Add(new Configuration.TreatmentConfig());
+
 
             //Add Convention
-          
+
             modelBuilder.Conventions.Add(new DateTimeConvention());
 
         }

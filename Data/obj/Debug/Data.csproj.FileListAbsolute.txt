@@ -12,22 +12,6 @@ C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.d
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.pdb
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.Migrations.f.resources
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Data\obj\Debug\Data.csproj.GenerateResource.Cache
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.dll.config
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Domain.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Domain.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.dll.config
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.pdb
@@ -46,3 +30,22 @@ C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.V1.resources
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.dll.config
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Data.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Domain.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Domain.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.V1.resources
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.V3.resources
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb
