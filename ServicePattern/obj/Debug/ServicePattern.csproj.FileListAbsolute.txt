@@ -12,24 +12,6 @@ C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\ServicePattern\bin\De
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\ServicePattern\obj\Debug\ServicePattern.csprojResolveAssemblyReference.cache
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\ServicePattern\obj\Debug\ServicePattern.dll
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\ServicePattern\obj\Debug\ServicePattern.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll.config
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Data.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Domain.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Data.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Domain.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.csprojResolveAssemblyReference.cache
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.pdb
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll.config
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.pdb
@@ -48,6 +30,7 @@ C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Domain
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.csprojResolveAssemblyReference.cache
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.pdb
+<<<<<<< HEAD
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll.config
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.pdb
@@ -66,3 +49,23 @@ C:\Users\Firas\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Domain.pdb
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.csprojResolveAssemblyReference.cache
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.dll
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.pdb
+=======
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll.config
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\ServicePattern.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Data.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Domain.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Data.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\bin\Debug\Domain.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.csprojResolveAssemblyReference.cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\ServicePattern\obj\Debug\ServicePattern.pdb
+>>>>>>> master
