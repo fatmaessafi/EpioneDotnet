@@ -16,12 +16,11 @@ namespace Domain
         public Boolean Validation { get; set; }
         public int NbModifications { get; set; }
         public Doctor LastModificationBy { get; set; }
+        public int DoctorId { get; set; }
         public DateTime LastModificationDate { get; set; }
         public string ModificationReason { get; set; }
         public Treatment Treatment { get; set; }
         public int TreatmentId { get; set; }
-        public Appointment Appointment { get; set; }
-
 
     }
 }

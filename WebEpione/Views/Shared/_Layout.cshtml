@@ -1,27 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
-
 @if (@User.Identity.IsAuthenticated)
-{    @ViewBag.user
-    if (TempData["role"] == "Doctor")
-    {
-
-    @Html.ActionLink("Connected as doctor " + User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
-    }
-    else if (TempData["role"]=="Patient")
-    {
-        @Html.ActionLink("Connected as patient " + User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
-
-    }
+{
+    @Html.ActionLink("Connected as " + @User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
 }
 else
 {
     @Html.ActionLink("Login", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
 }
-<br />
-Your Id=@ViewBag.id
- 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -1,9 +1,4 @@
-﻿using Data;
-using Domain;
-using Domain.Entities;
-using Microsoft.AspNet.Identity;
-using Service;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,36 +8,8 @@ namespace WebEpione.Controllers
 {
     public class HomeController : Controller
     {
-        private Contexte db=new Contexte();
-        
-        
         public ActionResult Index()
         {
-            if (User.Identity.GetUserId() != null)
-            {
-                int currentUserId = Int32.Parse(User.Identity.GetUserId());
-                TempData["currentid"] = currentUserId;
-                UserService su = new UserService();
-                User user = new User();
-                ViewBag.id = currentUserId;
-                string userstring = su.GetUserById(currentUserId).ToString();
-                ViewBag.userstring = userstring;
-
-                if (userstring.Contains("Doctor") == true)
-
-                {
-                    TempData["role"] = "Doctor";
-                }
-                else if (userstring.Contains("Patient") == true)
-                {
-                    TempData["role"] = "Patient";
-                }
-                else
-                {
-                    TempData["role"] = "No type";
-                }
-
-            }
             return View();
         }
 

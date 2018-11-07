@@ -16,6 +16,5 @@ namespace Domain
         public string SpecialReq { get; set; }
         public ICollection<Message> ListMsg { get; set; }
         public ICollection<Appointment> ListAppointment { get; set; }
-        public ICollection<Treatment> ListTreatment { get; set; }
     }
 }

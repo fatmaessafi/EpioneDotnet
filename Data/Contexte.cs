@@ -29,6 +29,7 @@ namespace Data
                 
             }
         //DbSets
+        //public DbSet<User> User { set; get; }
         public DbSet<Analytics> Analytics { set; get; }
         public DbSet<Appointment> Appointment { get; set; }
         public DbSet<DayOff> DayOff { set; get; }
@@ -50,11 +51,9 @@ namespace Data
             modelBuilder.Configurations.Add(new Configuration.MessageConfig());
             modelBuilder.Configurations.Add(new Configuration.StepConfig());
             modelBuilder.Configurations.Add(new Configuration.VisitReasonConfig());
-            modelBuilder.Configurations.Add(new Configuration.TreatmentConfig());
-
 
             //Add Convention
-
+          
             modelBuilder.Conventions.Add(new DateTimeConvention());
 
         }

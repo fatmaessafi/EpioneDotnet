@@ -14,5 +14,6 @@ namespace Domain
         public string ReportDescription { get; set; }
         public DateTime ReportDate { get; set; }
         public Appointment Appointment { get; set; }
+        public int AppointmentId { get; set; }
     }
 }
