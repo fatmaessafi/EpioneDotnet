@@ -13,7 +13,6 @@ namespace Domain
 
        
         public string Speciality { get; set; }
-        public string City { get; set; }
         public string Location { get; set; }
         public Boolean Surgeon { get; set; }
         public ICollection<DayOff> ListDayOff { get; set; }
@@ -21,6 +20,7 @@ namespace Domain
         public ICollection<VisitReason> ListVisitReason { get; set; }
         public ICollection<Message> ListMsg { get; set; }
         public ICollection<Appointment> ListAppointment { get; set; }
+        public ICollection<Treatment> ListReferringTreatment { get; set; }
 
 
     }
