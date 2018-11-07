@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +16,11 @@ namespace WebEpione.Controllers
         }
         public JsonResult GetAppointments()
         {
-            using (MyDataBaseE)
+            using (Contexte ct = new Contexte())
+            {
+                var appointments = ct.Appointment.ToList();
+                return new JsonResult { Data = appointments, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            }
         }
 
         // GET: Calendar/Details/5
