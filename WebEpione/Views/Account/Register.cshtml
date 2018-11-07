@@ -2,6 +2,7 @@
 @model WebEpione.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
+       
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -121,9 +122,9 @@
                                 <div class="form-group">
                                     @Html.LabelFor(x => x.Surgeon)<br />
                                     @Html.DropDownList("Surgeon",
-                    new SelectList(Enum.GetValues(typeof(Surgeon))),
-                    "Do you practice surgery ?",
-                    new { @class = "form-control"})
+                                      new SelectList(Enum.GetValues(typeof(Surgeon))),
+                                     "Do you practice surgery ?",
+                                          new { @class = "form-control"})
                             
                                 </div>
                              
