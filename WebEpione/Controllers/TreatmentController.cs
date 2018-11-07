@@ -41,18 +41,18 @@ namespace WebEpione.Controllers
         public ActionResult Details(int id)
         {
             List<StepViewModel> liststeps = new List<StepViewModel>();
-
+            if (id!=0) { ViewBag.illness = st.GetById(id).Illness; }
             foreach (var item2 in ss.GetListStepOrdered(id))
             {
                 StepViewModel svm = new StepViewModel();
                 svm.StepId = item2.StepId;
                 svm.StepDescription = item2.StepDescription;
                 svm.StepDate = item2.StepDate;
-                svm.LastModificationBy = item2.LastModificationBy;
+                svm.LastModificationBy = us.GetUserById(item2.LastModificationBy.Id).FirstName+" "+ us.GetUserById(item2.LastModificationBy.Id).LastName;
                 svm.ModificationReason = item2.ModificationReason;
-                svm.LastModificationDate = item2.LastModificationDate;
-                if (item2.Validation == true) svm.Validation = "Yes";
-                else if (item2.Validation == false) svm.Validation = "No";
+                svm.LastModificationDate = item2.LastModificationDate.Date;
+                if (item2.Validation == true) svm.Validation = "Validate";
+                else if (item2.Validation == false) svm.Validation = "Not validate";
                 svm.NbModifications = item2.NbModifications;
                 svm.TreatmentId = item2.TreatmentId;
                 svm.TreatmentIllness = st.GetById(item2.TreatmentId).Illness;

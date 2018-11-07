@@ -1,61 +1,90 @@
 ﻿@model IEnumerable<WebEpione.Models.TreatmentViewModel>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "My profile";
+    Layout = "~/Views/Shared/PartialProfile.cshtml";
+
 }
 
-<h2>My treatments</h2>
+     <div class="col-xl-9 col-lg-8">
 
-<p>
-    <h5><a href=@Url.Action("Create", "Treatment")><i class="pe-7s-plus"></i> New treatment</a></h5>
-</p>
-<table class="table">
-    <tr>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.Illness)
-        </th>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.Doctor)
-        </th>
-        <th>
-            View
-        </th>
-        <th>
-            Edit
-        </th>
-        <th>
-            Delete
-        </th>
-    </tr>
+<div class="tabs_styled_2">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active"   href="">Treatments</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  href=@Url.Action("Create", "Treatment") ><i class="pe-7s-plus"></i> New treatment</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link"  href="">Appointments</a>
+        </li>
+    </ul>
+    <!--/nav-tabs -->
 
-@foreach (var item in Model) {
-    <tr>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.Illness)
-        </td>
-       
-        <td>
-            @Html.DisplayFor(modelItem => item.Doctor)
+    <div class="tab-content">
+
+        <div class="tab-pane fade show active" id="book" role="tabpanel" aria-labelledby="book-tab">
+            <p class="lead add_bottom_30">This is all the treatments that this patient is following.</p>
+            
+                <div class="main_title_3">
+                    <h3>Treatments</h3>
+                </div>
+                <div class="form-group add_bottom_45">
+                   
+
+                    <table class="table">
+                        <tr>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Illness)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Doctor)
+                            </th>
+                            <th>
+                                View
+                            </th>
+                            <th>
+                                Edit
+                            </th>
+                            <th>
+                                Delete
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Illness)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Doctor)
 
 
-        </td>
-        <td>
-            <h1><a href=@Url.Action("Details", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-note2"></i></a></h1>
-            </td>
-        <td>
-            <h1><a href=@Url.Action("Edit", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-note"></i></a></h1>
-            </td>
-         <td>
-             <h1><a href=@Url.Action("Delete", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-trash"></i></a></h1>
+                                </td>
+                                <td>
+                                    <h1><a href=@Url.Action("Details", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-note2"></i></a></h1>
+                                </td>
+                                <td>
+                                    <h1><a href=@Url.Action("Edit", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-note"></i></a></h1>
+                                </td>
+                                <td>
+                                    <h1><a href=@Url.Action("Delete", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-trash"></i></a></h1>
 
 
-        </td>
-        
-    </tr>
-}
+                                </td>
 
-</table>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+        </div>
+</div>
+</div>
+</div>

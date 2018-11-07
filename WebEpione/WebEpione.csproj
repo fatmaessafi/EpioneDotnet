@@ -281,6 +281,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Treatment\Index.cshtml" />
     <Content Include="Views\Treatment\Details.cshtml" />
+    <Content Include="Views\Shared\PartialProfile.cshtml" />
+    <Content Include="Views\Shared\PartialMyProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

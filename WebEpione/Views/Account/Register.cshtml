@@ -116,8 +116,10 @@
                             <div style="display:none" id="DivDoctor">
                                 <div class="form-group">
                                     @Html.LabelFor(x => x.Speciality)<br />
-                                    @Html.TextBoxFor(x => x.Speciality,
-                             new { @class = "form-control" })
+                                    @Html.DropDownList("Speciality",
+                                      new SelectList(Enum.GetValues(typeof(Speciality))),
+                                     "What's your speciality ?",
+                                          new { @class = "form-control" })
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(x => x.Surgeon)<br />

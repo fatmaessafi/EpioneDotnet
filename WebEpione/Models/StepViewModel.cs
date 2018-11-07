@@ -13,7 +13,7 @@ namespace WebEpione.Models
         public DateTime StepDate { get; set; }
         public string Validation { get; set; }
         public int NbModifications { get; set; }
-        public Doctor LastModificationBy { get; set; }
+        public string LastModificationBy { get; set; }
         public DateTime LastModificationDate { get; set; }
         public string ModificationReason { get; set; }
         public string TreatmentIllness { get; set; }

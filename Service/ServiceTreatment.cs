@@ -22,7 +22,7 @@ namespace Service
 
         public IEnumerable<Treatment> GetListTreatmentOrdered(int id)
         {
-            return GetMany().OfType<Treatment>().Where(t=>t.PatientId.Equals(id)).OrderByDescending(t => t.TreatmentId);
+            return GetMany().OfType<Treatment>().Where(t=>t.PatientId.Equals(id)).OrderBy(t => t.TreatmentId);
         }
         
         

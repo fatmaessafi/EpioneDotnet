@@ -5,11 +5,72 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebEpione.Models
 {
+    public enum Speciality
+    {
+AnatomicalPathology,
+Anesthesiology,
+CardiacSurgery,
+Cardiology,
+ClinicalImmunologyAndAllergy,
+ColorectalSurgery,
+CriticalCareMedicine,
+Dermatology,
+DiagnosticRadiology,
+EmergencyMedicine,
+EndocrinologyAndMetabolism,
+ForensicPathology,
+Gastroenterology,
+GeneralPathology,
+GynecologicReproductiveEndocrinologyaAndInfertility,
+GeneralSurgery,
+GeneralSurgicalOncology,
+GeriatricMedicine,
+GeriatricPsychiatry,
+GynecologicOncology,
+HematologicalPathology,
+Hematology,
+InfectiousDiseases,
+InternalMedicine,
+MedicaBiochemistry,
+MedicalGenetics,
+MedicalMicrobiologyAndInfectiousDiseases,
+MedicalOncology,
+NeonatalPerinatalMedicine,
+GeneralInternalMedicine,
+Nephrology,
+Neurology,
+Neuropathology,
+Neurosurgery,
+NuclearMedicine,
+ObstetricsAndGynecology,
+OccupationalMedicine,
+Ophthalmology,
+OrthopedicSurgery,
+OtolaryngologyHeadAndNeckSurgery,
+PediatricEmergencyMedicine,
+PediatricHematologyAndOncology,
+PediatricSurgery,
+Pediatrics,
+PhysicalMedicineAndRehabilitation,
+PlasticSurgery,
+Psychiatry,
+DevelopmentalPediatrics,
+RadiationOncology,
+Respirology,
+ChildAndAdolescentPsychiatry,
+ForensicPsychiatry,
+Rheumatology,
+ThoracicSurgery,
+Urology,
+PublicHealthAndPreventiveMedicine,
+VascularSurgery,
+    }
     public enum Gender
     { Male, Female };
     public enum CivilStatus { Married, Single, Divorced, Engaged };
     public enum Role
     { Doctor, Patient };
+
     public enum Surgeon
     { Yes, No };
     public enum City
@@ -126,7 +187,7 @@ namespace WebEpione.Models
         [EnumDataType(typeof(Role),  ErrorMessage = "You have to select a role!")]
         public string Role { get; set; }
         //Patient attributes
-        [Display(Name = "Allergies*")]
+        [Display(Name = "Allergies")]
         public string Allergies { get; set; }
         [Display(Name = "Profession*")]
 
@@ -136,6 +197,7 @@ namespace WebEpione.Models
         public string SpecialReq { get; set; }
         // Doctor attributes
         [Display(Name = "Speciality*")]
+        [EnumDataType(typeof(Speciality))]
         public string Speciality { get; set; }
        
         [Display(Name = "Location*")]

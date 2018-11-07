@@ -18,6 +18,8 @@ namespace WebEpione
                       "~/Content/css/bootstrap.min.css",
                       "~/Content/css/menu.css",
                       "~/Content/css/vendors.css",
+                       "~/Content/css/tables.css",
+                       "~/Content/css/blog.css",
                       "~/Content/css/icon_fonts/css/all_icons_min.css",
                       "~/Content/css/style.css"));
         }
