@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<div id="calender"></div>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css" rel="stylesheet" />
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "Get",
+                url: "/Calendar/GetAppointments",
+                success: function (data) {
+                    $.each(data, function (i, v) {
+                        appointments.push({
+                            start: moment(v.AppDate),
+                            visitreason: v.VisitReason,
+                            reportid: v.RepotId,
+                            doctorid: v.DoctorId,
+                            patient: v.PatientId
+
+                        });
+
+
+                    })
+                    GenerateCalender(appointments);
+                },
+                error: function (error){
+                    alert('failed');
+                }
+                }
+            )
+
+            function GenerateCalender(appointments) {
+                $('#calender').fullCalendar('destroy');
+                $('#calender').fullCalendar({
+                    contentHeight: 400,
+                    defaultDate: new Date(),
+                    timeformat: 'h(:mm)a',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right:'month,basicweek,basicDay,agenda'     
+                    },
+                    eventLimit: true,
+                    eventColor : '#378006' ,
+                    events  : events
+                    })
+                    }
+                    })
+    </script>
+    
+     }

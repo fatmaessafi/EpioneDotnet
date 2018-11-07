@@ -280,3 +280,5 @@ C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.Owin.Se
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.csprojResolveAssemblyReference.cache
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.pdb
+C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\WebEpione\bin\ServicePattern.dll
+C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\WebEpione\bin\ServicePattern.pdb

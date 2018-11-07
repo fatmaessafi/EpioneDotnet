@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data.Configuration
 {
-    class VisitReasonConfig : EntityTypeConfiguration<VisitReason>
+    public class VisitReasonConfig : EntityTypeConfiguration<VisitReason>
     {
         public VisitReasonConfig()
         {   // One to Many Dotor et VisitReason
