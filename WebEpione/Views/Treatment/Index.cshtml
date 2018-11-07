@@ -5,49 +5,54 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>My treatments</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <h5><a href=@Url.Action("Create", "Treatment")><i class="pe-7s-plus"></i> New treatment</a></h5>
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TreatmentId)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Illness)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Patient)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Doctor)
         </th>
-        <th></th>
+        <th>
+            View
+        </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TreatmentId)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.Illness)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Patient)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.Doctor)
 
 
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id = item.TreatmentId }) |
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-         
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            <h1><a href=@Url.Action("Details", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-note2"></i></a></h1>
+            </td>
+        <td>
+            <h1><a href=@Url.Action("Edit", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-note"></i></a></h1>
+            </td>
+         <td>
+             <h1><a href=@Url.Action("Delete", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-trash"></i></a></h1>
+
+
         </td>
         
     </tr>
