@@ -14,26 +14,6 @@ C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Service\bin\Debug\Ent
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Service\obj\Debug\Service.dll
 C:\Users\Fatma\Documents\Visual Studio 2015\Projects\PIDEV\Service\obj\Debug\Service.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.dll.config
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Data.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Domain.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\ServicePattern.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Data.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Domain.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\ServicePattern.pdb
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.dll
-C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.pdb
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.dll.config
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.pdb
@@ -54,3 +34,23 @@ C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.Asp
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.dll.config
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Service.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Data.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Domain.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\ServicePattern.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Data.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Domain.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\ServicePattern.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.dll
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Service\obj\Debug\Service.pdb
