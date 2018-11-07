@@ -87,7 +87,7 @@ namespace ServicePattern
             catch (Exception ex)
             {
 
-                throw;
+                throw ;
             }
         }
 

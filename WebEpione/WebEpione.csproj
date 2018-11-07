@@ -278,6 +278,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
     <Content Include="Views\Appointment\CreateAppointment.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Appointment\Edit.cshtml" />
+    <Content Include="Views\Appointment\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +302,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{bbcdca57-9dc3-450b-8300-2c2055cc8717}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicePattern\ServicePattern.csproj">
+      <Project>{70169713-a933-4baa-a667-27f530333dfe}</Project>
+      <Name>ServicePattern</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{dbbc8766-05e6-4426-9a15-601f2d07a16f}</Project>

@@ -16,10 +16,10 @@ namespace WebEpione.Models
         public int AppRate { get; set; }
         public string VisitReason { get; set; }
         public Report Report { get; set; }
-        public int ReportId { get; set; }
-        public Doctor Doctor { get; set; }
+       public int ReportId { get; set; }
+       public Doctor Doctor { get; set; }
         public int DoctorId { get; set; }
-        public Patient Patient { get; set; }
+       public Patient Patient { get; set; }
         public int PatientId { get; set; }
     }
 }

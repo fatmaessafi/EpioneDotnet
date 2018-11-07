@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebEpione.Models.AppointmentViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AppDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VisitReason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReportId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VisitReason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AppointmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AppointmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AppointmentId })
+        </td>
+    </tr>
+}
+
+</table>

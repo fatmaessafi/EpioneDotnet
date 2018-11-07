@@ -325,6 +325,7 @@ C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.Web.Infrastr
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Newtonsoft.Json.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Owin.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Service.dll
+C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\ServicePattern.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\System.Net.Http.Formatting.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\System.Web.Helpers.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\System.Web.Http.dll
@@ -338,6 +339,7 @@ C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\System.Web.WebPages.Ra
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\WebGrease.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Data.pdb
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Domain.pdb
+C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\ServicePattern.pdb
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Service.pdb
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.AI.ServerTelemetryChannel.xml
@@ -374,5 +376,3 @@ C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.Owin.Securit
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.csprojResolveAssemblyReference.cache
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.pdb
-C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\ServicePattern.dll
-C:\Users\wael\Documents\GitHub\EpioneDotnet\WebEpione\bin\ServicePattern.pdb

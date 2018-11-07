@@ -62,7 +62,7 @@ C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.SqlSe
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
-C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.wael.resources
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
+C:\Users\wael\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb

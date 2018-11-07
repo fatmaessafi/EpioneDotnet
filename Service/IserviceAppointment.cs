@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-  public   interface IAppointmentService: IService<Appointment>
+  public  interface IserviceAppointment : IService<Appointment>
     {
-
-
+       
     }
 }

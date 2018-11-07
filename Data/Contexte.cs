@@ -53,7 +53,7 @@ namespace Data
 
             //Add Convention
           
-            modelBuilder.Conventions.Add(new DateTimeConvention());
+          //  modelBuilder.Conventions.Add(new DateTimeConvention());
 
         }
     }

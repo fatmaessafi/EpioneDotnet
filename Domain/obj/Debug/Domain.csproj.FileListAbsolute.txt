@@ -46,6 +46,5 @@ C:\Users\wael\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.xml
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\wael\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.dll
 C:\Users\wael\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.pdb

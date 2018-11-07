@@ -19,15 +19,16 @@ namespace Data.Configuration
 
            
             // Report
-            HasRequired<Report>(t => t.Report).WithRequiredPrincipal(t => t.Appointment);
+         /*   HasOptional<Report>(t => t.Report).WithOptionalPrincipal(t => t.Appointment);
 
                // One to Many Doctor and Appointment
-                HasRequired<Doctor>(a => a.Doctor).WithMany(t => t.ListAppointment)
+                HasOptional<Doctor>(a => a.Doctor).WithMany(t => t.ListAppointment)
               .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
 
             // One to Many Patient and Appointment
-            HasRequired<Patient>(a => a.Patient).WithMany(t => t.ListAppointment)
+            HasOptional<Patient>(a => a.Patient).WithMany(t => t.ListAppointment)
           .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
+          */
 
 
         }

@@ -1,21 +1,23 @@
-﻿using Domain;
-using ServicePattern;
+﻿using ServicePattern;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Infrastructure;
+using Domain;
 
 namespace Service
 {
-    class AppointmentService : Service<Appointment>, IAppointmentService
+    public class ServiceAppointment : Service<Appointment>, IserviceAppointment //il prend la signiature de la methode (pour la structure de travail)
     {
         private static IDatabaseFactory dbfactory = new DatabaseFactory();
         private static IUnitOfWork uow = new UnitOfWork(dbfactory);
-
-        public AppointmentService(IUnitOfWork utwk) : base(utwk)
+        public ServiceAppointment() : base(uow)
         {
+          
         }
+
+        
     }
 }
