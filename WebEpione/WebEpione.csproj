@@ -208,12 +208,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ReportViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -274,6 +276,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Report\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,6 +298,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{bbcdca57-9dc3-450b-8300-2c2055cc8717}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServicePattern\ServicePattern.csproj">
+      <Project>{70169713-a933-4baa-a667-27f530333dfe}</Project>
+      <Name>ServicePattern</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service\Service.csproj">
       <Project>{dbbc8766-05e6-4426-9a15-601f2d07a16f}</Project>

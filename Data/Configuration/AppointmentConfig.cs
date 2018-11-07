@@ -13,8 +13,7 @@ namespace Data.Configuration
         public AppointmentConfig()
         {   
            
-            // Report One to One
-            HasRequired<Report>(t => t.Report).WithRequiredPrincipal(t => t.Appointment);
+         
 
                // One to Many Doctor and Appointment
                 HasRequired<Doctor>(a => a.Doctor).WithMany(t => t.ListAppointment)

@@ -21,6 +21,8 @@ namespace Domain
         public Treatment Treatment { get; set; }
         public int TreatmentId { get; set; }
         public Appointment Appointment { get; set; }
+        public Report Report { get; set; }
+
 
 
     }

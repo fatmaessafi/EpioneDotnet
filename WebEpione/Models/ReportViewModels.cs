@@ -1,13 +1,14 @@
-﻿using System;
+﻿
+using Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Domain
+namespace WebEpione.Models
 {
-    public class Report
+    public class ReportViewModels
     {
         [Key]
         public int ReportId { get; set; }

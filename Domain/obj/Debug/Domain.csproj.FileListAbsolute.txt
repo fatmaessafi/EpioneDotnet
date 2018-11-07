@@ -35,3 +35,17 @@ C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspN
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.dll
 C:\Users\CompuTech\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.pdb
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Domain.dll.config
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Domain.dll
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Domain.pdb
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.dll
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.xml
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.dll
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.pdb
