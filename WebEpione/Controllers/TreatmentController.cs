@@ -13,15 +13,15 @@ namespace WebEpione.Controllers
    
     public class TreatmentController : Controller
     {
-        public static int idPatient = 1;
+      
         IServiceTreatment st = new ServiceTreatment();
         UserService us = new UserService();
-        ServiceStep ss = new ServiceStep();
+        ServiceStep ss = new ServiceStep(); 
         // GET: Treatment
         public ActionResult Index()
         {
             List<TreatmentViewModel> list = new List<TreatmentViewModel>();
-            foreach (var item in st.GetListTreatmentOrdered(idPatient))
+            foreach (var item in st.GetListTreatmentOrdered(1))
             {
                 TreatmentViewModel tvm = new TreatmentViewModel();
                 tvm.TreatmentId = item.TreatmentId;
@@ -52,7 +52,7 @@ namespace WebEpione.Controllers
                 svm.StepDate = item2.StepDate;
                 svm.LastModificationBy = us.GetUserById(item2.LastModificationBy).FirstName+" "+ us.GetUserById(item2.LastModificationBy).LastName;
                 svm.ModificationReason = item2.ModificationReason;
-                svm.LastModificationDate = item2.LastModificationDate.Date;
+                svm.LastModificationDate = item2.LastModificationDate.ToString("dd/MM/yyyy");
                 if (item2.Validation == true) svm.Validation = "Validate";
                 else if (item2.Validation == false) svm.Validation = "Not validate";
                 svm.NbModifications = item2.NbModifications;
@@ -80,7 +80,6 @@ namespace WebEpione.Controllers
                 Treatment treat = new Treatment();
                 treat.TreatmentId = collection.TreatmentId;
                 treat.Illness = collection.Illness;
-                treat.PatientId = idPatient;
                 treat.DoctorId= int.Parse(User.Identity.GetUserId());
                 treat.Validation = false;
                 st.Add(treat);

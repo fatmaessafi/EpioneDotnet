@@ -11,5 +11,6 @@ namespace Service
     public interface IServiceTreatment : IService<Treatment>
     {
         IEnumerable<Treatment> GetListTreatmentOrdered(int v);
+         int nbTotalTreatment(int id);
     }
 }

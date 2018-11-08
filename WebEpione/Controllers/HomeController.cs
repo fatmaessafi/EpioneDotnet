@@ -13,9 +13,9 @@ namespace WebEpione.Controllers
 {
     public class HomeController : Controller
     {
-        private Contexte db=new Contexte();
-        
-        
+        private Contexte db = new Contexte();
+        UserService us = new UserService();
+        IServiceTreatment st = new ServiceTreatment();
         public ActionResult Index()
         {
             if (User.Identity.GetUserId() != null)
@@ -59,5 +59,21 @@ namespace WebEpione.Controllers
 
             return View();
         }
+        public PartialViewResult UserInformations()
+        {
+                int currentUserId = Int32.Parse(User.Identity.GetUserId());
+                
+                var cuser = new User();
+               
+                cuser = us.GetUserById(currentUserId);
+            List<User> listuser = new List<User>();
+            listuser.Add(cuser);
+        int nb= st.nbTotalTreatment(currentUserId);
+            ViewBag.nbtreat = nb;
+
+
+            return PartialView(listuser);
+        }
+
     }
 }

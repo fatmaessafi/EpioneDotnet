@@ -282,9 +282,10 @@
     <Content Include="Views\Treatment\Index.cshtml" />
     <Content Include="Views\Treatment\Details.cshtml" />
     <Content Include="Views\Shared\PartialProfile.cshtml" />
-    <Content Include="Views\Shared\PartialMyProfile.cshtml" />
     <Content Include="Views\Treatment\Delete.cshtml" />
     <Content Include="Views\Treatment\Edit.cshtml" />
+    <Content Include="Views\Shared\MyProfileLayout.cshtml" />
+    <Content Include="Views\Home\UserInformations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

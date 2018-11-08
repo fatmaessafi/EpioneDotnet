@@ -28,7 +28,7 @@ namespace Service
         
         public int nbTotalTreatment(int id)
         {
-            return GetAll().OfType<Treatment>().Count();
+            return GetAll().OfType<Treatment>().Where(t=>t.PatientId.Equals(id)).Count();
         }
     }
 }
