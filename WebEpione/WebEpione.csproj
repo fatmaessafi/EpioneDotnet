@@ -216,6 +216,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PatientViewModel.cs" />
     <Compile Include="Models\StepViewModel.cs" />
     <Compile Include="Models\TreatmentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,4 @@
-﻿@model IEnumerable<Domain.Entities.User>
-
+﻿@model IEnumerable<WebEpione.Models.PatientViewModel>
 @{
     Layout = null;
 }
@@ -8,7 +7,9 @@
     <div class="row">
         <aside class="col-xl-3 col-lg-4" id="sidebar">
             <div class="box_profile">
+                <br />
                 <figure>
+                  
                     <img src="~/Content/img/avatar2.jpg" alt="" class="img-fluid">
                 </figure>
                 <small>Patient</small>
@@ -19,15 +20,19 @@
 
                 <ul class="statistic">
 
-                    <li>ViewBag.nbtreat Treatments</li>
+                    <li>@ViewBag.nbtreat Treatments</li>
                 </ul>
                 <ul class="contacts">
+                    <li><h6>Profession</h6>@Html.DisplayFor(modelItem => item.Profession)</li>
+                    <li><h6>Civil Status</h6>@Html.DisplayFor(modelItem => item.CivilStatus)</li>
                     <li><h6>City</h6>@Html.DisplayFor(modelItem => item.City)</li>
                     <li><h6>Address</h6>@Html.DisplayFor(modelItem => item.HomeAddress)</li>
                     <li><h6>Phone</h6>+216 @Html.DisplayFor(modelItem => item.PhoneNumber)</li>
+                    <li><h6>Allergies</h6>@Html.DisplayFor(modelItem => item.Allergies)</li>
+                    <li><h6>Special Requirements</h6>@Html.DisplayFor(modelItem => item.SpecialReq)</li>
+
                 </ul>
 }
-                <div class="text-center"><a href="" class="btn_1 outline" target="_blank"><i class="icon_pin"></i> View on map</a></div>
             </div>
         </aside>
        

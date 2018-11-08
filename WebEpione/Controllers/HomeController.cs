@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebEpione.Models;
 
 namespace WebEpione.Controllers
 {
@@ -15,6 +16,7 @@ namespace WebEpione.Controllers
     {
         private Contexte db = new Contexte();
         UserService us = new UserService();
+        IServicePatient sp = new ServicePatient();
         IServiceTreatment st = new ServiceTreatment();
         public ActionResult Index()
         {
@@ -63,11 +65,23 @@ namespace WebEpione.Controllers
         {
                 int currentUserId = Int32.Parse(User.Identity.GetUserId());
                 
-                var cuser = new User();
-               
-                cuser = us.GetUserById(currentUserId);
-            List<User> listuser = new List<User>();
-            listuser.Add(cuser);
+                var cuser = new Patient();
+            if (sp.GetById(currentUserId) != null) { cuser = sp.GetById(currentUserId); }
+            PatientViewModel pvm = new PatientViewModel();
+            pvm.LastName = cuser.LastName;
+            pvm.FirstName = cuser.FirstName;
+            pvm.City = cuser.City;
+            pvm.BirthDate = cuser.BirthDate;
+            pvm.CivilStatus = cuser.CivilStatus;
+            pvm.Gender = cuser.Gender;
+            pvm.HomeAddress = cuser.HomeAddress;
+            pvm.Profession = cuser.Profession;
+            pvm.RegistrationDate = cuser.RegistrationDate;
+            pvm.Allergies = cuser.Allergies;
+            pvm.SpecialReq = cuser.SpecialReq;
+            pvm.PhoneNumber = cuser.PhoneNumber;
+            List<PatientViewModel> listuser = new List<PatientViewModel>();
+            listuser.Add(pvm);
         int nb= st.nbTotalTreatment(currentUserId);
             ViewBag.nbtreat = nb;
 
