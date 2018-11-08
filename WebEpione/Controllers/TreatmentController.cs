@@ -82,6 +82,7 @@ namespace WebEpione.Controllers
                 treat.Illness = collection.Illness;
                 treat.PatientId = idPatient;
                 treat.DoctorId= int.Parse(User.Identity.GetUserId());
+                treat.Validation = false;
                 st.Add(treat);
                 st.Commit();
                 return RedirectToAction("Index");
@@ -95,18 +96,45 @@ namespace WebEpione.Controllers
         // GET: Treatment/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+
+            var t = st.GetById(id);
+            TreatmentViewModel tvm = new TreatmentViewModel();
+            tvm.Illness = t.Illness;
+            if (t.Validation == true)
+            {
+                tvm.Validation = "Validate";
+            }
+            else
+            {
+                tvm.Validation = "Not validate";
+            }
+            tvm.Doctor = us.GetUserById(t.DoctorId).FirstName + " " + us.GetUserById(t.DoctorId).LastName;
+            return View(tvm);
         }
 
         // POST: Treatment/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, TreatmentViewModel collection)
         {
-            try
-            {
-                // TODO: Add update logic here
 
-                return RedirectToAction("Index");
+            // TODO: Add update logic here
+           
+                Treatment t = st.GetById(id);
+            
+                try
+                {
+                    t.Illness = collection.Illness;
+                    if (collection.Validation == "Validate")
+                    { t.Validation = true;
+                    }
+                    else
+                    {
+                        t.Validation = false;
+                    }
+                    st.Update(t);
+                    st.Commit();
+
+                    return RedirectToAction("Index");
             }
             catch
             {
@@ -117,17 +145,38 @@ namespace WebEpione.Controllers
         // GET: Treatment/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var t = st.GetById(id);
+            TreatmentViewModel tvm = new TreatmentViewModel();
+            tvm.Illness = t.Illness;
+            if (t.Validation == true)
+            {
+                tvm.Validation = "Validate";
+            }
+            else
+            {
+                tvm.Validation = "Not validate";
+            }
+            tvm.Doctor = us.GetUserById(t.DoctorId).FirstName+" "+us.GetUserById(t.DoctorId).LastName;
+            return View(tvm);
         }
 
         // POST: Treatment/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, TreatmentViewModel collection)
         {
+              Treatment t = st.GetById(id);
+            
             try
-            {
-                // TODO: Add delete logic here
-
+            {   
+                t.Illness = collection.Illness;
+                if (collection.Validation == "Validate")
+                { t.Validation = true; }
+                else
+                {
+                    t.Validation = false;
+                }
+                st.Delete(t);
+                st.Commit();
                 return RedirectToAction("Index");
             }
             catch

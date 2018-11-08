@@ -34,3 +34,4 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.I
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.pdb
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
