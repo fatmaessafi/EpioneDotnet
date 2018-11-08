@@ -94,18 +94,12 @@ namespace WebEpione.Controllers
             rvm.ReportTitle = bib.ReportTitle;
            
 
-
-
-           
-
-
-
             return View(rvm);
         }
 
         // POST: Report/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, ReportViewModels RVM)
+        public ActionResult Edit(int id, ReportViewModels RVM, HttpPostedFileBase file)
         {
             Report r = RS.GetById(id);
 
