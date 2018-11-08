@@ -10,7 +10,7 @@ namespace WebEpione.Models
         
         public int TreatmentId { get; set; }
         public string Illness { get; set; }
-       
+        public string Validation { get; set; }
         public string Patient { get; set; }
         public string Doctor { get; set; }
     }

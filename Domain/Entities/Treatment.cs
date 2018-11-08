@@ -16,6 +16,7 @@ namespace Domain
         public int PatientId { get; set; }
         public Doctor ReferringDoctor { get; set; }
         public int DoctorId { get; set; }
+        public bool Validation { get; set; }
         public  ICollection<Step> ListSteps { get; set; }
        
 

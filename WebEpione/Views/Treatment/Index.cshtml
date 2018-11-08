@@ -44,6 +44,9 @@
                                 @Html.DisplayNameFor(model => model.Doctor)
                             </th>
                             <th>
+                                @Html.DisplayNameFor(model=>model.Validation)
+                            </th>
+                            <th>
                                 View
                             </th>
                             <th>
@@ -66,6 +69,9 @@
                                     @Html.DisplayFor(modelItem => item.Doctor)
 
 
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem=>item.Validation)
                                 </td>
                                 <td>
                                     <h1><a href=@Url.Action("Details", "Treatment", new { id = item.TreatmentId })><i class="pe-7s-note2"></i></a></h1>

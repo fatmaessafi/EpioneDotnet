@@ -26,6 +26,8 @@ namespace WebEpione.Controllers
                 TreatmentViewModel tvm = new TreatmentViewModel();
                 tvm.TreatmentId = item.TreatmentId;
                 tvm.Illness = item.Illness;
+                if (item.Validation == true) { tvm.Validation = "Validate"; }
+                else if(item.Validation==false) { tvm.Validation = "Not validate"; }
                 tvm.Doctor = us.GetUserById(item.DoctorId).FirstName + " " + us.GetUserById(item.DoctorId).LastName;
                 tvm.Patient = us.GetUserById(item.PatientId).FirstName + " " + us.GetUserById(item.PatientId).LastName;
 
@@ -48,7 +50,7 @@ namespace WebEpione.Controllers
                 svm.StepId = item2.StepId;
                 svm.StepDescription = item2.StepDescription;
                 svm.StepDate = item2.StepDate;
-                svm.LastModificationBy = us.GetUserById(item2.LastModificationBy.Id).FirstName+" "+ us.GetUserById(item2.LastModificationBy.Id).LastName;
+                svm.LastModificationBy = us.GetUserById(item2.LastModificationBy).FirstName+" "+ us.GetUserById(item2.LastModificationBy).LastName;
                 svm.ModificationReason = item2.ModificationReason;
                 svm.LastModificationDate = item2.LastModificationDate.Date;
                 if (item2.Validation == true) svm.Validation = "Validate";

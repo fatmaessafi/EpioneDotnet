@@ -12,10 +12,10 @@
     <div class="tabs_styled_2">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link" href=@Url.Action("Index", "Treatment")>Treatments</a>
+                <a class="nav-link active" href=@Url.Action("Index", "Treatment")>Treatments</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href=@Url.Action("Create", "Treatment")><i class="pe-7s-plus"></i> New treatment</a>
+                <a class="nav-link" href=@Url.Action("Create", "Treatment")><i class="pe-7s-plus"></i> New treatment</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="">Appointments</a>            
@@ -38,53 +38,59 @@
                     <p>
                         <h5><a href=@Url.Action("Create", "Step")><i class="pe-7s-plus"></i> New step</a></h5>
                     </p>
+                    <div class="margin_60_35">
 
-                    <div class="pricing-container cd-has-margins">
-                        <ul class="pricing-list">
-                            <li>
+                        <div class="pricing-container cd-has-margins">
+                            <ul class="pricing-list">
+
                                 @foreach (var item in Model)
                                 {
+                                  
 
-                                    <ul class="pricing-wrapper">
-                                        <li class="is-visible">
-                                            <header class="pricing-header">
-                                                <h2>@Html.DisplayFor(modelItem => item.Validation)</h2>
+                                          
+                                <li @(item.Validation == "Not validate" ? String.Empty : "class=popular" )>
+                                
 
-                                                <div class="price">
-                                                    <span class="currency"> @Html.DisplayFor(modelItem => item.StepDate)</span>
-                                                    <span class="price-duration">@Html.DisplayFor(modelItem => item.StepDescription)</span>
+                                        <ul class="pricing-wrapper">
+                                            <li class="is-visible">
+                                                <header class="pricing-header">
+                                                    <h2>@Html.DisplayFor(modelItem => item.Validation)</h2>
+
+                                                    <div class="price">
+                                                        <span class="currency"> @Html.DisplayFor(modelItem => item.StepDate)</span>
+                                                        <span class="price-duration">@Html.DisplayFor(modelItem => item.StepDescription)</span>
+                                                    </div>
+                                                </header>
+                                                <!-- /pricing-header -->
+                                                <div class="pricing-body">
+                                                    <ul class="pricing-features">
+                                                        <li>Modified <em>@Html.DisplayFor(modelItem => item.NbModifications)</em> times</li>
+                                                        <li><em>Last modification by </em> @Html.DisplayFor(modelItem => item.LastModificationBy)</li>
+                                                        <li><em>Modification reason</em> @Html.DisplayFor(modelItem => item.ModificationReason)</li>
+                                                        <li>Modification date <em> @Html.DisplayFor(modelItem => item.LastModificationDate)</em></li>
+                                                    </ul>
                                                 </div>
-                                            </header>
-                                            <!-- /pricing-header -->
-                                            <div class="pricing-body">
-                                                <ul class="pricing-features">
-                                                    <li>Modified <em>@Html.DisplayFor(modelItem => item.NbModifications)</em> times</li>
-                                                    <li><em>Last modification by </em> @Html.DisplayFor(modelItem => item.LastModificationBy)</li>
-                                                    <li><em>Modification reason</em> @Html.DisplayFor(modelItem => item.ModificationReason)</li>
-                                                    <li>Modification date <em> @Html.DisplayFor(modelItem => item.LastModificationDate)</em></li>
-                                                </ul>
-                                            </div>
-                                            <!-- /pricing-body -->
-                                            <footer class="pricing-footer">
-                                                <a class="select-plan" href="#0">Select</a>
-                                            </footer>
-                                        </li>
-                                    </ul>
-                                        <!-- /pricing-wrapper -->
-
+                                                <!-- /pricing-body -->
+                                                <footer class="pricing-footer">
+                                                    <a class="select-plan" href="#0">Select</a>
+                                                </footer>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <!-- /pricing-wrapper -->
                                 }
-                            </li>
 
-                        </ul>
-                        <!-- /pricing-list -->
+
+                            </ul>
+                            <!-- /pricing-list -->
+                        </div>
+                        <!-- /pricing-container -->
+
+
                     </div>
-                    <!-- /pricing-container -->
 
 
                 </div>
-
-
-
 </div>
 </div>
 </div>
