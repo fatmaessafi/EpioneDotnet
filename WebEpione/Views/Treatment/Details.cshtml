@@ -64,10 +64,12 @@
                                                 <!-- /pricing-header -->
                                                 <div class="pricing-body">
                                                     <ul class="pricing-features">
+                                                        <li>Appointment <em> @Html.DisplayFor(modelItem => item.Appointment)</em></li>
                                                         <li>Modified <em>@Html.DisplayFor(modelItem => item.NbModifications)</em> times</li>
                                                         <li><em>Last modification by </em> @Html.DisplayFor(modelItem => item.LastModificationBy)</li>
                                                         <li><em>Modification reason</em> @Html.DisplayFor(modelItem => item.ModificationReason)</li>
                                                         <li>Modification date <em> @Html.DisplayFor(modelItem => item.LastModificationDate)</em></li>
+                                                        
                                                     </ul>
                                                 </div>
                                                 <!-- /pricing-body -->

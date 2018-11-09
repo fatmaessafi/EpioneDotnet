@@ -50,7 +50,7 @@ namespace WebEpione.Controllers
                 svm.StepId = item2.StepId;
                 svm.StepDescription = item2.StepDescription;
                 svm.StepDate = item2.StepDate;
-                svm.LastModificationBy = us.GetUserById(item2.LastModificationBy).FirstName+" "+ us.GetUserById(item2.LastModificationBy).LastName;
+                svm.LastModificationBy = us.GetUserById(item2.LastModificationBy).FirstName + " " + us.GetUserById(item2.LastModificationBy).LastName;
                 svm.ModificationReason = item2.ModificationReason;
                 svm.LastModificationDate = item2.LastModificationDate.ToString("dd-MM-yyyy");
                 if (item2.Validation == true) svm.Validation = "Validate";
@@ -59,6 +59,16 @@ namespace WebEpione.Controllers
                 svm.TreatmentId = item2.TreatmentId;
                 svm.TreatmentIllness = st.GetById(item2.TreatmentId).Illness;
 
+                if (item2.Appointment !=null)
+                {
+                    svm.AppointmentId = item2.Appointment.AppointmentId;
+                    svm.Appointment = "Taken";
+                }
+                else
+                {
+                    svm.AppointmentId = 0;
+                    svm.Appointment = "Not taken";
+                }
 
                 liststeps.Add(svm);
             }

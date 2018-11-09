@@ -18,5 +18,7 @@ namespace WebEpione.Models
         public string ModificationReason { get; set; }
         public string TreatmentIllness { get; set; }
         public int TreatmentId { get; set; }
+        public int AppointmentId { get; set; }
+        public string Appointment { get; set; }
     }
 }
