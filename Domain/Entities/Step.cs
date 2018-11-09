@@ -20,6 +20,7 @@ namespace Domain
         public string ModificationReason { get; set; }
         public Treatment Treatment { get; set; }
         public int TreatmentId { get; set; }
+        public virtual Appointment Appointment { get; set; }
 
 
     }

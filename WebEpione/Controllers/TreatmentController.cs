@@ -52,7 +52,7 @@ namespace WebEpione.Controllers
                 svm.StepDate = item2.StepDate;
                 svm.LastModificationBy = us.GetUserById(item2.LastModificationBy).FirstName+" "+ us.GetUserById(item2.LastModificationBy).LastName;
                 svm.ModificationReason = item2.ModificationReason;
-                svm.LastModificationDate = item2.LastModificationDate.ToString("dd/MM/yyyy");
+                svm.LastModificationDate = item2.LastModificationDate.ToString("dd-MM-yyyy");
                 if (item2.Validation == true) svm.Validation = "Validate";
                 else if (item2.Validation == false) svm.Validation = "Not validate";
                 svm.NbModifications = item2.NbModifications;

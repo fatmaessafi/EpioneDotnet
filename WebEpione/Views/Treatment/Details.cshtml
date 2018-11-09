@@ -57,7 +57,7 @@
                                                     <h2>@Html.DisplayFor(modelItem => item.Validation)</h2>
 
                                                     <div class="price">
-                                                        <span class="currency"> @Html.DisplayFor(modelItem => item.StepDate)</span>
+                                                        <span class="currency">@Convert.ToDateTime(item.StepDate).ToString("dd/MM/yyyy")</span>
                                                         <span class="price-duration">@Html.DisplayFor(modelItem => item.StepDescription)</span>
                                                     </div>
                                                 </header>
@@ -72,7 +72,7 @@
                                                 </div>
                                                 <!-- /pricing-body -->
                                                 <footer class="pricing-footer">
-                                                    <a class="select-plan" href="#0">Select</a>
+                                                    <a class="select-plan" href=@Url.Action("Edit", "Step", new { id = item.StepId })>Select</a>
                                                 </footer>
                                             </li>
                                         </ul>

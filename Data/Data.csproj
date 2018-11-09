@@ -75,13 +75,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201811072359368_M1.cs" />
-    <Compile Include="Migrations\201811072359368_M1.Designer.cs">
-      <DependentUpon>201811072359368_M1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811080002040_no id.cs" />
-    <Compile Include="Migrations\201811080002040_no id.Designer.cs">
-      <DependentUpon>201811080002040_no id.cs</DependentUpon>
+    <Compile Include="Migrations\201811091808178_Step.cs" />
+    <Compile Include="Migrations\201811091808178_Step.Designer.cs">
+      <DependentUpon>201811091808178_Step.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,11 +93,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811072359368_M1.resx">
-      <DependentUpon>201811072359368_M1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811080002040_no id.resx">
-      <DependentUpon>201811080002040_no id.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811091808178_Step.resx">
+      <DependentUpon>201811091808178_Step.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

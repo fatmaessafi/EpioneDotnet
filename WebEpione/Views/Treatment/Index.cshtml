@@ -34,7 +34,7 @@
                    
 
                     <table class="table">
-                        <tr>
+                        <tr >
 
                             <th>
                                 @Html.DisplayNameFor(model => model.Illness)
@@ -59,7 +59,7 @@
 
                         @foreach (var item in Model)
                         {
-                            <tr>
+                            <tr @(item.Validation == "Not validate" ? String.Empty : "bgcolor=#74d1c6")>
 
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Illness)

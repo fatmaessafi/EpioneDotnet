@@ -19,6 +19,10 @@ namespace Data.Configuration
             HasRequired<Patient>(a => a.Patient).WithMany(t => t.ListAppointment)
           .HasForeignKey(e => e.DoctorId).WillCascadeOnDelete(true);
 
+            //Optional one to one with Step
+            HasOptional<Step>(x => x.Step)
+           .WithOptionalPrincipal()
+           .Map(x => x.MapKey("AppointmentId"));
 
         }
                 
