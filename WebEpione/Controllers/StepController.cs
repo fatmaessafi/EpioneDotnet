@@ -1,4 +1,7 @@
-﻿using Service;
+﻿using Domain;
+using Domain.Entities;
+using Microsoft.AspNet.Identity;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +13,11 @@ namespace WebEpione.Controllers
 {
     public class StepController : Controller
     {
+        
         UserService us = new UserService();
         IServiceStep ss = new ServiceStep();
         IServiceTreatment st = new ServiceTreatment();
+        IServiceStepRequest ssr = new ServiceStepRequest();
         // GET: Step
         public ActionResult Index()
         {
@@ -54,23 +59,32 @@ namespace WebEpione.Controllers
             StepViewModel svm = new StepViewModel();
             svm.StepId = s.StepId;
             svm.StepSpeciality = s.StepSpeciality;
+            svm.NewStepSpeciality = s.StepSpeciality;
             svm.StepDescription = s.StepDescription;
+            svm.NewStepDescription = s.StepDescription;
             svm.StepDate = s.StepDate;
+            svm.NewStepDate = s.StepDate;
+
             if (s.Validation == true)
             {
-                svm.Validation = "Validate";
+                svm.Validation = "Valid";
+                svm.NewValidation = "Valid";
             }
             else
             {
-                svm.Validation = "Not validate";
+                svm.Validation = "Not valid";
+                svm.NewValidation = "Not valid";
             }
             svm.TreatmentId = s.TreatmentId;
             svm.LastModificationBy = us.GetUserById(s.LastModificationBy).FirstName+" "+us.GetUserById(s.LastModificationBy).LastName;
+            svm.NewLastModificationBy = Int32.Parse(User.Identity.GetUserId());
             svm.LastModificationDate = s.LastModificationDate.ToString();
+            svm.NewLastModificationDate = DateTime.UtcNow.Date;
             svm.ModificationReason = s.ModificationReason;
-
+            svm.NewValidation = "Not valid";
+            svm.TreatmentIllness = st.GetById(s.TreatmentId).Illness;
             
-                svm.TreatmentIllness = st.GetById(s.TreatmentId).Illness;
+
             ViewBag.illness = svm.TreatmentIllness;
             
             if (s.Appointment != null)
@@ -83,19 +97,37 @@ namespace WebEpione.Controllers
                 svm.AppointmentId = 0;
                 svm.Appointment = "Not taken";
             }
+
             return View(svm);
 
         }
 
         // POST: Step/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, StepViewModel collection)
         {
+            StepRequest sr = new StepRequest();
             try
             {
-                // TODO: Add update logic here
+                sr.NewLastModificationBy = collection.NewLastModificationBy;
+                sr.NewLastModificationDate = collection.NewLastModificationDate;
+                sr.NewModificationReason = collection.NewModificationReason;
+                sr.NewTreatmentId = collection.TreatmentId;
+                sr.NewStepDate = collection.NewStepDate;
+                sr.NewStepDescription = collection.NewStepDescription;
+                sr.NewStepSpeciality = collection.NewStepSpeciality;
+                if (collection.NewValidation == "Valid")
+                {
+                    sr.NewValidation = true;
+                }
+                else
+                {
+                    sr.NewValidation = false;
+                }
+                ssr.Add(sr);
+                ssr.Commit();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", "Treatment", new {id=id});
             }
             catch
             {

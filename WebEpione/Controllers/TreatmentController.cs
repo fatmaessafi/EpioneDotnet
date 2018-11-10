@@ -112,13 +112,22 @@ namespace WebEpione.Controllers
             tvm.Illness = t.Illness;
             if (t.Validation == true)
             {
-                tvm.Validation = "Validate";
+                tvm.Validation = "Valid";
             }
             else
             {
-                tvm.Validation = "Not validate";
+                tvm.Validation = "Not valid";
             }
             tvm.Doctor = us.GetUserById(t.DoctorId).FirstName + " " + us.GetUserById(t.DoctorId).LastName;
+
+            List<SelectListItem> list = new List<SelectListItem>
+            {
+            new SelectListItem {  Text = "Not valid", Value = "Not valid"},
+            new SelectListItem { Text = "Valid", Value = "Valid"},
+          
+            };
+
+            ViewBag.DDLItems = new SelectList(list, "Value", "Text", "Not valid");
             return View(tvm);
         }
 

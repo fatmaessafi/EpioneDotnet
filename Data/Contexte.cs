@@ -36,6 +36,7 @@ namespace Data
         public DbSet<Step> Step { set; get; }
         public DbSet<Treatment> Treatment { get; set; }
         public DbSet<VisitReason> VisitReason { set; get; }
+        public DbSet<StepRequest> StepRequest { set; get; }
 
         //On ModelCreating
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

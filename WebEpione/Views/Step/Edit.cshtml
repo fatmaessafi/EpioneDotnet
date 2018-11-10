@@ -119,18 +119,61 @@
                                     @Html.ValidationMessageFor(model => model.Appointment, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+                            <!--Modification div-->
+                            <div id="Modification" >
+                                <div class="main_title_3">
+                                <h3>Modification of the step</h3>
+                                    </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.NewStepSpeciality, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.NewStepSpeciality, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NewStepSpeciality, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.NewStepDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.NewStepDescription, new { htmlAttributes = new { @class = "form-control"} })
+                                        @Html.ValidationMessageFor(model => model.NewStepDescription, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.NewStepDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(model => model.NewStepDate,
+                             new { @class = "form-control", @id = "booking_date" })
+                                         @Html.ValidationMessageFor(model => model.NewStepDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.NewValidation, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.NewValidation, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NewValidation, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ModificationReason, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.NewModificationReason, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NewModificationReason, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
 
-                            <div class="form-group">
+                            <div class="form-group" >
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="Save" class="btn btn-default" />
                                 </div>
+                                </div>
                             </div>
                         </div>
-                    }
+                   
 
                     <div>
-                        @Html.ActionLink("Back to List", "Index")
+                        <a href=@Url.Action("Details", "Treatment", new { id = Model.TreatmentId } )>Back to list</a>
                     </div>
+                    }
                 </div>
             </div>
         </div>

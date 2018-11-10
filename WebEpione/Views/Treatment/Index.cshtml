@@ -59,7 +59,7 @@
 
                         @foreach (var item in Model)
                         {
-                            <tr @(item.Validation == "Not validate" ? String.Empty : "bgcolor=#74d1c6")>
+                            <tr @(item.Validation == "Not valid" ? String.Empty : "bgcolor=#74d1c6")>
 
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Illness)
