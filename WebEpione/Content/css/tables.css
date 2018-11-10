@@ -7,7 +7,7 @@ color:#e97d68;
 }
 
 .pricing-container {
-width:90%;
+width:100%;
 max-width:1200px;
 margin:1em auto;
 }
@@ -362,7 +362,7 @@ clear:both;
 }
 
 .pricing-list>li {
-width:33.3333333333%;
+width:50%;
 float:left;
 }
 

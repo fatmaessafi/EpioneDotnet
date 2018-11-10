@@ -48,3 +48,4 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.Step.resources
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.speciality.resources

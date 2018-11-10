@@ -287,6 +287,7 @@
     <Content Include="Views\Treatment\Edit.cshtml" />
     <Content Include="Views\Shared\MyProfileLayout.cshtml" />
     <Content Include="Views\Home\UserInformations.cshtml" />
+    <Content Include="Views\Step\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

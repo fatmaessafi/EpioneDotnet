@@ -12,6 +12,7 @@ namespace Domain
         [Key]
         public int StepId { get; set; }
         public string StepDescription { get; set; }
+        public string StepSpeciality { get; set; }
         public DateTime StepDate { get; set; }
         public Boolean Validation { get; set; }
         public int NbModifications { get; set; }

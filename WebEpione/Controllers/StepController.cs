@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebEpione.Models;
 
 namespace WebEpione.Controllers
 {
     public class StepController : Controller
     {
+        UserService us = new UserService();
+        IServiceStep ss = new ServiceStep();
+        IServiceTreatment st = new ServiceTreatment();
         // GET: Step
         public ActionResult Index()
         {
@@ -45,7 +50,41 @@ namespace WebEpione.Controllers
         // GET: Step/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var s = ss.GetById(id);
+            StepViewModel svm = new StepViewModel();
+            svm.StepId = s.StepId;
+            svm.StepSpeciality = s.StepSpeciality;
+            svm.StepDescription = s.StepDescription;
+            svm.StepDate = s.StepDate;
+            if (s.Validation == true)
+            {
+                svm.Validation = "Validate";
+            }
+            else
+            {
+                svm.Validation = "Not validate";
+            }
+            svm.TreatmentId = s.TreatmentId;
+            svm.LastModificationBy = us.GetUserById(s.LastModificationBy).FirstName+" "+us.GetUserById(s.LastModificationBy).LastName;
+            svm.LastModificationDate = s.LastModificationDate.ToString();
+            svm.ModificationReason = s.ModificationReason;
+
+            
+                svm.TreatmentIllness = st.GetById(s.TreatmentId).Illness;
+            ViewBag.illness = svm.TreatmentIllness;
+            
+            if (s.Appointment != null)
+            {
+                svm.AppointmentId = s.Appointment.AppointmentId;
+                svm.Appointment = "Taken";
+            }
+            else
+            {
+                svm.AppointmentId = 0;
+                svm.Appointment = "Not taken";
+            }
+            return View(svm);
+
         }
 
         // POST: Step/Edit/5

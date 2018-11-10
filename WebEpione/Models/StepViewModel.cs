@@ -1,6 +1,7 @@
 ﻿using Domain;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,6 +10,9 @@ namespace WebEpione.Models
     public class StepViewModel
     {
         public int StepId { get; set; }
+        [EnumDataType(typeof(Speciality))]
+        public string StepSpeciality { get; set; }
+
         public string StepDescription { get; set; }
         public DateTime StepDate { get; set; }
         public string Validation { get; set; }

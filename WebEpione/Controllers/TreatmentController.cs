@@ -26,8 +26,8 @@ namespace WebEpione.Controllers
                 TreatmentViewModel tvm = new TreatmentViewModel();
                 tvm.TreatmentId = item.TreatmentId;
                 tvm.Illness = item.Illness;
-                if (item.Validation == true) { tvm.Validation = "Validate"; }
-                else if(item.Validation==false) { tvm.Validation = "Not validate"; }
+                if (item.Validation == true) { tvm.Validation = "Valid"; }
+                else if(item.Validation==false) { tvm.Validation = "Not valid"; }
                 tvm.Doctor = us.GetUserById(item.DoctorId).FirstName + " " + us.GetUserById(item.DoctorId).LastName;
                 tvm.Patient = us.GetUserById(item.PatientId).FirstName + " " + us.GetUserById(item.PatientId).LastName;
 
@@ -48,13 +48,14 @@ namespace WebEpione.Controllers
             {
                 StepViewModel svm = new StepViewModel();
                 svm.StepId = item2.StepId;
+                svm.StepSpeciality = item2.StepSpeciality;
                 svm.StepDescription = item2.StepDescription;
                 svm.StepDate = item2.StepDate;
                 svm.LastModificationBy = us.GetUserById(item2.LastModificationBy).FirstName + " " + us.GetUserById(item2.LastModificationBy).LastName;
                 svm.ModificationReason = item2.ModificationReason;
                 svm.LastModificationDate = item2.LastModificationDate.ToString("dd-MM-yyyy");
-                if (item2.Validation == true) svm.Validation = "Validate";
-                else if (item2.Validation == false) svm.Validation = "Not validate";
+                if (item2.Validation == true) svm.Validation = "Valid";
+                else if (item2.Validation == false) svm.Validation = "Not valid";
                 svm.NbModifications = item2.NbModifications;
                 svm.TreatmentId = item2.TreatmentId;
                 svm.TreatmentIllness = st.GetById(item2.TreatmentId).Illness;

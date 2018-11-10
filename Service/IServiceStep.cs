@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    interface IServiceStep: IService<Step>
+   public interface IServiceStep: IService<Step>
     {
 
     }

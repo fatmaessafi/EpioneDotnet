@@ -26,15 +26,12 @@
         <div class="tab-content">
 
             <div class="tab-pane fade show active" id="book" role="tabpanel" aria-labelledby="book-tab">
-                <p class="lead add_bottom_30">This is all the treatments that this patient is following.</p>
+                <p class="lead add_bottom_30">This is all the steps of the treatment.</p>
 
                 <div class="main_title_3">
-                    <h3>Details of treatment @ViewBag.illness</h3>
+                    <h3>Steps of treatment @ViewBag.illness</h3>
                 </div>
                 <div class="form-group add_bottom_45">
-
-
-
                     <p>
                         <h5><a href=@Url.Action("Create", "Step")><i class="pe-7s-plus"></i> New step</a></h5>
                     </p>
@@ -46,9 +43,7 @@
                                 @foreach (var item in Model)
                                 {
                                   
-
-                                          
-                                <li @(item.Validation == "Not validate" ? String.Empty : "class=popular" )>
+                                <li @(item.Validation == "Not valid" ? String.Empty : "class=popular" )>
                                 
 
                                         <ul class="pricing-wrapper">
@@ -58,6 +53,7 @@
 
                                                     <div class="price">
                                                         <span class="currency">@Convert.ToDateTime(item.StepDate).ToString("dd/MM/yyyy")</span>
+                                                        <span class="price">@Html.DisplayFor(modelItem => item.StepSpeciality)</span>
                                                         <span class="price-duration">@Html.DisplayFor(modelItem => item.StepDescription)</span>
                                                     </div>
                                                 </header>
@@ -87,8 +83,6 @@
                             <!-- /pricing-list -->
                         </div>
                         <!-- /pricing-container -->
-
-
                     </div>
 
 
