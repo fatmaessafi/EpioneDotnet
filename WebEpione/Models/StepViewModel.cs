@@ -7,8 +7,15 @@ using System.Web;
 
 namespace WebEpione.Models
 {
+    public enum ValidationType
+    {
+        Valid,
+        NotValid
+    }
+
     public class StepViewModel
     {
+        
         public int StepId { get; set; }
         [Display(Name ="Step Speciality")]
         [EnumDataType(typeof(Speciality))]
@@ -55,13 +62,13 @@ namespace WebEpione.Models
 
         public DateTime NewStepDate { get; set; }
         [Display(Name = "New Step Validation")]
-
+        [EnumDataType(typeof(ValidationType))]
         public string NewValidation { get; set; }
        
         public int NewLastModificationBy { get; set; }
         public DateTime NewLastModificationDate { get; set; }
-        [Required]
         [Display(Name = "New Modification Reason")]
+        [Required]
         public string NewModificationReason { get; set; }
 
     }

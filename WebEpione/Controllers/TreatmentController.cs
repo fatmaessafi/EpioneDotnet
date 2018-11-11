@@ -27,7 +27,7 @@ namespace WebEpione.Controllers
                 tvm.TreatmentId = item.TreatmentId;
                 tvm.Illness = item.Illness;
                 if (item.Validation == true) { tvm.Validation = "Valid"; }
-                else if(item.Validation==false) { tvm.Validation = "Not valid"; }
+                else if(item.Validation==false) { tvm.Validation = "NotValid"; }
                 tvm.Doctor = us.GetUserById(item.DoctorId).FirstName + " " + us.GetUserById(item.DoctorId).LastName;
                 tvm.Patient = us.GetUserById(item.PatientId).FirstName + " " + us.GetUserById(item.PatientId).LastName;
 
@@ -55,7 +55,7 @@ namespace WebEpione.Controllers
                 svm.ModificationReason = item2.ModificationReason;
                 svm.LastModificationDate = item2.LastModificationDate.ToString("dd-MM-yyyy");
                 if (item2.Validation == true) svm.Validation = "Valid";
-                else if (item2.Validation == false) svm.Validation = "Not valid";
+                else if (item2.Validation == false) svm.Validation = "NotValid";
                 svm.NbModifications = item2.NbModifications;
                 svm.TreatmentId = item2.TreatmentId;
                 svm.TreatmentIllness = st.GetById(item2.TreatmentId).Illness;
@@ -116,18 +116,11 @@ namespace WebEpione.Controllers
             }
             else
             {
-                tvm.Validation = "Not valid";
+                tvm.Validation = "NotValid";
             }
             tvm.Doctor = us.GetUserById(t.DoctorId).FirstName + " " + us.GetUserById(t.DoctorId).LastName;
 
-            List<SelectListItem> list = new List<SelectListItem>
-            {
-            new SelectListItem {  Text = "Not valid", Value = "Not valid"},
-            new SelectListItem { Text = "Valid", Value = "Valid"},
-          
-            };
-
-            ViewBag.DDLItems = new SelectList(list, "Value", "Text", "Not valid");
+            
             return View(tvm);
         }
 
@@ -169,11 +162,11 @@ namespace WebEpione.Controllers
             tvm.Illness = t.Illness;
             if (t.Validation == true)
             {
-                tvm.Validation = "Validate";
+                tvm.Validation = "Valid";
             }
             else
             {
-                tvm.Validation = "Not validate";
+                tvm.Validation = "NotValid";
             }
             tvm.Doctor = us.GetUserById(t.DoctorId).FirstName+" "+us.GetUserById(t.DoctorId).LastName;
             return View(tvm);

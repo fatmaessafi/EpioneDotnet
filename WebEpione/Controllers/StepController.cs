@@ -5,12 +5,14 @@ using Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using WebEpione.Models;
 
 namespace WebEpione.Controllers
 {
+    
     public class StepController : Controller
     {
         
@@ -72,8 +74,8 @@ namespace WebEpione.Controllers
             }
             else
             {
-                svm.Validation = "Not valid";
-                svm.NewValidation = "Not valid";
+                svm.Validation = "NotValid";
+                svm.NewValidation = "NotValid";
             }
             svm.TreatmentId = s.TreatmentId;
             svm.LastModificationBy = us.GetUserById(s.LastModificationBy).FirstName+" "+us.GetUserById(s.LastModificationBy).LastName;
@@ -81,9 +83,9 @@ namespace WebEpione.Controllers
             svm.LastModificationDate = s.LastModificationDate.ToString();
             svm.NewLastModificationDate = DateTime.UtcNow.Date;
             svm.ModificationReason = s.ModificationReason;
-            svm.NewValidation = "Not valid";
+            svm.NewValidation = "NotValid";
             svm.TreatmentIllness = st.GetById(s.TreatmentId).Illness;
-           
+            svm.NewModificationReason = "";
 
             ViewBag.illness = svm.TreatmentIllness;
             
@@ -125,6 +127,20 @@ namespace WebEpione.Controllers
                 {
                     sr.NewValidation = false;
                 }
+                var maildocteur= us.GetUserById(st.GetById(s.TreatmentId).DoctorId).Email;
+                var mailpatient= us.GetUserById(st.GetById(s.TreatmentId).PatientId).Email;
+                var lastmodifbyname = us.GetUserById(s.LastModificationBy).FirstName + " " + us.GetUserById(s.LastModificationBy).LastName;
+                var illness = st.GetById(s.TreatmentId).Illness;
+                var patient = us.GetUserById(st.GetById(s.TreatmentId).PatientId).FirstName + " " + us.GetUserById(st.GetById(s.TreatmentId).PatientId).LastName;
+                //MAIL
+                MailMessage mail = new MailMessage("EpionePidev@esprit.tn", maildocteur, "Modification request", "The doctor '" +lastmodifbyname+"' sent a request to modify the treatment of '"+illness+"' of the patient '"+patient+"'");
+                 //MailMessage mail = new MailMessage();
+                mail.IsBodyHtml = true;
+                SmtpClient smtpClient = new SmtpClient("Smtp.gmail.com", 587);
+                smtpClient.EnableSsl = true;
+
+               smtpClient.Credentials = new System.Net.NetworkCredential("EpionePidev@gmail.com", "epionepidev123");
+                smtpClient.Send(mail);
                 ssr.Add(sr);
                 ssr.Commit();
 
