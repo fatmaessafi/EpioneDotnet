@@ -42,6 +42,7 @@ namespace WebEpione.Controllers
         // GET: Treatment/Details/id
         public ActionResult Details(int id)
         {
+            TempData["idTreatment"] = id;
             List<StepViewModel> liststeps = new List<StepViewModel>();
             if (id!=0) { ViewBag.illness = st.GetById(id).Illness; }
             foreach (var item2 in ss.GetListStepOrdered(id))

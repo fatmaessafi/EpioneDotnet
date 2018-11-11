@@ -91,6 +91,10 @@
     <Compile Include="Migrations\201811101243375_stepreq.Designer.cs">
       <DependentUpon>201811101243375_stepreq.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811111847579_typesr.cs" />
+    <Compile Include="Migrations\201811111847579_typesr.Designer.cs">
+      <DependentUpon>201811111847579_typesr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,6 +124,9 @@
     <EmbeddedResource Include="Migrations\201811101243375_stepreq.resx">
       <DependentUpon>201811101243375_stepreq.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811111847579_typesr.resx">
+      <DependentUpon>201811111847579_typesr.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

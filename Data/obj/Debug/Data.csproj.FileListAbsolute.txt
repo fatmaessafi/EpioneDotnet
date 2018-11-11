@@ -51,3 +51,4 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csproj.Generate
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.speciality.resources
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.newclass.resources
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.stepreq.resources
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.typesr.resources

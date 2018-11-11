@@ -19,5 +19,6 @@ namespace Domain.Entities
         public DateTime NewLastModificationDate { get; set; }
         public string NewModificationReason { get; set; }
         public int NewTreatmentId { get; set; }
+        public string Type { get; set; }
     }
 }

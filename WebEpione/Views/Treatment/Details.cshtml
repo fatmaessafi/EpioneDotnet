@@ -15,10 +15,10 @@
                 <a class="nav-link active" href=@Url.Action("Index", "Treatment")>Treatments</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href=@Url.Action("Create", "Treatment")><i class="pe-7s-plus"></i> New treatment</a>
+                <a class="nav-link" href=@Url.Action("Create", "Step", new { id = TempData["idTreatment"] })><i class="pe-7s-plus"></i> New step</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Appointments</a>            
+                <a class="nav-link" href="">Requests</a>            
             </li>
         </ul>
         <!--/nav-tabs -->
@@ -32,9 +32,7 @@
                     <h3>Steps of treatment @ViewBag.illness</h3>
                 </div>
                 <div class="form-group add_bottom_45">
-                    <p>
-                        <h5><a href=@Url.Action("Create", "Step")><i class="pe-7s-plus"></i> New step</a></h5>
-                    </p>
+                   
                     <div class="margin_60_35">
 
                         <div class="pricing-container cd-has-margins">

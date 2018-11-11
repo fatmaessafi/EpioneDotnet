@@ -288,6 +288,8 @@
     <Content Include="Views\Shared\MyProfileLayout.cshtml" />
     <Content Include="Views\Home\UserInformations.cshtml" />
     <Content Include="Views\Step\Edit.cshtml" />
+    <Content Include="Views\Step\Create.cshtml" />
+    <Content Include="Views\Step\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

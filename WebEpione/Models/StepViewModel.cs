@@ -68,7 +68,7 @@ namespace WebEpione.Models
         public int NewLastModificationBy { get; set; }
         public DateTime NewLastModificationDate { get; set; }
         [Display(Name = "New Modification Reason")]
-        [Required]
+        
         public string NewModificationReason { get; set; }
 
     }
