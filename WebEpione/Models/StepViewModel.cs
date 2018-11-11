@@ -45,13 +45,23 @@ namespace WebEpione.Models
 
         //New step request
 
+        [Display(Name = "New Step Description")]
+
         public string NewStepDescription { get; set; }
+        [Display(Name = "New Step Speciality")]
+
         public string NewStepSpeciality { get; set; }
+        [Display(Name = "New Step Date")]
+
         public DateTime NewStepDate { get; set; }
+        [Display(Name = "New Step Validation")]
+
         public string NewValidation { get; set; }
+       
         public int NewLastModificationBy { get; set; }
         public DateTime NewLastModificationDate { get; set; }
         [Required]
+        [Display(Name = "New Modification Reason")]
         public string NewModificationReason { get; set; }
 
     }

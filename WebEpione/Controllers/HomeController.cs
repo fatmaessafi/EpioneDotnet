@@ -63,8 +63,12 @@ namespace WebEpione.Controllers
         }
         public PartialViewResult UserInformations()
         {
-                int currentUserId = Int32.Parse(User.Identity.GetUserId());
-                
+            int currentUserId = 0;
+            if (User.Identity.GetUserId()!="")
+            {
+                 currentUserId = Int32.Parse(User.Identity.GetUserId());
+            }
+           
                 var cuser = new Patient();
             if (sp.GetById(currentUserId) != null) { cuser = sp.GetById(currentUserId); }
             PatientViewModel pvm = new PatientViewModel();

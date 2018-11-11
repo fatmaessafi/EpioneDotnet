@@ -83,7 +83,7 @@ namespace WebEpione.Controllers
             svm.ModificationReason = s.ModificationReason;
             svm.NewValidation = "Not valid";
             svm.TreatmentIllness = st.GetById(s.TreatmentId).Illness;
-            
+           
 
             ViewBag.illness = svm.TreatmentIllness;
             
@@ -109,10 +109,11 @@ namespace WebEpione.Controllers
             StepRequest sr = new StepRequest();
             try
             {
-                sr.NewLastModificationBy = collection.NewLastModificationBy;
-                sr.NewLastModificationDate = collection.NewLastModificationDate;
+                var s = ss.GetById(id);
+                sr.NewLastModificationBy = Int32.Parse(User.Identity.GetUserId());
+                sr.NewLastModificationDate = DateTime.UtcNow.Date;
                 sr.NewModificationReason = collection.NewModificationReason;
-                sr.NewTreatmentId = collection.TreatmentId;
+                sr.NewTreatmentId = s.TreatmentId;
                 sr.NewStepDate = collection.NewStepDate;
                 sr.NewStepDescription = collection.NewStepDescription;
                 sr.NewStepSpeciality = collection.NewStepSpeciality;
@@ -127,7 +128,7 @@ namespace WebEpione.Controllers
                 ssr.Add(sr);
                 ssr.Commit();
 
-                return RedirectToAction("Details", "Treatment", new {id=id});
+                return RedirectToAction("Details", "Treatment", new {id=s.TreatmentId});
             }
             catch
             {
