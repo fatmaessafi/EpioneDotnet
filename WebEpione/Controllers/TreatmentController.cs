@@ -137,7 +137,7 @@ namespace WebEpione.Controllers
                 try
                 {
                     t.Illness = collection.Illness;
-                    if (collection.Validation == "Validate")
+                    if (collection.Validation == "Valid")
                     { t.Validation = true;
                     }
                     else
@@ -182,7 +182,7 @@ namespace WebEpione.Controllers
             try
             {   
                 t.Illness = collection.Illness;
-                if (collection.Validation == "Validate")
+                if (collection.Validation == "Valid")
                 { t.Validation = true; }
                 else
                 {
