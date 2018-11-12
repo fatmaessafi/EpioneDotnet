@@ -209,6 +209,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StepController.cs" />
+    <Compile Include="Controllers\StepRequestController.cs" />
     <Compile Include="Controllers\TreatmentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,6 +218,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PatientViewModel.cs" />
+    <Compile Include="Models\StepRequestViewModel.cs" />
     <Compile Include="Models\StepViewModel.cs" />
     <Compile Include="Models\TreatmentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -290,6 +292,7 @@
     <Content Include="Views\Step\Edit.cshtml" />
     <Content Include="Views\Step\Create.cshtml" />
     <Content Include="Views\Step\Delete.cshtml" />
+    <Content Include="Views\StepRequest\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

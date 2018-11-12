@@ -16,5 +16,9 @@ namespace Service
         public ServiceStepRequest() : base(uow)
         {
         }
+        public IEnumerable<StepRequest> GetListStepRequestOrdered(int id)
+        {   
+            return GetMany().OfType<StepRequest>().Where(t=>t.NewTreatmentId.Equals(id)).OrderBy(t => t.NewStepDate);
+        }
     }
 }

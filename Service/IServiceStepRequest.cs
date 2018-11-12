@@ -10,5 +10,7 @@ namespace Service
 {
    public interface IServiceStepRequest:IService<StepRequest>
     {
+         IEnumerable<StepRequest> GetListStepRequestOrdered(int id);
+
     }
 }

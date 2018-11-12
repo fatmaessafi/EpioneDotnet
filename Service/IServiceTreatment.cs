@@ -10,7 +10,8 @@ namespace Service
 {
     public interface IServiceTreatment : IService<Treatment>
     {
-        IEnumerable<Treatment> GetListTreatmentOrdered(int v);
+        IEnumerable<Treatment> GetListTreatmentOrdered(int id);
          int nbTotalTreatment(int id);
+        IEnumerable<Treatment> GetListTreatmentOrderedByDoctor(int id);
     }
 }

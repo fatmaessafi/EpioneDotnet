@@ -24,8 +24,11 @@ namespace Service
         {
             return GetMany().OfType<Treatment>().Where(t=>t.PatientId.Equals(id)).OrderBy(t => t.TreatmentId);
         }
-        
-        
+        public IEnumerable<Treatment> GetListTreatmentOrderedByDoctor(int id)
+        {
+            return GetMany().OfType<Treatment>().Where(t => t.DoctorId.Equals(id)).OrderBy(t => t.TreatmentId);
+        }
+
         public int nbTotalTreatment(int id)
         {
             return GetAll().OfType<Treatment>().Where(t=>t.PatientId.Equals(id)).Count();

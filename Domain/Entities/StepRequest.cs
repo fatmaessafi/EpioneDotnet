@@ -11,6 +11,7 @@ namespace Domain.Entities
     {
         [Key]
         public int NewStepId { get; set; }
+        public int StepId { get; set; }
         public string NewStepDescription { get; set; }
         public string NewStepSpeciality { get; set; }
         public DateTime NewStepDate { get; set; }

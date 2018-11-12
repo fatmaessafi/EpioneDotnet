@@ -86,26 +86,27 @@ Your Id=@ViewBag.id
                                     </li>
                                 </ul>
                                 //Menu
+                                if (TempData["role"] == "Doctor")
+                                {
                                 <nav id="menu" class="main-menu">
                                     <ul>
                                         <li>
-                                            <span><a href="#0">Home</a></span>
+                                            <span><a href=@Url.Action("Index", "Home")>Home</a></span>
 
                                         </li>
                                         <li>
-                                            <span><a href="#0">Pages</a></span>
+                                            <span><a href=@Url.Action("Index", "StepRequest",new { id = TempData["id"]})>Requests</a></span>
 
                                         </li>
                                         <li>
-                                            <span><a href="#0">Extra Elements</a></span>
+                                            <span><a href=@Url.Action("Index", "Treatment")>Treatments</a></span>
 
                                         </li>
-                                        <li><span><a href="menu_2/index.html">Menu V2</a></span></li>
-                                        <li><span><a href="admin_section/index.html" target="_blank">Admin</a></span></li>
-                                        <li><span><a href="https://themeforest.net/item/Epione-doctors-directory-and-book-online-template/20876478?ref=ansonika">Buy this template</a></span></li>
+                                        
                                     </ul>
                                 </nav>
-                            }
+                                    }
+                                }
                         }
                         else
                         {

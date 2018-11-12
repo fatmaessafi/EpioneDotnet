@@ -27,6 +27,7 @@ namespace WebEpione.Controllers
                 UserService su = new UserService();
                 User user = new User();
                 ViewBag.id = currentUserId;
+                TempData["id"] = currentUserId;
                 string userstring = su.GetUserById(currentUserId).ToString();
                 ViewBag.userstring = userstring;
 
@@ -67,6 +68,7 @@ namespace WebEpione.Controllers
             if (User.Identity.GetUserId()!="")
             {
                  currentUserId = Int32.Parse(User.Identity.GetUserId());
+
             }
            
                 var cuser = new Patient();

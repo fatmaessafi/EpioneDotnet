@@ -78,7 +78,7 @@ namespace WebEpione.Controllers
                     sr.NewStepDate = collection.NewStepDate;
                     sr.NewStepDescription = collection.StepDescription;
                     sr.NewStepSpeciality = collection.StepSpeciality;
-
+                    sr.Type = "Add";
                     sr.NewValidation = false;
                     var maildocteur = us.GetUserById(st.GetById(sr.NewTreatmentId).DoctorId).Email;
                     var mailpatient = us.GetUserById(st.GetById(sr.NewTreatmentId).PatientId).Email;
@@ -175,7 +175,7 @@ namespace WebEpione.Controllers
                     sr.NewStepDate = collection.NewStepDate;
                     sr.NewStepDescription = collection.NewStepDescription;
                     sr.NewStepSpeciality = collection.NewStepSpeciality;
-
+                    sr.StepId = id;
                     if (collection.NewValidation == "Valid")
                     {
                         sr.NewValidation = true;
