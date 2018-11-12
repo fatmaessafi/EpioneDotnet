@@ -71,56 +71,55 @@ Your Id=@ViewBag.id
                         </div>
                     </div>
                     <div class="col-lg-9 col-6">
+                        
+                            @if (@User.Identity.IsAuthenticated)
+                            {
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                {   @Html.AntiForgeryToken()
+                                   //Logout
+                                    <ul id="top_access">
 
-                        @if (@User.Identity.IsAuthenticated)
-                        {
-                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                            {   @Html.AntiForgeryToken()
-                                //Logout
-                                <ul id="top_access">
-
-                                    <li>
-                                        <a href="javascript:document.getElementById('logoutForm').submit()">
-                                            <i class="pe-7s-delete-user"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                                //Menu
-                                if (TempData["role"] == "Doctor")
-                                {
-                                <nav id="menu" class="main-menu">
-                                    <ul>
                                         <li>
-                                            <span><a href=@Url.Action("Index", "Home")>Home</a></span>
-
+                                            <a href="javascript:document.getElementById('logoutForm').submit()">
+                                                <i class="pe-7s-delete-user"></i>
+                                            </a>
                                         </li>
-                                        <li>
-                                            <span><a href=@Url.Action("Index", "StepRequest",new { id = TempData["id"]})>Requests</a></span>
-
-                                        </li>
-                                        <li>
-                                            <span><a href=@Url.Action("Index", "Treatment")>Treatments</a></span>
-
-                                        </li>
-                                        
                                     </ul>
-                                </nav>
-                                    }
+                                    //Menu
+                                        <nav id="menu" class="main-menu">
+                                            <ul>
+                                                <li>
+                                                    <span><a href=@Url.Action("Index", "Home")>Home</a></span>
+
+                                                </li>
+                                                <li>
+                                                    <span><a href=@Url.Action("Index", "StepRequest")>Requests</a></span>
+
+                                                </li>
+                                                <li>
+                                                    <span><a href=@Url.Action("Index", "Treatment")>Treatments</a></span>
+
+                                                </li>
+
+                                            </ul>
+                                        </nav>
+                                    
+
                                 }
-                        }
-                        else
-                        {
-                            // register&login
-                            <ul id="top_access">
-                                <li><a href=@Url.Action("Login","Account")><i class="pe-7s-user"></i></a></li>
-                                <li><a href=@Url.Action("Register","Account")><i class="pe-7s-add-user"></i></a></li>
-                            </ul>
-                        }
+                            }
+                            else
+                            {
+                                // register&login
+                                 <ul id="top_access">
+                            <li><a href=@Url.Action("Login","Account")><i class="pe-7s-user"></i></a></li>
+                            <li><a href=@Url.Action("Register","Account")><i class="pe-7s-add-user"></i></a></li>
+                        </ul>
+                            }
 
 
-
-                        <!-- /main-menu -->
-                    </div>
+                           
+                            <!-- /main-menu -->
+</div>
                 </div>
             </div>
             <!-- /container -->

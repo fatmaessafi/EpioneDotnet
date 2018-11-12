@@ -10,7 +10,6 @@ namespace WebEpione
         {
             bundles.Add(new ScriptBundle("~/Content/js").Include(
 
-
                "~/Content/js/jquery-2.2.4.min.js",
              "~/Content/js/common_scripts.min.js",
              "~/Content/js/functions.js",
