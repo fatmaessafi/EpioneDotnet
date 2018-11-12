@@ -376,3 +376,4 @@ C:\Users\Firas\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.Owin.Securi
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.dll
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.pdb
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\WebEpione\bin\Rotativa.dll

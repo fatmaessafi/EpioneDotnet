@@ -10,11 +10,7 @@ namespace WebEpione.Models
     public class StatViewModels
     {
         [Key]
-        public int StatId { get; set; }
-        public DateTime StatDate { get; set; }
-        public int NbPatients { get; set; }
-        public float CancelingRate { get; set; }
-        public Doctor DoctorAnalytics { get; set; }
-        public int DoctorId { get; set; }
+        public int AppointmentId { get; set; }
+        public string VisitReason { get; set; }
     }
 }

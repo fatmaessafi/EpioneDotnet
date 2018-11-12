@@ -1,18 +1,24 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebEpione.Models;
 
 namespace WebEpione.Controllers
 {
     public class StatController : Controller
     {
+        IStatService SS = new StatService();
         // GET: Stat
         public ActionResult Index()
         {
-            return View();
-        }
+
+           int item = SS.GetAll().Count();
+           
+            return View(item);       
+    }
 
         // GET: Stat/Details/5
         public ActionResult Details(int id)

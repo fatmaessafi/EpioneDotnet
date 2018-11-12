@@ -8,6 +8,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebEpione.Models;
+using Rotativa;
+
 
 namespace WebEpione.Controllers
 {
@@ -32,6 +34,15 @@ namespace WebEpione.Controllers
             }
 
             return View(list);
+        }
+
+        public ActionResult ExportPDF()
+        {
+            return new Rotativa.ActionAsPdf("Index") {
+          FileName =Server.MapPath("~/Content/list.pdf")      };
+
+
+           
         }
 
         // GET: Report/Details/5
