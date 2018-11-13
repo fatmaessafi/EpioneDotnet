@@ -111,6 +111,7 @@ namespace WebEpione.Controllers
         {
             var s = ss.GetById(id);
             StepViewModel svm = new StepViewModel();
+            
             svm.StepId = s.StepId;
             svm.StepSpeciality = s.StepSpeciality;
             svm.NewStepSpeciality = s.StepSpeciality;
@@ -175,6 +176,7 @@ namespace WebEpione.Controllers
                     sr.NewStepDate = collection.NewStepDate;
                     sr.NewStepDescription = collection.NewStepDescription;
                     sr.NewStepSpeciality = collection.NewStepSpeciality;
+                    
                     sr.StepId = id;
                     if (collection.NewValidation == "Valid")
                     {
@@ -212,11 +214,12 @@ namespace WebEpione.Controllers
                     s.LastModificationBy = Int32.Parse(User.Identity.GetUserId());
                     s.LastModificationDate = DateTime.UtcNow.Date;
                     s.ModificationReason = collection.NewModificationReason;
-
+                   
                     s.StepDate = collection.NewStepDate;
                     s.StepDescription = collection.NewStepDescription;
                     s.StepSpeciality = collection.NewStepSpeciality;
-                    s.NbModifications = s.NbModifications + 1;
+                    
+                   s.NbModifications +=1;
                     if (collection.NewValidation == "Valid")
                     {
                         s.Validation = true;
@@ -238,30 +241,38 @@ namespace WebEpione.Controllers
                 return View();
             }
         }
-
-        // GET: Step/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult EditPatient(int id)
         {
             var s = ss.GetById(id);
             StepViewModel svm = new StepViewModel();
+
             svm.StepId = s.StepId;
             svm.StepSpeciality = s.StepSpeciality;
+            svm.NewStepSpeciality = s.StepSpeciality;
             svm.StepDescription = s.StepDescription;
+            svm.NewStepDescription = s.StepDescription;
             svm.StepDate = s.StepDate;
+            svm.NewStepDate = s.StepDate;
 
             if (s.Validation == true)
             {
                 svm.Validation = "Valid";
+                svm.NewValidation = "Valid";
             }
             else
             {
                 svm.Validation = "NotValid";
+                svm.NewValidation = "NotValid";
             }
             svm.TreatmentId = s.TreatmentId;
             svm.LastModificationBy = us.GetUserById(s.LastModificationBy).FirstName + " " + us.GetUserById(s.LastModificationBy).LastName;
+            svm.NewLastModificationBy = Int32.Parse(User.Identity.GetUserId());
             svm.LastModificationDate = s.LastModificationDate.ToString();
+            svm.NewLastModificationDate = DateTime.UtcNow.Date;
             svm.ModificationReason = s.ModificationReason;
+            svm.NewValidation = "NotValid";
             svm.TreatmentIllness = st.GetById(s.TreatmentId).Illness;
+            svm.NewModificationReason = "";
 
             ViewBag.illness = svm.TreatmentIllness;
 
@@ -275,42 +286,25 @@ namespace WebEpione.Controllers
                 svm.AppointmentId = 0;
                 svm.Appointment = "Not taken";
             }
-            return View();
+
+            return View(svm);
+
+        }
+        // GET: Step/Delete/5
+        public ActionResult Delete(int id)
+        {
+            if (ss.GetById(id) != null)
+            {
+                var s = ss.GetById(id);
+
+                ss.Delete(s);
+                ss.Commit();
+            }
+            return Redirect(Request.UrlReferrer.ToString());
         }
 
-        // POST: Step/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, StepViewModel collection)
-        {
-            try
-            {
-                Step s = ss.GetById(id);
 
-               
-                    s.StepId = id;
-
-                    var docteurreferant = us.GetUserById(st.GetById(id).DoctorId).Id;
-                    if (Int32.Parse(User.Identity.GetUserId()) == docteurreferant)
-                    {
-
-                        ss.Delete(s);
-                        ss.Commit();
-
-
-                        return RedirectToAction("Details", "Treatment", new { id = collection.TreatmentId });
-                    }
-                    else
-                    {
-                        ViewBag.errordelete = "You can't delete this step you are not a doctor referant";
-                        return View();
-                    }
-                }
-                catch
-                {
-                    return View();
-                }
-            }
-            }
+    }
     }
 
 

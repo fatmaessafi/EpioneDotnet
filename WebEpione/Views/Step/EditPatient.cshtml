@@ -1,10 +1,9 @@
 ﻿@using WebEpione.Models
 @model WebEpione.Models.StepViewModel
 
-
 @{
-    ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/PartialProfile.cshtml";
+    ViewBag.Title = "EditPatient";
+    Layout = "~/Views/Shared/MyProfileLayout.cshtml";
 }
 
 
@@ -13,12 +12,10 @@
     <div class="tabs_styled_2">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link active" href=@Url.Action("Index", "Treatment")>Treatments</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href=@Url.Action("Create", "Step")><i class="pe-7s-plus"></i>New Step</a>
+                <a class="nav-link active">Treatments</a>
             </li>
            
+
         </ul>
         <!--/nav-tabs -->
 
@@ -41,11 +38,11 @@
                         <div class="form-horizontal">
                             <hr />
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                
+
                             <div class="form-group">
                                 @Html.LabelFor(model => model.StepSpeciality, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.StepSpeciality, new { htmlAttributes = new { @class = "form-control", disabled="disabled" } })
+                                    @Html.EditorFor(model => model.StepSpeciality, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
                                     @Html.ValidationMessageFor(model => model.StepSpeciality, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -118,38 +115,28 @@
                                     @Html.EditorFor(model => model.Appointment, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
                                     @Html.ValidationMessageFor(model => model.Appointment, "", new { @class = "text-danger" })
                                 </div>
-                                
-                            </div>
-                            <div class="form-group" align="right">
-                                @if (Model.Validation == "Valid")
-                                {
-                                    <input type="button" class="btn btn-default" value="Modify this step" onclick="THEFUNCTION()" disabled>
 
-                                }
-                                else
-                                {
-                                <input type="button" class="btn btn-default" value="Modify this step" onclick = "THEFUNCTION()">
-                                }
                             </div>
+                           
 
 
                             <!--Modification div-->
-                            <div id="Modification" style="display:none" >
+                            <div id="Modification" style="display:none">
                                 <div class="main_title_3">
-                                <h3>Modification of the step</h3>
-                                    </div>
+                                    <h3>Modification of the step</h3>
+                                </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.NewStepSpeciality, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
                                         @Html.DropDownListFor(model => model.NewStepSpeciality, new SelectList(Enum.GetValues(typeof(Speciality))),
-                                          new { @class = "form-control" })                                       
-                                         @Html.ValidationMessageFor(model => model.NewStepSpeciality, "", new { @class = "text-danger" })
+                                          new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.NewStepSpeciality, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.NewStepDescription, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
-                                        @Html.EditorFor(model => model.NewStepDescription, new { htmlAttributes = new { @class = "form-control"} })
+                                        @Html.EditorFor(model => model.NewStepDescription, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.NewStepDescription, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -158,7 +145,7 @@
                                     <div class="col-md-10">
                                         @Html.TextBoxFor(model => model.NewStepDate,
                              new { @class = "form-control", @id = "booking_date" })
-                                         @Html.ValidationMessageFor(model => model.NewStepDate, "", new { @class = "text-danger" })
+                                        @Html.ValidationMessageFor(model => model.NewStepDate, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -177,35 +164,21 @@
                                     </div>
                                 </div>
 
-                            <div class="form-group" >
-                                <div class="col-md-offset-2 col-md-10">
-                                    <input type="submit" value="Save" class="btn btn-default" />
-                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Save" class="btn btn-default" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                   
 
-                    <div>
-                        <a href=@Url.Action("Details", "Treatment", new { id = Model.TreatmentId } )>Back to list</a>
-                    </div>
+
+                        <div>
+                            <a href=@Url.Action("DetailsPatient", "Treatment", new { id = Model.TreatmentId } )>Back to list</a>
+                        </div>
                     }
                 </div>
             </div>
         </div>
     </div>
-</div><!--JavaScript-->
-<script type="text/javascript">
-                                function THEFUNCTION() {
-                                    var DivModif = document.getElementById('Modification');
-                                  
-                                       DivModif.style.display = ''; 
-                                        
-
-                                    
-                                }
-</script>
-
-
-   
-    
+</div>

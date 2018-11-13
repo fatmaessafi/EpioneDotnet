@@ -45,7 +45,7 @@ namespace WebEpione.Controllers
                 step.StepSpeciality = StepReq.NewStepSpeciality;
                 step.TreatmentId = StepReq.NewTreatmentId;
                 step.Validation = StepReq.NewValidation;
-                step.NbModifications = step.NbModifications+1;
+                step.NbModifications += 1;
                 step.LastModificationBy = StepReq.NewLastModificationBy;
                 step.LastModificationDate = StepReq.NewLastModificationDate;
                 step.ModificationReason = StepReq.NewModificationReason;
@@ -60,10 +60,11 @@ namespace WebEpione.Controllers
         
         public ActionResult Deny(int id)
         {
-            var StepReq = ssr.GetById(id);
-            ssr.Delete(StepReq);
-            ssr.Commit();
-
+            if (ssr.GetById(id) != null)
+                { var StepReq = ssr.GetById(id);
+                ssr.Delete(StepReq);
+                ssr.Commit();
+            }
             return Redirect(Request.UrlReferrer.ToString());
         }
         // GET: StepRequest

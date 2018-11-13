@@ -294,6 +294,9 @@
     <Content Include="Views\Step\Delete.cshtml" />
     <Content Include="Views\StepRequest\Index.cshtml" />
     <Content Include="Views\Home\UserConnected.cshtml" />
+    <Content Include="Views\Treatment\IndexPatient.cshtml" />
+    <Content Include="Views\Treatment\DetailsPatient.cshtml" />
+    <Content Include="Views\Step\EditPatient.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

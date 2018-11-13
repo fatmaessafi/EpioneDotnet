@@ -23,14 +23,11 @@ namespace WebEpione.Controllers
             //Validation treatment
             foreach (var treat in st.GetListTreatmentOrdered(1))
             {
-                bool valid = false;
+                bool valid = true;
                 foreach(var step in ss.GetListStepOrdered(treat.TreatmentId))
                 {
-                    if(step.Validation==true)
-                    {
-                        valid = true;
-                    }
-                    else if(step.Validation==false)
+                    
+                     if(step.Validation==false)
                     {
                         valid = false;
                     }
@@ -66,6 +63,51 @@ namespace WebEpione.Controllers
             return View(list);
         }
 
+        public ActionResult IndexPatient(int id)
+        {
+            //Validation treatment
+            foreach (var treat in st.GetListTreatmentOrdered(1))
+            {
+                bool valid = true;
+                foreach (var step in ss.GetListStepOrdered(treat.TreatmentId))
+                {
+
+                    if (step.Validation == false)
+                    {
+                        valid = false;
+                    }
+
+
+                }
+                if (valid == true)
+                    treat.Validation = true;
+                else if (valid == false)
+                    treat.Validation = false;
+
+                st.Update(treat);
+                st.Commit();
+            }
+
+            //!Validation treatment
+            List<TreatmentViewModel> list = new List<TreatmentViewModel>();
+            foreach (var item in st.GetListTreatmentOrdered(id))
+            {
+                TreatmentViewModel tvm = new TreatmentViewModel();
+                tvm.TreatmentId = item.TreatmentId;
+                tvm.Illness = item.Illness;
+                if (item.Validation == true) { tvm.Validation = "Valid"; }
+                else if (item.Validation == false) { tvm.Validation = "NotValid"; }
+                tvm.Doctor = us.GetUserById(item.DoctorId).FirstName + " " + us.GetUserById(item.DoctorId).LastName;
+                tvm.Patient = us.GetUserById(item.PatientId).FirstName + " " + us.GetUserById(item.PatientId).LastName;
+
+
+                list.Add(tvm);
+
+
+            }
+            return View(list);
+        }
+
         // GET: Treatment/Details/id
         public ActionResult Details(int id)
         {
@@ -89,6 +131,42 @@ namespace WebEpione.Controllers
                 svm.TreatmentIllness = st.GetById(item2.TreatmentId).Illness;
 
                 if (item2.Appointment !=null)
+                {
+                    svm.AppointmentId = item2.Appointment.AppointmentId;
+                    svm.Appointment = "Taken";
+                }
+                else
+                {
+                    svm.AppointmentId = 0;
+                    svm.Appointment = "Not taken";
+                }
+
+                liststeps.Add(svm);
+            }
+            return View(liststeps);
+        }
+        public ActionResult DetailsPatient(int id)
+        {
+            TempData["idTreatment"] = id;
+            List<StepViewModel> liststeps = new List<StepViewModel>();
+            if (id != 0) { ViewBag.illness = st.GetById(id).Illness; }
+            foreach (var item2 in ss.GetListStepOrdered(id))
+            {
+                StepViewModel svm = new StepViewModel();
+                svm.StepId = item2.StepId;
+                svm.StepSpeciality = item2.StepSpeciality;
+                svm.StepDescription = item2.StepDescription;
+                svm.StepDate = item2.StepDate;
+                svm.LastModificationBy = us.GetUserById(item2.LastModificationBy).FirstName + " " + us.GetUserById(item2.LastModificationBy).LastName;
+                svm.ModificationReason = item2.ModificationReason;
+                svm.LastModificationDate = item2.LastModificationDate.ToString("dd-MM-yyyy");
+                if (item2.Validation == true) svm.Validation = "Valid";
+                else if (item2.Validation == false) svm.Validation = "NotValid";
+                svm.NbModifications = item2.NbModifications;
+                svm.TreatmentId = item2.TreatmentId;
+                svm.TreatmentIllness = st.GetById(item2.TreatmentId).Illness;
+
+                if (item2.Appointment != null)
                 {
                     svm.AppointmentId = item2.Appointment.AppointmentId;
                     svm.Appointment = "Taken";
