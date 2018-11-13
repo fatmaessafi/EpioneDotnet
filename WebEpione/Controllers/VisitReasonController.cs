@@ -17,6 +17,7 @@ namespace WebEpione.Controllers
         // GET: VisitReason
         public ActionResult Index()
         {
+            if (User.Identity.GetUserId()!=null) { 
             int userconnect = Int32.Parse(User.Identity.GetUserId());
 
             List<VisitReasonViewModel> lists = new List<VisitReasonViewModel>();
@@ -30,9 +31,13 @@ namespace WebEpione.Controllers
                 lists.Add(VRVM);
                 
             }
-            
+                return View(lists);
 
-            return View(lists);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         // GET: VisitReason/Details/5

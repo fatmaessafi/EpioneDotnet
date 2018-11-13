@@ -21,6 +21,7 @@ namespace Domain
         public ICollection<Message> ListMsg { get; set; }
         public ICollection<Appointment> ListAppointment { get; set; }
         public ICollection<Treatment> ListReferringTreatment { get; set; }
+        public ICollection<Event> ListEvent { get; set; }
 
 
     }

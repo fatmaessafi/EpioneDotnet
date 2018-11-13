@@ -148,18 +148,21 @@
 
                             <div id="pass-info" class="clearfix"></div>
                             <!--Checkbox obligatoire-->
-                            <div class="form-group">
-                                @Html.CheckBoxFor(x => x.TermsAndConditions,
-                             
-                                 new { @id = "check_2" })
-                                @Html.LabelFor(x => x.TermsAndConditions)
-                                @Html.ValidationMessageFor(x => x.TermsAndConditions)
+                          @*  <div class="form-group">
+        @Html.CheckBoxFor(x => x.TermsAndConditions,
 
-                            </div>
+         new { @id = "check_2" })
+        @Html.LabelFor(x => x.TermsAndConditions)
+        @Html.ValidationMessageFor(x => x.TermsAndConditions)
 
-                            <div class="form-group text-center add_top_30">
-                                <input class="btn_1" type="submit" value="Submit">
-                            </div>
+
+    </div>
+                        *@
+                                <div class="form-group text-center add_top_30">
+                                    <input class="btn_1" type="submit" value="Submit">
+                                </div>
+                           
+
                         </div>
                         <p class="text-center"><small>Make sure your informations are exact for a better experience.</small></p>
                     }

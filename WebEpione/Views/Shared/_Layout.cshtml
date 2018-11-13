@@ -226,7 +226,11 @@ Your Id=@ViewBag.id
     <!-- Back to top button -->
     <!-- COMMON SCRIPTS -->
     @Scripts.Render("~/Content/js")
-    @RenderSection("Scripts",false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", false)
 </body>
 
 

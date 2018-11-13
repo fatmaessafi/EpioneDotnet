@@ -57,7 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventIservice.cs" />
+    <Compile Include="EventService.cs" />
+    <Compile Include="IserviceAppointment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceAppointment.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="VisitReasonIService.cs" />
     <Compile Include="VisitReasonService.cs" />
   </ItemGroup>

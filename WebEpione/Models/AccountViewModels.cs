@@ -119,7 +119,7 @@ namespace WebEpione.Models
         public Boolean Enabled { get; set; }
         public DateTime RegistrationDate { get; set; }
         [Display(Name = "Terms and Conditions")]
-        [Range(typeof(bool), "true", "true", ErrorMessage = "You have to accept the Terms and Conditions!")]
+        [Range(typeof(bool), "false", "false", ErrorMessage = "You have to accept the Terms and Conditions!")]
         public bool TermsAndConditions { get; set; }
         [Required]
         [Display(Name = "Role*")]

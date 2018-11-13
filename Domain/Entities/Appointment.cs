@@ -18,6 +18,7 @@ namespace Domain
         public Doctor Doctor { get; set; }
         public int DoctorId { get; set; }
         public Patient Patient { get; set; }
+        public int patientId { get; set; }
         public Step Step { get; set; }
 
     }

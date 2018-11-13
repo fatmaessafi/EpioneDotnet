@@ -61,8 +61,10 @@
     <Compile Include="Configuration\AppointmentConfig.cs" />
     <Compile Include="Configuration\DayOffConfig.cs" />
     <Compile Include="Configuration\DoctorConfig.cs" />
+    <Compile Include="Configuration\EventConfig.cs" />
     <Compile Include="Configuration\MessageConfig.cs" />
     <Compile Include="Configuration\StepConfig.cs" />
+    <Compile Include="Configuration\TreatmentConfig.cs" />
     <Compile Include="Configuration\VisitReasonConfig.cs" />
     <Compile Include="Contexte.cs" />
     <Compile Include="Conventions\DateTimeConvention.cs" />
@@ -74,6 +76,11 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201811122013208_test.cs" />
+    <Compile Include="Migrations\201811122013208_test.Designer.cs">
+      <DependentUpon>201811122013208_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +93,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811122013208_test.resx">
+      <DependentUpon>201811122013208_test.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
