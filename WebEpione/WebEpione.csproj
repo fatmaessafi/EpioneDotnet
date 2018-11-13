@@ -290,6 +290,7 @@
     <Content Include="Views\Shared\TemplateAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\RecupDoc.cshtml" />
+    <Content Include="Views\Admin\ConfirmDocs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

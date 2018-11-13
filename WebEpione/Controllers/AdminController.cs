@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace WebEpione.Controllers
 {
     public class AdminController : Controller
     {
+        ServiceDoctolib userservice = new ServiceDoctolib();
         private int reTryCounter;
 
         // GET: Admin
@@ -58,6 +60,7 @@ namespace WebEpione.Controllers
                 UserViewModl.doctolibName = item3.InnerText;
                 UserViewModl.doctolibAdress = HeaderAdd[i].InnerText;
                 UserViewModl.doctolibSpec = Headerspec[i].InnerText;
+
                 i++;
                 lists.Add(UserViewModl);
             }
@@ -77,6 +80,44 @@ namespace WebEpione.Controllers
         }
 
 
-        public ActionResult 
+        public ActionResult ConfirmDocs()
+        {
+            List<UserViewModel> lists = new List<UserViewModel>();
+
+            foreach (var item in userservice.GetListUser())
+            {
+                
+                    UserViewModel UserViewModl = new UserViewModel();
+
+
+                    UserViewModl.FirstName = item.FirstName;
+                    UserViewModl.Email = item.Email;
+                    UserViewModl.LastName = item.LastName;
+                    UserViewModl.Speciality = item.Speciality;
+                    UserViewModl.Location = item.LastName;
+                    UserViewModl.address = item.HomeAddress;
+                    UserViewModl.birthDate = item.BirthDate;
+                    UserViewModl.gender = item.Gender;
+                    UserViewModl.phoneNumber = item.PhoneNumber;
+                    UserViewModl.Id = item.Id;
+
+
+
+
+                    lists.Add(UserViewModl);
+
+                
+            }
+
+            try
+            {
+                // TODO: Add insert logic here
+                return View(lists);
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
