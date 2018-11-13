@@ -16,6 +16,7 @@ namespace WebEpione.Controllers
     {
         private Contexte db = new Contexte();
         UserService us = new UserService();
+        IUserService uus = new ServiceUser();
         IServicePatient sp = new ServicePatient();
         IServiceTreatment st = new ServiceTreatment();
         public ActionResult Index()
@@ -95,5 +96,93 @@ namespace WebEpione.Controllers
             return PartialView(listuser);
         }
 
+        public PartialViewResult UserConnected()
+        {
+            int currentUserId = 0;
+            if (User.Identity.GetUserId() != "")
+            {
+                currentUserId = Int32.Parse(User.Identity.GetUserId());
+
+            }
+
+            var cuser = new User();
+            if (uus.GetById(currentUserId) != null)
+            {
+                cuser = uus.GetById(currentUserId);
+                
+            }
+            string userstring = us.GetUserById(currentUserId).ToString();
+            if (userstring.Contains("Doctor") == true)
+
+                {
+                    ViewBag.role = "Doctor";
+                    TempData["role"] = "Doctor";
+                    Doctor pvm = new Doctor();
+                    pvm.LastName = cuser.LastName;
+                    pvm.FirstName = cuser.FirstName;
+                    pvm.City = cuser.City;
+                    pvm.BirthDate = cuser.BirthDate;
+                    pvm.CivilStatus = cuser.CivilStatus;
+                    pvm.Gender = cuser.Gender;
+                    pvm.HomeAddress = cuser.HomeAddress;
+                    pvm.RegistrationDate = cuser.RegistrationDate;
+
+                    pvm.PhoneNumber = cuser.PhoneNumber;
+                    List<Doctor> listuser = new List<Doctor>();
+                    listuser.Add(pvm);
+                return PartialView(listuser);
+
+
+            }
+            else if (userstring.Contains("Patient") == true)
+                {
+                    ViewBag.role = "Patient";
+
+                    TempData["role"] = "Patient";
+                    Patient pvm = new Patient();
+                    pvm.LastName = cuser.LastName;
+                    pvm.FirstName = cuser.FirstName;
+                    pvm.City = cuser.City;
+                    pvm.BirthDate = cuser.BirthDate;
+                    pvm.CivilStatus = cuser.CivilStatus;
+                    pvm.Gender = cuser.Gender;
+                    pvm.HomeAddress = cuser.HomeAddress;
+                    pvm.RegistrationDate = cuser.RegistrationDate;
+
+                    pvm.PhoneNumber = cuser.PhoneNumber;
+                    List<Patient> listuser = new List<Patient>();
+                    listuser.Add(pvm);
+                return PartialView(listuser);
+
+
+            }
+            else
+                {
+                    User pvm = new User();
+                    pvm.LastName = cuser.LastName;
+                    pvm.FirstName = cuser.FirstName;
+                    pvm.City = cuser.City;
+                    pvm.BirthDate = cuser.BirthDate;
+                    pvm.CivilStatus = cuser.CivilStatus;
+                    pvm.Gender = cuser.Gender;
+                    pvm.HomeAddress = cuser.HomeAddress;
+                    pvm.RegistrationDate = cuser.RegistrationDate;
+
+                    pvm.PhoneNumber = cuser.PhoneNumber;
+                    List<User> listuser = new List<User>();
+
+                    ViewBag.role = "None";
+
+                    TempData["role"] = "No type";
+                    listuser.Add(pvm);
+                return PartialView(listuser);
+
+
+            }
+
+
+
+
+        }
     }
 }

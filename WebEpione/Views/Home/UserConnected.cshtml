@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Domain.Entities.User>
+    @{
+        Layout = null;
+    }
+   
+@foreach (var item in Model)
+{
+    
+    <nav id="menu" class="main-menu">
+                  
+        <ul>
+
+            @if (TempData["role"] == "Doctor")
+            {
+
+            <li>
+                <span><a href=@Url.Action("Index", "Home")>Home</a></span>
+
+            </li>
+            <li>
+                <span><a href=@Url.Action("Index", "StepRequest")>Requests</a></span>
+
+            </li>
+            <li>
+                <span><a href=@Url.Action("Index", "Treatment")>Treatments</a></span>
+
+            </li>
+            }
+        </ul>
+    </nav>
+    <ul>
+        <li><span><b>Connected as @ViewBag.role : @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</b></span></li>
+    </ul>         }

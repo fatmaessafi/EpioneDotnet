@@ -2,26 +2,6 @@
 <html lang="en">
 
 
-@if (@User.Identity.IsAuthenticated)
-{    @ViewBag.user
-    if (TempData["role"] == "Doctor")
-    {
-
-        @Html.ActionLink("Connected as doctor " + User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
-    }
-    else if (TempData["role"] == "Patient")
-    {
-        @Html.ActionLink("Connected as patient " + User.Identity.Name + "!", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
-
-    }
-}
-else
-{
-    @Html.ActionLink("Login", "Index", "Home", new { area = "" }, new { @class = "hello_user" })
-}
-<br />
-Your Id=@ViewBag.id
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,24 +66,8 @@ Your Id=@ViewBag.id
                                         </li>
                                     </ul>
                                     //Menu
-                                        <nav id="menu" class="main-menu">
-                                            <ul>
-                                                <li>
-                                                    <span><a href=@Url.Action("Index", "Home")>Home</a></span>
+                                      @Html.Action("UserConnected", "Home")
 
-                                                </li>
-                                                <li>
-                                                    <span><a href=@Url.Action("Index", "StepRequest")>Requests</a></span>
-
-                                                </li>
-                                                <li>
-                                                    <span><a href=@Url.Action("Index", "Treatment")>Treatments</a></span>
-
-                                                </li>
-
-                                            </ul>
-                                        </nav>
-                                    
 
                                 }
                             }

@@ -293,6 +293,7 @@
     <Content Include="Views\Step\Create.cshtml" />
     <Content Include="Views\Step\Delete.cshtml" />
     <Content Include="Views\StepRequest\Index.cshtml" />
+    <Content Include="Views\Home\UserConnected.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
