@@ -188,5 +188,38 @@ namespace WebEpione.Controllers
 
 
         }
+
+        public PartialViewResult UserByIdInformations(int id)
+        {
+           
+
+            var cuser = new Patient();
+            if (sp.GetById(id) != null) { cuser = sp.GetById(id); }
+            PatientViewModel pvm = new PatientViewModel();
+            pvm.LastName = cuser.LastName;
+            pvm.FirstName = cuser.FirstName;
+            pvm.City = cuser.City;
+            pvm.BirthDate = cuser.BirthDate;
+            pvm.CivilStatus = cuser.CivilStatus;
+            pvm.Gender = cuser.Gender;
+            pvm.HomeAddress = cuser.HomeAddress;
+            pvm.Profession = cuser.Profession;
+            pvm.RegistrationDate = cuser.RegistrationDate;
+            pvm.Allergies = cuser.Allergies;
+            pvm.SpecialReq = cuser.SpecialReq;
+            pvm.PhoneNumber = cuser.PhoneNumber;
+            List<PatientViewModel> listuser = new List<PatientViewModel>();
+            listuser.Add(pvm);
+            int nb = st.nbTotalTreatment(id);
+            ViewBag.nbtreat = nb;
+
+
+            return PartialView(listuser);
+        }
+
+
+
+
     }
-}
+
+    }

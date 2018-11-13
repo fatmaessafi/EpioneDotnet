@@ -66,6 +66,7 @@ namespace WebEpione.Controllers
 
         public ActionResult IndexPatient(int id)
         {
+
             //Validation treatment
             foreach (var treat in st.GetListTreatmentOrdered(1))
             {
@@ -112,9 +113,14 @@ namespace WebEpione.Controllers
         // GET: Treatment/Details/id
         public ActionResult Details(int id)
         {
+
+           
+
             TempData["idTreatment"] = id;
             List<StepViewModel> liststeps = new List<StepViewModel>();
-            if (id!=0) { ViewBag.illness = st.GetById(id).Illness; }
+            if (id!=0) { ViewBag.illness = st.GetById(id).Illness;
+                TempData["idPatient"] = st.GetById(id).PatientId;
+            }
             foreach (var item2 in ss.GetListStepOrdered(id))
             {
                 StepViewModel svm = new StepViewModel();
@@ -141,6 +147,7 @@ namespace WebEpione.Controllers
                     svm.AppointmentId = 0;
                     svm.Appointment = "Not taken";
                 }
+
 
                 liststeps.Add(svm);
             }
@@ -217,6 +224,7 @@ namespace WebEpione.Controllers
         // GET: Treatment/Edit/5
         public ActionResult Edit(int id)
         {
+            TempData["idPatient"] = st.GetById(id).PatientId;
             TempData["idTreatment"] = id;
             var t = st.GetById(id);
             TreatmentViewModel tvm = new TreatmentViewModel();
@@ -241,8 +249,8 @@ namespace WebEpione.Controllers
         {
 
             // TODO: Add update logic here
-           
-                Treatment t = st.GetById(id);
+            TempData["idPatient"] = st.GetById(id).PatientId;
+            Treatment t = st.GetById(id);
             
                 try
                 {
@@ -268,6 +276,7 @@ namespace WebEpione.Controllers
         // GET: Treatment/Delete/5
         public ActionResult Delete(int id)
         {
+            TempData["idPatient"] = st.GetById(id).PatientId;
             var t = st.GetById(id);
             TreatmentViewModel tvm = new TreatmentViewModel();
             tvm.Illness = t.Illness;
@@ -287,7 +296,8 @@ namespace WebEpione.Controllers
         [HttpPost]
         public ActionResult Delete(int id, TreatmentViewModel collection)
         {
-              Treatment t = st.GetById(id);
+            TempData["idPatient"] = st.GetById(id).PatientId;
+            Treatment t = st.GetById(id);
             
             try
             {   

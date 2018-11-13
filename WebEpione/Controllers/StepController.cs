@@ -36,7 +36,7 @@ namespace WebEpione.Controllers
         public ActionResult Create(int id)
         {
             TempData["idTreatment"] = id;
-
+            TempData["idPatient"] = st.GetById(id).PatientId;
             return View();
         }
 
@@ -44,6 +44,8 @@ namespace WebEpione.Controllers
         [HttpPost]
         public ActionResult Create(int id, StepViewModel collection)
         {
+            TempData["idPatient"] = st.GetById(id).PatientId;
+            TempData["idTreatment"] = id;
             try
             {
                 var docteurreferant = us.GetUserById(st.GetById(id).DoctorId).Id;
@@ -109,7 +111,9 @@ namespace WebEpione.Controllers
         // GET: Step/Edit/5
         public ActionResult Edit(int id)
         {
+            
             var s = ss.GetById(id);
+            TempData["idTreatment"] = ss.GetById(id).TreatmentId;
             StepViewModel svm = new StepViewModel();
             
             svm.StepId = s.StepId;
@@ -130,6 +134,7 @@ namespace WebEpione.Controllers
                 svm.Validation = "NotValid";
                 svm.NewValidation = "NotValid";
             }
+            TempData["idPatient"] = st.GetById(s.TreatmentId).PatientId;
             svm.TreatmentId = s.TreatmentId;
             svm.LastModificationBy = us.GetUserById(s.LastModificationBy).FirstName + " " + us.GetUserById(s.LastModificationBy).LastName;
             svm.NewLastModificationBy = Int32.Parse(User.Identity.GetUserId());
@@ -168,15 +173,18 @@ namespace WebEpione.Controllers
                 if (Int32.Parse(User.Identity.GetUserId()) != docteurreferant)
                 {
                     var s = ss.GetById(id);
+                    TempData["idTreatment"] = s.TreatmentId;
+
+                    TempData["idPatient"] = st.GetById(s.TreatmentId).PatientId;
                     StepRequest sr = new StepRequest();
                     sr.NewLastModificationBy = Int32.Parse(User.Identity.GetUserId());
                     sr.NewLastModificationDate = DateTime.UtcNow.Date;
                     sr.NewModificationReason = collection.NewModificationReason;
                     sr.NewTreatmentId = s.TreatmentId;
+
                     sr.NewStepDate = collection.NewStepDate;
                     sr.NewStepDescription = collection.NewStepDescription;
                     sr.NewStepSpeciality = collection.NewStepSpeciality;
-                    
                     sr.StepId = id;
                     if (collection.NewValidation == "Valid")
                     {
@@ -211,6 +219,9 @@ namespace WebEpione.Controllers
                 {
 
                     var s = ss.GetById(id);
+                    TempData["idPatient"] = st.GetById(s.TreatmentId).PatientId;
+                    TempData["idTreatment"] = s.TreatmentId;
+
                     s.LastModificationBy = Int32.Parse(User.Identity.GetUserId());
                     s.LastModificationDate = DateTime.UtcNow.Date;
                     s.ModificationReason = collection.NewModificationReason;
@@ -298,7 +309,12 @@ namespace WebEpione.Controllers
         {
             if (ss.GetById(id) != null)
             {
+              
+
                 var s = ss.GetById(id);
+                TempData["idPatient"] = st.GetById(s.TreatmentId).PatientId;
+                TempData["idTreatment"] = s.TreatmentId;
+
 
                 ss.Delete(s);
                 ss.Commit();
