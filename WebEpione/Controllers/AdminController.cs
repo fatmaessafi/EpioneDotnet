@@ -24,7 +24,7 @@ namespace WebEpione.Controllers
         {
             List<UserViewModel> lists = new List<UserViewModel>();
 
-            
+
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
 
@@ -51,7 +51,7 @@ namespace WebEpione.Controllers
             var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToArray();
 
 
-          int  i= 0;
+            int i = 0;
 
             foreach (var item3 in HeaderNames)
             {
@@ -60,15 +60,25 @@ namespace WebEpione.Controllers
                 UserViewModl.doctolibName = item3.InnerText;
                 UserViewModl.doctolibAdress = HeaderAdd[i].InnerText;
                 UserViewModl.doctolibSpec = Headerspec[i].InnerText;
-                
-                      ;
-                
+
+                ;
+
                 string[] ADD = HeaderAdd[i].InnerText.ToString().Split(' ');
-                UserViewModl.doctolibADD = ADD[ADD.Length-1];
+                UserViewModl.doctolibADD = ADD[ADD.Length - 1];
                 string[] NOM = item3.InnerText.ToString().Split(' ');
-                UserViewModl.doctolibNOM = (NOM[1]+"-"+NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
-                string[] NOM = Headerspec[i].InnerText.ToString().Split(' ');
                 UserViewModl.doctolibNOM = (NOM[1] + "-" + NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+                string[] SPC = Headerspec[i].InnerText.ToString().Split(' ');
+                if (SPC.Length == 2)
+                {
+                    UserViewModl.doctolibSPC = (SPC[0] + "-" + SPC[1]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+
+                }
+                else
+                {
+                    UserViewModl.doctolibSPC = SPC[0].ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+
+                }
+
 
 
 
@@ -101,27 +111,27 @@ namespace WebEpione.Controllers
 
             foreach (var item in userservice.GetListUser())
             {
-                
-                    UserViewModel UserViewModl = new UserViewModel();
+
+                UserViewModel UserViewModl = new UserViewModel();
 
 
-                    UserViewModl.FirstName = item.FirstName;
-                    UserViewModl.Email = item.Email;
-                    UserViewModl.LastName = item.LastName;
-                    UserViewModl.Speciality = item.Speciality;
-                    UserViewModl.Location = item.LastName;
-                    UserViewModl.address = item.HomeAddress;
-                    UserViewModl.birthDate = item.BirthDate;
-                    UserViewModl.gender = item.Gender;
-                    UserViewModl.phoneNumber = item.PhoneNumber;
-                    UserViewModl.Id = item.Id;
+                UserViewModl.FirstName = item.FirstName;
+                UserViewModl.Email = item.Email;
+                UserViewModl.LastName = item.LastName;
+                UserViewModl.Speciality = item.Speciality;
+                UserViewModl.Location = item.LastName;
+                UserViewModl.address = item.HomeAddress;
+                UserViewModl.birthDate = item.BirthDate;
+                UserViewModl.gender = item.Gender;
+                UserViewModl.phoneNumber = item.PhoneNumber;
+                UserViewModl.Id = item.Id;
 
 
 
 
-                    lists.Add(UserViewModl);
+                lists.Add(UserViewModl);
 
-                
+
             }
 
             try
@@ -133,8 +143,10 @@ namespace WebEpione.Controllers
             {
                 return View();
             }
+
         }
     }
-    public ActionResult DetailsDoc()
-    {
-    }
+}
+    //public ActionResult DetailsDoc()
+    //{
+    //}
