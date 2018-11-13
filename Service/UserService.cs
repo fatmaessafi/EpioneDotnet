@@ -1,4 +1,5 @@
 ﻿using Data;
+using Data.Infrastructure;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,9 @@ namespace Service
 {
     public class UserService
     {
-
+        IUnitOfWork utwk;
         private Contexte _db;
+
 
         public UserService()
         {
@@ -22,6 +24,14 @@ namespace Service
         {
             return _db.Users.FirstOrDefault(User => User.Id == id);
         }
+
+        public IEnumerable<User> GetAll()
+        {
+            return utwk.getRepository<User>().GetAll();
+        }
+
+
+
 
     }
 }
