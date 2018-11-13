@@ -118,6 +118,7 @@ namespace WebEpione.Controllers
                     ViewBag.role = "Doctor";
                     TempData["role"] = "Doctor";
                     Doctor pvm = new Doctor();
+                pvm.Id = cuser.Id;
                     pvm.LastName = cuser.LastName;
                     pvm.FirstName = cuser.FirstName;
                     pvm.City = cuser.City;
@@ -140,7 +141,8 @@ namespace WebEpione.Controllers
 
                     TempData["role"] = "Patient";
                     Patient pvm = new Patient();
-                    pvm.LastName = cuser.LastName;
+                pvm.Id = cuser.Id;
+                pvm.LastName = cuser.LastName;
                     pvm.FirstName = cuser.FirstName;
                     pvm.City = cuser.City;
                     pvm.BirthDate = cuser.BirthDate;
@@ -159,7 +161,9 @@ namespace WebEpione.Controllers
             else
                 {
                     User pvm = new User();
-                    pvm.LastName = cuser.LastName;
+                pvm.Id = cuser.Id;
+
+                pvm.LastName = cuser.LastName;
                     pvm.FirstName = cuser.FirstName;
                     pvm.City = cuser.City;
                     pvm.BirthDate = cuser.BirthDate;

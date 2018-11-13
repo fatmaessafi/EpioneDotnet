@@ -20,7 +20,34 @@ namespace WebEpione.Controllers
         // GET: Treatment
         public ActionResult Index()
         {
-            List<TreatmentViewModel> list = new List<TreatmentViewModel>();
+            //Validation treatment
+            foreach (var treat in st.GetListTreatmentOrdered(1))
+            {
+                bool valid = false;
+                foreach(var step in ss.GetListStepOrdered(treat.TreatmentId))
+                {
+                    if(step.Validation==true)
+                    {
+                        valid = true;
+                    }
+                    else if(step.Validation==false)
+                    {
+                        valid = false;
+                    }
+
+
+                }
+                if (valid == true)
+                    treat.Validation = true;
+                else if (valid == false)
+                    treat.Validation = false;
+
+                st.Update(treat);
+                st.Commit();
+            }
+
+                //!Validation treatment
+                List<TreatmentViewModel> list = new List<TreatmentViewModel>();
             foreach (var item in st.GetListTreatmentOrdered(1))
             {
                 TreatmentViewModel tvm = new TreatmentViewModel();
@@ -33,7 +60,7 @@ namespace WebEpione.Controllers
 
 
                 list.Add(tvm);
-
+                
             
             }
             return View(list);
