@@ -14,7 +14,7 @@
             <a class="nav-link active"   href="">Treatments</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link"  href=@Url.Action("Create", "Treatment") ><i class="pe-7s-plus"></i> New treatment</a>
+            <a class="nav-link"  href=@Url.Action("Create", "Treatment", new { id = TempData["idPatient"]}) ><i class="pe-7s-plus"></i> New treatment</a>
         </li>
         
     </ul>

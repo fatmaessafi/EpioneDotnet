@@ -243,7 +243,10 @@ namespace WebEpione.Controllers
         }
         public ActionResult EditPatient(int id)
         {
-            var s = ss.GetById(id);
+            
+            
+                var s = ss.GetById(id);
+            
             StepViewModel svm = new StepViewModel();
 
             svm.StepId = s.StepId;

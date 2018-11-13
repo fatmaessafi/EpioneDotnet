@@ -20,6 +20,7 @@ namespace WebEpione.Controllers
         // GET: Treatment
         public ActionResult Index(int id)
         {
+            TempData["idPatient"] = id;
             //Validation treatment
             foreach (var treat in st.GetListTreatmentOrdered(id))
             {
@@ -183,25 +184,29 @@ namespace WebEpione.Controllers
         }
 
         // GET: Treatment/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            TempData["idPatient"] = id;
             return View();
         }
 
         // POST: Treatment/Create
         [HttpPost]
-        public ActionResult Create(TreatmentViewModel collection)
+        public ActionResult Create(int id,TreatmentViewModel collection)
         {
+            TempData["idPatient"] = id;
             try
             {
                 Treatment treat = new Treatment();
                 treat.TreatmentId = collection.TreatmentId;
                 treat.Illness = collection.Illness;
+                treat.PatientId = id;
                 treat.DoctorId= int.Parse(User.Identity.GetUserId());
                 treat.Validation = false;
                 st.Add(treat);
                 st.Commit();
-                return RedirectToAction("Index");
+
+                return RedirectToAction("Index", new { id = treat.PatientId });
             }
             catch
             {
@@ -212,7 +217,7 @@ namespace WebEpione.Controllers
         // GET: Treatment/Edit/5
         public ActionResult Edit(int id)
         {
-
+            TempData["idTreatment"] = id;
             var t = st.GetById(id);
             TreatmentViewModel tvm = new TreatmentViewModel();
             tvm.Illness = t.Illness;
@@ -252,7 +257,7 @@ namespace WebEpione.Controllers
                     st.Update(t);
                     st.Commit();
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { id = t.PatientId });
             }
             catch
             {
@@ -295,7 +300,8 @@ namespace WebEpione.Controllers
                 }
                 st.Delete(t);
                 st.Commit();
-                return RedirectToAction("Index");
+
+                return RedirectToAction("Index", new { id = t.PatientId });
             }
             catch
             {

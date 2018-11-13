@@ -9,14 +9,12 @@
     <div class="tabs_styled_2">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
-                <a class="nav-link" href=@Url.Action("Index", "Treatment")>Treatments</a>
+                <a class="nav-link" href=@Url.Action("Index", "Treatment",  new { id = TempData["idPatient"]})>Treatments</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href=@Url.Action("Create", "Treatment")><i class="pe-7s-plus"></i> New treatment</a>
+                <a class="nav-link active" href=@Url.Action("Create", "Treatment", new { id = TempData["idPatient"]})><i class="pe-7s-plus"></i> New treatment</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">Appointments</a>
-            </li>
+            
         </ul>
         <!--/nav-tabs -->
 
@@ -56,7 +54,7 @@
                     }
 
                     <div>
-                        @Html.ActionLink("Back to List", "Index")
+                        @Html.ActionLink("Back to List", "Index" , new { id = TempData["idPatient"] })
                     </div>
 
                 </div>
