@@ -47,6 +47,7 @@ namespace WebEpione.Controllers
             var HeaderNames = doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']").ToList();
             var Headerspec = doc.DocumentNode.SelectNodes("//div[@class='dl-search-result-subtitle']").ToList();
             var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToList();
+
             var alternatePairs = HeaderNames.Select(
              (item1, index1) => new
              {

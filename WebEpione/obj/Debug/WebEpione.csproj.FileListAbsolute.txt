@@ -378,3 +378,6 @@ C:\Users\Zreds\Documents\GitHub\EpioneDotnet\WebEpione\bin\Microsoft.Owin.Securi
 C:\Users\Zreds\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.csprojResolveAssemblyReference.cache
 C:\Users\Zreds\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.dll
 C:\Users\Zreds\Documents\GitHub\EpioneDotnet\WebEpione\obj\Debug\WebEpione.pdb
+C:\Users\Zreds\Documents\GitHub\EpioneDotnet\WebEpione\bin\HtmlAgilityPack.dll
+C:\Users\Zreds\Documents\GitHub\EpioneDotnet\WebEpione\bin\HtmlAgilityPack.pdb
+C:\Users\Zreds\Documents\GitHub\EpioneDotnet\WebEpione\bin\HtmlAgilityPack.xml
