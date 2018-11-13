@@ -22,7 +22,7 @@ namespace WebEpione.Controllers
         {
             List<UserViewModel> lists = new List<UserViewModel>();
 
-            UserViewModel UserViewModl = new UserViewModel();
+            
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
 
@@ -44,23 +44,21 @@ namespace WebEpione.Controllers
 
             }
 
-            var HeaderNames = doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']").ToList();
-            var Headerspec = doc.DocumentNode.SelectNodes("//div[@class='dl-search-result-subtitle']").ToList();
-            var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToList();
+            var HeaderNames = doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']").ToArray();
+            var Headerspec = doc.DocumentNode.SelectNodes("//div[@class='dl-search-result-subtitle']").ToArray();
+            var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToArray();
 
-            var alternatePairs = HeaderNames.Select(
-             (item1, index1) => new
-             {
-                 name = item1,
-                 address = HeaderAdd[index1 % 2],
-                 spec = Headerspec[index1 % 3]
 
-             });
-            foreach (var item3 in alternatePairs)
+          int  i= 0;
+
+            foreach (var item3 in HeaderNames)
             {
-                UserViewModl.doctolibName = item3.name.InnerText;
-                UserViewModl.doctolibAdress = item3.address.InnerText;
-                UserViewModl.doctolibSpec = item3.spec.InnerText;
+
+                UserViewModel UserViewModl = new UserViewModel();
+                UserViewModl.doctolibName = item3.InnerText;
+                UserViewModl.doctolibAdress = HeaderAdd[i].InnerText;
+                UserViewModl.doctolibSpec = Headerspec[i].InnerText;
+                i++;
                 lists.Add(UserViewModl);
             }
 
