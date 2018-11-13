@@ -145,8 +145,95 @@ namespace WebEpione.Controllers
             }
 
         }
+
+
+        public ActionResult DetailsDoc(string add , string nom , string spc)
+        {
+            List<UserViewModel> lists = new List<UserViewModel>();
+
+
+            HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+
+
+            web.PreRequest = delegate (HttpWebRequest webRequest)
+            {
+                webRequest.Timeout = 15000;
+                return true;
+            };
+
+            try { doc = web.Load("https://www.doctolib.fr/medecin-generaliste/france"); }
+            catch (WebException ex)
+            {
+                reTryCounter++;
+                if (reTryCounter == 19) { }
+            }
+            catch (IOException ex2)
+            {
+
+            }
+
+            var HeaderNames = doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']").ToArray();
+            var Headerspec = doc.DocumentNode.SelectNodes("//div[@class='dl-search-result-subtitle']").ToArray();
+            var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToArray();
+
+
+            int i = 0;
+
+            foreach (var item3 in HeaderNames)
+            {
+
+                UserViewModel UserViewModl = new UserViewModel();
+                UserViewModl.doctolibName = item3.InnerText;
+                UserViewModl.doctolibAdress = HeaderAdd[i].InnerText;
+                UserViewModl.doctolibSpec = Headerspec[i].InnerText;
+
+                ;
+
+                string[] ADD = HeaderAdd[i].InnerText.ToString().Split(' ');
+                UserViewModl.doctolibADD = ADD[ADD.Length - 1];
+                string[] NOM = item3.InnerText.ToString().Split(' ');
+                UserViewModl.doctolibNOM = (NOM[1] + "-" + NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+                string[] SPC = Headerspec[i].InnerText.ToString().Split(' ');
+                if (SPC.Length == 2)
+                {
+                    UserViewModl.doctolibSPC = (SPC[0] + "-" + SPC[1]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+
+                }
+                else
+                {
+                    UserViewModl.doctolibSPC = SPC[0].ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+
+                }
+
+
+
+
+
+
+
+
+                i++;
+                lists.Add(UserViewModl);
+            }
+
+
+            try
+            {
+                // TODO: Add insert logic here
+                return View(lists);
+            }
+            catch
+            {
+                return View();
+            }
+
+            return View();
+        }
+
+
+
+
     }
 }
-    //public ActionResult DetailsDoc()
-    //{
-    //}
+
