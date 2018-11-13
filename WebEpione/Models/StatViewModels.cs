@@ -12,5 +12,10 @@ namespace WebEpione.Models
         [Key]
         public int AppointmentId { get; set; }
         public string VisitReason { get; set; }
+
+        public int var { get; set; }
+        public int varp { get; set; }
+        public int app { get; set; }
+
     }
 }

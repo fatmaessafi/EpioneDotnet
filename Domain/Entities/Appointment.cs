@@ -19,6 +19,7 @@ namespace Domain
         public int DoctorId { get; set; }
         public Patient Patient { get; set; }
         public Step Step { get; set; }
+       // public int count { get; set; }
 
     }
 }

@@ -29,8 +29,21 @@ namespace WebEpione
                 "~/Content/admin_section/vendor/jquery.magnific-popup.min.js",
                 "~/Content/admin_section/js/admin.js",
                  "~/Content/admin_section/js/admin-charts.js",
-                  "~/Content/admin_section/vendor/dropzone.min.js"
-
+                  "~/Content/admin_section/vendor/dropzone.min.js",
+                   "~/Content/admin_section/js/jquery-2.2.4.min.js",
+                   "~/Content/admin_section/js/functions.js",
+                   "~/Content/admin_section/js/common_scripts.min.js",
+                    "~/Content/admin_section/vendor/jquery/jquery.min.js",
+                     "~/Content/admin_section/vendor/bootstrap/js/bootstrap.bundle.min.js",
+                      "~/Content/admin_section/vendor/jquery-easing/jquery.easing.min.js",
+                       "~/Content/admin_section/vendor/chart.js/Chart.min.js",
+                        "~/Content/admin_section/vendor/datatables/jquery.dataTables.js",
+                         "~/Content/admin_section/vendor/datatables/dataTables.bootstrap4.js",
+                          "~/Content/admin_section/vendor/jquery.selectbox-0.2.js",
+                           "~/Content/admin_section/vendor/retina-replace.min.js",
+                            "~/Content/admin_section/vendor/jquery.magnific-popup.min.js",
+                             "~/Content/admin_section/js/admin-charts-all.js",
+                              "~/Content/admin_section/js/admin.js"
 
             ));
 

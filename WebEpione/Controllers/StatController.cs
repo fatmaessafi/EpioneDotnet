@@ -1,6 +1,7 @@
 ﻿using Service;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,14 +11,22 @@ namespace WebEpione.Controllers
 {
     public class StatController : Controller
     {
-        IStatService SS = new StatService();
+       
         // GET: Stat
         public ActionResult Index()
         {
-
-           int item = SS.GetAll().Count();
-           
-            return View(item);       
+            StatService ss = new StatService();
+            ServiceMessage msg = new ServiceMessage();
+            ServiceAppC apc = new ServiceAppC();
+            int c = ss.nbrApp();
+            int d = msg.nbrApp();
+            int e = apc.nbrApp();
+            StatViewModels s = new StatViewModels();
+            s.var = c;
+            s.varp = d;
+            s.app = e;
+                         
+            return View(s);       
     }
 
         // GET: Stat/Details/5

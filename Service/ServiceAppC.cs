@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-   public class StatService : Service<Appointment>, IStatService
-       
+    public class ServiceAppC : Service<Analytics>, IServiceAppC
     {
+
+
         private static IDatabaseFactory databaseFactory = new DatabaseFactory();
         private static IUnitOfWork unit = new UnitOfWork(databaseFactory);
-        public StatService() : base(unit)
-        {
+        public ServiceAppC() : base(unit)
+            {
 
         }
 

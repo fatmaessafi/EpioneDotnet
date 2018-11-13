@@ -57,11 +57,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServiceAppC.cs" />
+    <Compile Include="IServiceMessage.cs" />
     <Compile Include="IServiceRapport.cs" />
     <Compile Include="IServiceStep.cs" />
     <Compile Include="IServiceTreatment.cs" />
     <Compile Include="IStatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceAppC.cs" />
+    <Compile Include="ServiceMessage.cs" />
     <Compile Include="ServiceRapport.cs" />
     <Compile Include="ServiceStep.cs" />
     <Compile Include="ServiceTreatment.cs" />

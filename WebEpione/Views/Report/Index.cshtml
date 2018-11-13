@@ -2,6 +2,7 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+   
 </p>
 <table class="table">
     <tr>
@@ -34,18 +35,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.ReportDate)
         </td>
-        <td>
+        @*<td>
             
             <img src="@Url.Content("~/Content/Upload/"+item.ReportImage)" width="200" height="100"/>
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReportId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReportId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ReportId })
         </td>
     </tr>
 }
 
 </table>
-<a href="@Url.Action("ExportPDF","Report")"> Export PDF</a>
-<a href="javascript:window.print()">Print Page </a>  
+
+<a href="@Url.Action("ExportPDF","Report")"> -  Export PDF</a>
+<a href="javascript:window.print()"> / -  Print Page </a>  

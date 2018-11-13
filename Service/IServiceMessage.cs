@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Service
 {
-    public interface IStatService : IService<Appointment>
+   public interface IServiceMessage : IService<Message>
     {
-
         int nbrApp();
     }
 }

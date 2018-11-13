@@ -60,7 +60,7 @@ C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\bin\Debug\EntityFramework.SqlS
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
-C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.fir.resources
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.dll
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.pdb

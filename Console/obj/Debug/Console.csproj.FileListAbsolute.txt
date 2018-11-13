@@ -38,9 +38,6 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Data.pdb
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.exe
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.pdb
-C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
-C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.exe
-C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.pdb
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Console.exe.config
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Console.exe
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Console.pdb
@@ -60,3 +57,6 @@ C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\bin\Debug\EntityFramework.S
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\bin\Debug\Data.pdb
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.exe
+C:\Users\Firas\Documents\GitHub\EpioneDotnet\Console\obj\Debug\Console.pdb
