@@ -99,6 +99,10 @@
     <Compile Include="Migrations\201811121318544_id.Designer.cs">
       <DependentUpon>201811121318544_id.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811131858312_delete.cs" />
+    <Compile Include="Migrations\201811131858312_delete.Designer.cs">
+      <DependentUpon>201811131858312_delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -134,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811121318544_id.resx">
       <DependentUpon>201811121318544_id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811131858312_delete.resx">
+      <DependentUpon>201811131858312_delete.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

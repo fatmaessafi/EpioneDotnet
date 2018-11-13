@@ -22,7 +22,7 @@
 
             </li>
             <li>
-                <span><a href=@Url.Action("Index", "Treatment")>Treatments</a></span>
+                <span><a href=@Url.Action("Index", "PatientFatma")>Treatments</a></span>
 
             </li>
             }
@@ -37,5 +37,7 @@
         </ul>
     </nav>
     <ul>
-        <li><span><b>Connected as @ViewBag.role : @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</b></span></li>
+        <li>
+    <img src="~/Content/img/avatarblue.png" alt="" class="img-fluid">
+<span>Connected as @ViewBag.role <b> @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName)</b></span></li>
     </ul>         }

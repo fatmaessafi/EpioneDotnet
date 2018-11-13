@@ -18,10 +18,10 @@ namespace WebEpione.Controllers
         UserService us = new UserService();
         ServiceStep ss = new ServiceStep(); 
         // GET: Treatment
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             //Validation treatment
-            foreach (var treat in st.GetListTreatmentOrdered(1))
+            foreach (var treat in st.GetListTreatmentOrdered(id))
             {
                 bool valid = true;
                 foreach(var step in ss.GetListStepOrdered(treat.TreatmentId))

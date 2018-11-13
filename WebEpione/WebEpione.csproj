@@ -208,6 +208,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PatientFatmaController.cs" />
     <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Controllers\StepRequestController.cs" />
     <Compile Include="Controllers\TreatmentController.cs" />
@@ -297,6 +298,7 @@
     <Content Include="Views\Treatment\IndexPatient.cshtml" />
     <Content Include="Views\Treatment\DetailsPatient.cshtml" />
     <Content Include="Views\Step\EditPatient.cshtml" />
+    <Content Include="Views\PatientFatma\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

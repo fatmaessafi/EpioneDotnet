@@ -53,3 +53,4 @@ C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.newc
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.stepreq.resources
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.typesr.resources
 C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.id.resources
+C:\Users\Fatma\Documents\GitHub\EpioneDotnet\Data\obj\Debug\Data.Migrations.delete.resources

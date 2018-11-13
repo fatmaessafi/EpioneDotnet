@@ -15,7 +15,7 @@ namespace Data.Configuration
 
             // One to Many Treatment et Step
             HasRequired<Treatment>(a => a.Treatment).WithMany(t => t.ListSteps)
-         .HasForeignKey(e => e.TreatmentId).WillCascadeOnDelete(false);
+         .HasForeignKey(e => e.TreatmentId).WillCascadeOnDelete(true);
         }
     }
 }
