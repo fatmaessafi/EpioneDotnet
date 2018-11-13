@@ -60,6 +60,21 @@ namespace WebEpione.Controllers
                 UserViewModl.doctolibName = item3.InnerText;
                 UserViewModl.doctolibAdress = HeaderAdd[i].InnerText;
                 UserViewModl.doctolibSpec = Headerspec[i].InnerText;
+                
+                      ;
+                
+                string[] ADD = HeaderAdd[i].InnerText.ToString().Split(' ');
+                UserViewModl.doctolibADD = ADD[ADD.Length-1];
+                string[] NOM = item3.InnerText.ToString().Split(' ');
+                UserViewModl.doctolibNOM = (NOM[1]+"-"+NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+                string[] NOM = Headerspec[i].InnerText.ToString().Split(' ');
+                UserViewModl.doctolibNOM = (NOM[1] + "-" + NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+
+
+
+
+
+
 
                 i++;
                 lists.Add(UserViewModl);
@@ -120,4 +135,6 @@ namespace WebEpione.Controllers
             }
         }
     }
-}
+    public ActionResult DetailsDoc()
+    {
+    }

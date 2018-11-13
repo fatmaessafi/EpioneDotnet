@@ -20,5 +20,7 @@ namespace WebEpione.Models
         public String doctolibName { get; set; }
         public String doctolibAdress { get; set; }
         public String doctolibSpec { get; set; }
+        public String doctolibADD { get; set; }
+        public String doctolibNOM { get; set; }
     }
 }
