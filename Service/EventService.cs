@@ -17,5 +17,10 @@ namespace Service
         {
 
         }
+        public IEnumerable<Event> eventGetAll(int id)
+        {
+            
+            return (IEnumerable<Event>)GetAll().Where(t=>t.DoctorId==id);
+        }
     }
 }

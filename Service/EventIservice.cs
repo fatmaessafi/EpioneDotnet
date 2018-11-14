@@ -10,6 +10,7 @@ namespace Service
 {
     public interface EventIservice : IService<Event>
     {
+        IEnumerable<Event> eventGetAll(int id);
 
     }
 }

@@ -20,7 +20,7 @@ namespace Domain.Entities
         public Byte IsFullDay { get; set; }
         public Doctor DoctorEvent { get; set; }
         public int DoctorId { get; set; }
-
+        
 
     }
 }

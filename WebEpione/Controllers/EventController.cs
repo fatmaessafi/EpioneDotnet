@@ -46,17 +46,31 @@ namespace WebEpione.Controllers
         {
             EventIservice EVS = new EventService();
             int userconnect = Int32.Parse(User.Identity.GetUserId());
-            Event Ev = new Event();
-            Ev.Description = EVM.Description;
-            Ev.IsFullDay = 0;
-            Ev.DoctorId = userconnect;
-            Ev.Start = EVM.Start;
-            Ev.End = EVM.End;
-            Ev.ThemeColor = "red";
-            Ev.Subject = EVM.Subject;
-            EVS.Add(Ev);
-            EVS.Commit();
+            int a = 0;
+            var events = EVS.eventGetAll(userconnect);
+            List<DateTime> d = new List<DateTime>();
+
+            foreach (var item in events)
+            {
+                d.Add(item.Start);
+            }
+            if (d.Contains(EVM.Start)==false)
+            {
+                Event Ev = new Event();
+                Ev.Description = EVM.Description;
+                Ev.IsFullDay = 0;
+                Ev.DoctorId = userconnect;
+                Ev.Start = EVM.Start;
+                Ev.End = EVM.End;
+                Ev.ThemeColor = "red";
+                Ev.Subject = EVM.Subject;
+                EVS.Add(Ev);
+                EVS.Commit();
+            }
+
             return RedirectToAction("Index");
+
+
         }
 
         // GET: Event/Edit/5
