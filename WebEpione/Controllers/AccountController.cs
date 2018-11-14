@@ -161,7 +161,7 @@ namespace WebEpione.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new Patient { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City=model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date, Profession=model.Profession, Allergies=model.Allergies, SpecialReq=model.SpecialReq };
+                    var user = new Patient { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City=model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = true, RegistrationDate = DateTime.UtcNow.Date, Profession=model.Profession, Allergies=model.Allergies, SpecialReq=model.SpecialReq };
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
@@ -186,7 +186,7 @@ namespace WebEpione.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress=model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date, Speciality=model.Speciality, Location=model.Location };
+                    var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress=model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = true, RegistrationDate = DateTime.UtcNow.Date, Speciality=model.Speciality, Location=model.Location };
                     if(model.Surgeon=="Yes")
                     {
                         user.Surgeon = true;
@@ -219,7 +219,7 @@ namespace WebEpione.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new User { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date };
+                    var user = new User { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = true, RegistrationDate = DateTime.UtcNow.Date };
                    
                     var result = await UserManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
