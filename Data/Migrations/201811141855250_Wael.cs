@@ -3,7 +3,7 @@ namespace Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Step : DbMigration
+    public partial class Wael : DbMigration
     {
         public override void Up()
         {
@@ -79,6 +79,7 @@ namespace Data.Migrations
                         AppRate = c.Int(nullable: false),
                         VisitReason = c.String(),
                         DoctorId = c.Int(nullable: false),
+                        PatientId = c.Int(nullable: false),
                         StepId = c.Int(),
                     })
                 .PrimaryKey(t => t.AppointmentId)
@@ -120,6 +121,7 @@ namespace Data.Migrations
                     {
                         StepId = c.Int(nullable: false, identity: true),
                         StepDescription = c.String(),
+                        StepSpeciality = c.String(),
                         StepDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
                         Validation = c.Boolean(nullable: false),
                         NbModifications = c.Int(nullable: false),
@@ -130,7 +132,7 @@ namespace Data.Migrations
                         AppointmentId = c.Int(),
                     })
                 .PrimaryKey(t => t.StepId)
-                .ForeignKey("dbo.Treatments", t => t.TreatmentId)
+                .ForeignKey("dbo.Treatments", t => t.TreatmentId, cascadeDelete: true)
                 .ForeignKey("dbo.Appointments", t => t.AppointmentId)
                 .Index(t => t.TreatmentId)
                 .Index(t => t.AppointmentId);
@@ -210,6 +212,24 @@ namespace Data.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            CreateTable(
+                "dbo.StepRequests",
+                c => new
+                    {
+                        NewStepId = c.Int(nullable: false, identity: true),
+                        StepId = c.Int(nullable: false),
+                        NewStepDescription = c.String(),
+                        NewStepSpeciality = c.String(),
+                        NewStepDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        NewValidation = c.Boolean(nullable: false),
+                        NewLastModificationBy = c.Int(nullable: false),
+                        NewLastModificationDate = c.DateTime(nullable: false, precision: 7, storeType: "datetime2"),
+                        NewModificationReason = c.String(),
+                        NewTreatmentId = c.Int(nullable: false),
+                        Type = c.String(),
+                    })
+                .PrimaryKey(t => t.NewStepId);
+            
         }
         
         public override void Down()
@@ -242,6 +262,7 @@ namespace Data.Migrations
             DropIndex("dbo.Appointments", new[] { "DoctorId" });
             DropIndex("dbo.CustomUserClaims", new[] { "UserId" });
             DropIndex("dbo.Analytics", new[] { "DoctorId" });
+            DropTable("dbo.StepRequests");
             DropTable("dbo.CustomRoles");
             DropTable("dbo.VisitReasons");
             DropTable("dbo.DayOffs");

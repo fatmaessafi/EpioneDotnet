@@ -75,33 +75,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201811091808178_Step.cs" />
-    <Compile Include="Migrations\201811091808178_Step.Designer.cs">
-      <DependentUpon>201811091808178_Step.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811101141551_speciality.cs" />
-    <Compile Include="Migrations\201811101141551_speciality.Designer.cs">
-      <DependentUpon>201811101141551_speciality.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811101240005_new class.cs" />
-    <Compile Include="Migrations\201811101240005_new class.Designer.cs">
-      <DependentUpon>201811101240005_new class.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811101243375_stepreq.cs" />
-    <Compile Include="Migrations\201811101243375_stepreq.Designer.cs">
-      <DependentUpon>201811101243375_stepreq.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811111847579_typesr.cs" />
-    <Compile Include="Migrations\201811111847579_typesr.Designer.cs">
-      <DependentUpon>201811111847579_typesr.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811121318544_id.cs" />
-    <Compile Include="Migrations\201811121318544_id.Designer.cs">
-      <DependentUpon>201811121318544_id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811131858312_delete.cs" />
-    <Compile Include="Migrations\201811131858312_delete.Designer.cs">
-      <DependentUpon>201811131858312_delete.cs</DependentUpon>
+    <Compile Include="Migrations\201811141855250_Wael.cs" />
+    <Compile Include="Migrations\201811141855250_Wael.Designer.cs">
+      <DependentUpon>201811141855250_Wael.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,30 +93,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811091808178_Step.resx">
-      <DependentUpon>201811091808178_Step.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811101141551_speciality.resx">
-      <DependentUpon>201811101141551_speciality.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811101240005_new class.resx">
-      <DependentUpon>201811101240005_new class.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811101243375_stepreq.resx">
-      <DependentUpon>201811101243375_stepreq.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811111847579_typesr.resx">
-      <DependentUpon>201811111847579_typesr.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811121318544_id.resx">
-      <DependentUpon>201811121318544_id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811131858312_delete.resx">
-      <DependentUpon>201811131858312_delete.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811141855250_Wael.resx">
+      <DependentUpon>201811141855250_Wael.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

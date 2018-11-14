@@ -18,6 +18,8 @@ namespace Domain
         public Doctor Doctor { get; set; }
         public int DoctorId { get; set; }
         public Patient Patient { get; set; }
+        public int PatientId { get; set; }
+
         public virtual Step Step { get; set; }
 
     }
