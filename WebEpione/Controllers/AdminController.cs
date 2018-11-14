@@ -214,6 +214,70 @@ namespace WebEpione.Controllers
         }
 
 
+        public ActionResult checkdoc(int id)
+        {
+            var Doc = userservice.GetById(id);
+
+            UserViewModel UserViewModl = new UserViewModel();
+            UserViewModl.doctolibName = "";
+            HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            web.PreRequest = delegate (HttpWebRequest webRequest)
+            {
+                webRequest.Timeout = 15000;
+                return true;
+            };
+
+            try { doc = web.Load("https://www.doctolib.fr/doctors/" + Doc.FirstName + "+" + Doc.LastName + "/france"); }
+            catch (WebException ex)
+            {
+                reTryCounter++;
+                if (reTryCounter == 19) { }
+            }
+            catch (IOException ex2)
+            {
+
+            }
+
+            if (doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']") != null)
+            {
+                var HeaderNames = doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']").ToList();
+                var Headerspec = doc.DocumentNode.SelectNodes("//div[@class='dl-search-result-subtitle']").ToList();
+                var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToList();
+                var alternatePairs = HeaderNames.Select(
+                 (item1, index1) => new
+                 {
+                     name = item1,
+                     address = HeaderAdd[index1 % 2],
+                     spec = Headerspec[index1 % 3]
+
+                 });
+                foreach (var item3 in alternatePairs)
+                {
+                    UserViewModl.doctolibName = item3.name.InnerText;
+                    UserViewModl.doctolibAdress = item3.address.InnerText;
+                    UserViewModl.doctolibSpec = item3.spec.InnerText;
+                }
+            }
+            UserViewModl.Id = Doc.Id;
+
+            UserViewModl.FirstName = Doc.FirstName;
+            UserViewModl.Email = Doc.Email;
+            UserViewModl.LastName = Doc.LastName;
+            UserViewModl.address = Doc.HomeAddress;
+            UserViewModl.birthDate = Doc.BirthDate;
+            UserViewModl.gender = Doc.Gender;
+            UserViewModl.phoneNumber = Doc.PhoneNumber;
+
+
+            if (UserViewModl.doctolibName != "")
+                UserViewModl.avalib = "Doctor available in doctolib";
+            else
+                UserViewModl.avalib = "Not found in doctolib";
+
+
+            return View(UserViewModl);
+        }
 
 
     }

@@ -29,5 +29,7 @@ namespace Service
         {
             return GetAll().OfType<Doctor>().Count();
         }
+
+
     }
 }

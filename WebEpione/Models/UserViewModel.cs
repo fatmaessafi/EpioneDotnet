@@ -23,6 +23,8 @@ namespace WebEpione.Models
         public String doctolibADD { get; set; }
         public String doctolibNOM { get; set; }
         public String doctolibSPC { get; set; }
+        public String avalib { get; set; }
+
 
     }
 }
