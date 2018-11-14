@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using WebEpione.Models;
 
@@ -25,23 +26,69 @@ namespace WebEpione.Controllers
             s.var = c;
             s.varp = d;
             s.app = e;
-
-                         
+                     
             return View(s);       
     }
-        public ActionResult GetData()
+        public ActionResult BillChart()
         {
             StatService ss = new StatService();
-            int pigiste = ss.GetAll().Where(x => x.VisitReason == "Fievre").Count();
-            int employe = ss.GetAll().Where(x => x.VisitReason == "Grippe").Count();
+            ServiceMessage msg = new ServiceMessage();
+            ServiceAppC apc = new ServiceAppC();
+            int c = ss.nbrApp();
+            int d = msg.nbrApp();
+            int e = apc.nbrApp();
+            StatViewModels s = new StatViewModels();
+            s.var = c;
+            s.varp = d;
+            s.app = e;
 
-            Type obj = new Type();
-            obj.employe = employe;
-            obj.pigiste = pigiste;
+            decimal Appointments = c;
+            decimal AppointmentsC = e;
 
-            return Json(obj, JsonRequestBehavior.AllowGet);
+            string myTheme =
+                @"<Chart BackColor=""Transparent"">
+                     <ChartAreas>
+                                <ChartArea Name=""Default"" BackColor=""Transparent""> 
+                                </ChartArea>
+                     </ChartAreas>
+                   </Chart>";
+            new Chart(width: 350, height: 350, theme: myTheme)
+               .AddSeries(
+              chartType: "pie",
+               xValue: new[] { "Appointments", "Appointments Cancelled" },
+               yValues: new[] { Appointments, AppointmentsC })
+               .Write("png");
+            return null;
         }
 
+        public ActionResult MyChart()
+        {
+            StatService ss = new StatService();
+            ServiceMessage msg = new ServiceMessage();
+            ServiceAppC apc = new ServiceAppC();
+            int c = ss.nbrApp();
+            int d = msg.nbrApp();
+            int e = apc.nbrApp();
+            StatViewModels s = new StatViewModels();
+            s.var = c;
+            s.varp = d;
+            s.app = e;
+
+
+
+            decimal Appointments = d;
+            decimal AppointmentsC = e;
+
+            new Chart(width: 800, height: 500)
+                .AddSeries(
+               chartType: "Column",
+                xValue: new[] { "Appointments", "Appointments Cancelled"},
+                yValues: new[] { Appointments, AppointmentsC})
+                .Write("png");
+            return null;
+        }
+
+       
         public class Type
         {
             public int employe { get; set; }

@@ -347,9 +347,6 @@
     <Content Include="Views\Report\Edit.cshtml" />
     <Content Include="Views\Stat\Index.cshtml" />
     <Content Include="Views\Message\Index.cshtml" />
-    <Content Include="Views\Stat\Test.cshtml" />
-    <Content Include="Views\Stat\GetData.cshtml" />
-    <Content Include="Views\Stat\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
