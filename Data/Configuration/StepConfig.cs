@@ -7,11 +7,15 @@ namespace Data.Configuration
     {
         public StepConfig()
 
-        {   //One to One Appointment et Step
-            HasOptional<Appointment>(t => t.Appointment).WithOptionalPrincipal(t => t.Step);
+        {
+            //Optional one to one with Appointment
+            HasOptional<Appointment>(x => x.Appointment)
+           .WithOptionalPrincipal()
+           .Map(x => x.MapKey("StepId"));
+
             // One to Many Treatment et Step
             HasRequired<Treatment>(a => a.Treatment).WithMany(t => t.ListSteps)
-         .HasForeignKey(e => e.TreatmentId).WillCascadeOnDelete(false);
+         .HasForeignKey(e => e.TreatmentId).WillCascadeOnDelete(true);
         }
     }
 }

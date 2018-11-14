@@ -208,14 +208,20 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PatientFatmaController.cs" />
     <Compile Include="Controllers\StepController.cs" />
+    <Compile Include="Controllers\StepRequestController.cs" />
     <Compile Include="Controllers\TreatmentController.cs" />
+    <Compile Include="Controllers\WSFatmaController.cs" />
+    <Compile Include="Controllers\WSIdentityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PatientViewModel.cs" />
+    <Compile Include="Models\StepRequestViewModel.cs" />
     <Compile Include="Models\StepViewModel.cs" />
     <Compile Include="Models\TreatmentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -281,6 +287,20 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Treatment\Index.cshtml" />
     <Content Include="Views\Treatment\Details.cshtml" />
+    <Content Include="Views\Treatment\Delete.cshtml" />
+    <Content Include="Views\Treatment\Edit.cshtml" />
+    <Content Include="Views\Shared\MyProfileLayout.cshtml" />
+    <Content Include="Views\Home\UserInformations.cshtml" />
+    <Content Include="Views\Step\Edit.cshtml" />
+    <Content Include="Views\Step\Create.cshtml" />
+    <Content Include="Views\Step\Delete.cshtml" />
+    <Content Include="Views\StepRequest\Index.cshtml" />
+    <Content Include="Views\Home\UserConnected.cshtml" />
+    <Content Include="Views\Treatment\IndexPatient.cshtml" />
+    <Content Include="Views\Treatment\DetailsPatient.cshtml" />
+    <Content Include="Views\Step\EditPatient.cshtml" />
+    <Content Include="Views\PatientFatma\Index.cshtml" />
+    <Content Include="Views\Home\UserByIdInformations.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

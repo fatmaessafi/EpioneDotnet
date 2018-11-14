@@ -19,7 +19,7 @@ namespace Service
         }
         public IEnumerable<Step> GetListStepOrdered(int idTreatment)
         {
-            return GetMany().OfType<Step>().Where(t => t.TreatmentId.Equals(idTreatment)).OrderByDescending(t => t.StepId);
+            return GetMany().OfType<Step>().Where(t => t.TreatmentId.Equals(idTreatment)).OrderBy(t => t.StepDate);
         }
 
 
