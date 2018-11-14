@@ -20,7 +20,7 @@ namespace WebEpione.Controllers
         {
             return View();
         }
-        public ActionResult RecupDoc()
+        public ActionResult RecupDoc(string url)
         {
             List<UserViewModel> lists = new List<UserViewModel>();
 
@@ -35,7 +35,7 @@ namespace WebEpione.Controllers
                 return true;
             };
 
-            try { doc = web.Load("https://www.doctolib.fr/medecin-generaliste/france"); }
+            try { doc = web.Load(url); }
             catch (WebException ex)
             {
                 reTryCounter++;
@@ -149,12 +149,12 @@ namespace WebEpione.Controllers
 
         public ActionResult DetailsDoc(string add , string nom , string spc)
         {
-            List<UserViewModel> lists = new List<UserViewModel>();
+            List<DocIndivViewModel> lists = new List<DocIndivViewModel>();
 
-
+            string adress = "https://www.doctolib.fr/"+spc+"/"+add+"/"+nom;
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-
+            Console.WriteLine(adress);
 
             web.PreRequest = delegate (HttpWebRequest webRequest)
             {
@@ -162,7 +162,8 @@ namespace WebEpione.Controllers
                 return true;
             };
 
-            try { doc = web.Load("https://www.doctolib.fr/medecin-generaliste/france"); }
+
+            try { doc = web.Load(adress); }
             catch (WebException ex)
             {
                 reTryCounter++;
@@ -173,9 +174,12 @@ namespace WebEpione.Controllers
 
             }
 
-            var HeaderNames = doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']").ToArray();
-            var Headerspec = doc.DocumentNode.SelectNodes("//div[@class='dl-search-result-subtitle']").ToArray();
-            var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToArray();
+            var HeaderNames = doc.DocumentNode.SelectNodes("//h1[@class='dl-profile-header-name']").ToArray();
+            var Headerspec = doc.DocumentNode.SelectNodes("//h2[@class='dl-profile-header-speciality']").ToArray();
+            var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-profile-text']").ToArray();
+            var HeaderDesc = doc.DocumentNode.SelectNodes("//div[@class='dl-profile-text js-bio dl-profile-bio']").ToArray();
+            var HeaderIMG = doc.DocumentNode.SelectNodes("//div[@class='dl-profile-header-photo']").ToArray();
+
 
 
             int i = 0;
@@ -183,36 +187,14 @@ namespace WebEpione.Controllers
             foreach (var item3 in HeaderNames)
             {
 
-                UserViewModel UserViewModl = new UserViewModel();
+                DocIndivViewModel UserViewModl = new DocIndivViewModel();
                 UserViewModl.doctolibName = item3.InnerText;
                 UserViewModl.doctolibAdress = HeaderAdd[i].InnerText;
                 UserViewModl.doctolibSpec = Headerspec[i].InnerText;
+                UserViewModl.doctolibDesc = HeaderDesc[i].InnerText;
 
-                ;
-
-                string[] ADD = HeaderAdd[i].InnerText.ToString().Split(' ');
-                UserViewModl.doctolibADD = ADD[ADD.Length - 1];
-                string[] NOM = item3.InnerText.ToString().Split(' ');
-                UserViewModl.doctolibNOM = (NOM[1] + "-" + NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
-                string[] SPC = Headerspec[i].InnerText.ToString().Split(' ');
-                if (SPC.Length == 2)
-                {
-                    UserViewModl.doctolibSPC = (SPC[0] + "-" + SPC[1]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
-
-                }
-                else
-                {
-                    UserViewModl.doctolibSPC = SPC[0].ToLowerInvariant().Replace("é", "e").Replace("è", "e");
-
-                }
-
-
-
-
-
-
-
-
+                string[] IMG = HeaderIMG[i].InnerText.ToString().Split('=');
+                UserViewModl.doctolibIMG = IMG[0];
                 i++;
                 lists.Add(UserViewModl);
             }

@@ -13,5 +13,7 @@ namespace WebEpione.Models
         public String doctolibTarifs { get; set; }
         public String doctolibAcess{ get; set; }
         public String doctolibMethod { get; set; }
+        public String doctolibDesc { get; set; }
+        public String doctolibIMG { get; set; }
     }
 }

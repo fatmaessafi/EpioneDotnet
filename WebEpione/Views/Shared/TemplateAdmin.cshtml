@@ -45,61 +45,45 @@
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
-                    <a class="nav-link" href="messages.html">
-                        <i class="fa fa-fw fa-envelope-open"></i>
-                        <span class="nav-link-text">Messages</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookings">
-                    <a class="nav-link" href="bookings.html">
-                        <i class="fa fa-fw fa-calendar-check-o"></i>
-                        <span class="nav-link-text">Bookings <span class="badge badge-pill badge-primary">6 New</span></span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reviews">
-                    <a class="nav-link" href="reviews.html">
-                        <i class="fa fa-fw fa-star"></i>
-                        <span class="nav-link-text">Reviews</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmarks">
-                    <a class="nav-link" href="bookmarks.html">
-                        <i class="fa fa-fw fa-heart"></i>
-                        <span class="nav-link-text">Bookmarks</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Add listing">
-                    <a class="nav-link" href="add-listing.html">
-                        <i class="fa fa-fw fa-plus-circle"></i>
-                        <span class="nav-link-text">Add listing</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My profile">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile" data-parent="#exampleAccordion">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">My profile</span>
-                    </a>
-                    <ul class="sidenav-second-level collapse" id="collapseProfile">
-                        <li>
-                            <a href="user-profile.html">User profile</a>
-                        </li>
-                        <li>
-                            <a href="doctor-profile.html">Doctor profile</a>
-                        </li>
-                    </ul>
-                </li>
+                   
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-gear"></i>
-                        <span class="nav-link-text">Components</span>
+                        <span class="nav-link-text">Get From Doctolib</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents">
                         <li>
-                            <a href="charts.html">Charts</a>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/medecin-generaliste/france"})">General Practitioner </a>
                         </li>
                         <li>
-                            <a href="tables.html">Tables</a>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/allergologue/france"})">Allergist </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/cardiologue/france"})">Cardiologist </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/dermatologue/france"})">Dermatologist  </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/obstetricien/france"})">Obstetrician  </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/ophtalmologue/france"})">Ophthalmologist  </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/pediatre/france"})">Pediatrician  </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/chirurgien-plasticien/france"})">Plastic Surgeon </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/psychiatre/france"})">Psychiatrist  </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/rhumatologue/france"})">Rheumatologist  </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("RecupDoc", "Admin", new { url ="https://www.doctolib.fr/chirurgien-urologue/france"})">Urologist  </a>
                         </li>
                     </ul>
                 </li>
@@ -260,6 +244,10 @@
     <script src="~/ContentAdmin/vendor/jquery.selectbox-0.2.js"></script>
     <script src="~/ContentAdmin/vendor/retina-replace.min.js"></script>
     <script src="~/ContentAdmin/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="~/ContentAdmin/js/jquery-2.2.4.min.js"></script>
+    <script src="~/ContentAdmin/js/common_scripts.min.js"></script>
+    <script src="~/ContentAdmin/js/functions.js"></script>
+
     <!-- Custom scripts for all pages-->
     <script src="~/ContentAdmin/js/admin.js"></script>
     <!-- Custom scripts for this page-->
