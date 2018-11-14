@@ -293,6 +293,7 @@
     <Content Include="Views\Admin\RecupDoc.cshtml" />
     <Content Include="Views\Admin\ConfirmDocs.cshtml" />
     <Content Include="Views\Admin\DetailsDoc.cshtml" />
+    <Content Include="Views\Admin\checkdoc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -214,7 +214,7 @@ namespace WebEpione.Controllers
         }
 
 
-        public ActionResult checkdoc(int id)
+        public ActionResult CheckDoc(int id)
         {
             var Doc = userservice.GetById(id);
 
@@ -259,8 +259,12 @@ namespace WebEpione.Controllers
                     UserViewModl.doctolibSpec = item3.spec.InnerText;
                 }
             }
-            UserViewModl.Id = Doc.Id;
 
+
+
+
+
+            UserViewModl.Id = Doc.Id;
             UserViewModl.FirstName = Doc.FirstName;
             UserViewModl.Email = Doc.Email;
             UserViewModl.LastName = Doc.LastName;
@@ -268,9 +272,11 @@ namespace WebEpione.Controllers
             UserViewModl.birthDate = Doc.BirthDate;
             UserViewModl.gender = Doc.Gender;
             UserViewModl.phoneNumber = Doc.PhoneNumber;
+            UserViewModl.Speciality = Doc.Speciality;
 
 
             if (UserViewModl.doctolibName != "")
+
                 UserViewModl.avalib = "Doctor available in doctolib";
             else
                 UserViewModl.avalib = "Not found in doctolib";
