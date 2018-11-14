@@ -207,6 +207,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListdocController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -214,6 +215,9 @@
     <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Controllers\StepRequestController.cs" />
     <Compile Include="Controllers\TreatmentController.cs" />
+    <Compile Include="Controllers\VisitReasonController.cs" />
+    <Compile Include="Controllers\WSchihebController.cs" />
+    <Compile Include="Controllers\WSeventController.cs" />
     <Compile Include="Controllers\WSFatmaController.cs" />
     <Compile Include="Controllers\WSIdentityController.cs" />
     <Compile Include="Global.asax.cs">
@@ -221,13 +225,16 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppointmentViewModel.cs" />
+    <Compile Include="Models\DoctorViewModel.cs" />
     <Compile Include="Models\DocViewModel.cs" />
+    <Compile Include="Models\EventViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PatientViewModel.cs" />
     <Compile Include="Models\StepRequestViewModel.cs" />
     <Compile Include="Models\StepViewModel.cs" />
     <Compile Include="Models\TreatmentViewModel.cs" />
+    <Compile Include="Models\VisitReasonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -300,7 +307,6 @@
     <Content Include="Views\Step\Delete.cshtml" />
     <Content Include="Views\StepRequest\Index.cshtml" />
     <Content Include="Views\Home\UserConnected.cshtml" />
-    <Content Include="Views\Treatment\IndexPatient.cshtml" />
     <Content Include="Views\Treatment\DetailsPatient.cshtml" />
     <Content Include="Views\Step\EditPatient.cshtml" />
     <Content Include="Views\PatientFatma\Index.cshtml" />
@@ -311,6 +317,15 @@
     <Content Include="Views\Appointment\Index.cshtml" />
     <Content Include="Views\Listdoc\Details.cshtml" />
     <Content Include="Views\Listdoc\Index.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\VisitReason\Create.cshtml" />
+    <Content Include="Views\VisitReason\Delete.cshtml" />
+    <Content Include="Views\VisitReason\Edit.cshtml" />
+    <Content Include="Views\VisitReason\Index.cshtml" />
+    <Content Include="Views\Event\IndexPatient.cshtml" />
+    <Content Include="Views\Home\DoctorInformations.cshtml" />
+    <Content Include="Views\Shared\DoctorLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

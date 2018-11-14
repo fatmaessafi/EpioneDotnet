@@ -61,6 +61,7 @@
     <Compile Include="Configuration\AppointmentConfig.cs" />
     <Compile Include="Configuration\DayOffConfig.cs" />
     <Compile Include="Configuration\DoctorConfig.cs" />
+    <Compile Include="Configuration\EventConfig.cs" />
     <Compile Include="Configuration\MessageConfig.cs" />
     <Compile Include="Configuration\StepConfig.cs" />
     <Compile Include="Configuration\TreatmentConfig.cs" />
@@ -75,9 +76,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201811141855250_Wael.cs" />
-    <Compile Include="Migrations\201811141855250_Wael.Designer.cs">
-      <DependentUpon>201811141855250_Wael.cs</DependentUpon>
+    <Compile Include="Migrations\201811142014296_chiheb.cs" />
+    <Compile Include="Migrations\201811142014296_chiheb.Designer.cs">
+      <DependentUpon>201811142014296_chiheb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,8 +94,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811141855250_Wael.resx">
-      <DependentUpon>201811141855250_Wael.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201811142014296_chiheb.resx">
+      <DependentUpon>201811142014296_chiheb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -57,6 +57,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventIservice.cs" />
+    <Compile Include="EventService.cs" />
     <Compile Include="IserviceAppointment.cs" />
     <Compile Include="Iservicedoc.cs" />
     <Compile Include="IServicePatient.cs" />
@@ -73,6 +75,8 @@
     <Compile Include="ServiceTreatment.cs" />
     <Compile Include="ServiceUser.cs" />
     <Compile Include="UserService.cs" />
+    <Compile Include="VisitReasonIService.cs" />
+    <Compile Include="VisitReasonService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

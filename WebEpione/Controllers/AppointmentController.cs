@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.Entities;
 using Microsoft.AspNet.Identity;
 using Service;
 using ServicePattern;
@@ -14,8 +15,9 @@ namespace WebEpione.Controllers
 {
     public class AppointmentController : Controller
     {
-
+        UserService us = new UserService();
         IserviceAppointment AS = new ServiceAppointment();
+        Iservicedoc DS = new Serivicedoc();
         // GET: Appointment
         public ActionResult Index()
         {
@@ -89,7 +91,19 @@ namespace WebEpione.Controllers
             a.PatientId = int.Parse(User.Identity.GetUserId());
 
 
+            Event e = new Event();
+            e.Subject = us.GetUserById(a.PatientId).FirstName+" "+us.GetUserById(a.PatientId).LastName;
+            e.Description = collection.VisitReason;
+            e.Start = collection.AppDate;
+            TimeSpan tspan = new TimeSpan(0, 0, 15, 0);
 
+            e.End = collection.AppDate + tspan;
+            e.ThemeColor = "green";
+            e.DoctorId = Id;
+
+            EventService SV = new EventService();
+            SV.Add(e);
+            SV.Commit();
 
             AS.Add(a);
             AS.Commit();

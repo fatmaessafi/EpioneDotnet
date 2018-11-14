@@ -115,6 +115,7 @@
                         <ul>
                             <li><a href="#0" onclick="onHtmlClick('Doctors', 0)" class="btn_listing">View on Map</a></li>
                             <li><a href="" target="_blank">Directions</a></li>
+                            <li> <a href=@Url.Action("IndexPatient", "Event", new { id = item.Id })>Calender</a></li>
                             <li><a href="@Url.Action("Details","Listdoc", new {firstname = item.firstname})">Book now</a></li>
                         </ul>
                     </div>

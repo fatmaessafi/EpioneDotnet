@@ -37,6 +37,8 @@ namespace Data
         public DbSet<Treatment> Treatment { get; set; }
         public DbSet<VisitReason> VisitReason { set; get; }
         public DbSet<StepRequest> StepRequest { set; get; }
+        public DbSet<Event> Event { set; get; }
+
 
         //On ModelCreating
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -52,6 +54,7 @@ namespace Data
             modelBuilder.Configurations.Add(new Configuration.StepConfig());
             modelBuilder.Configurations.Add(new Configuration.VisitReasonConfig());
             modelBuilder.Configurations.Add(new Configuration.TreatmentConfig());
+            modelBuilder.Configurations.Add(new Configuration.EventConfig());
 
 
             //Add Convention

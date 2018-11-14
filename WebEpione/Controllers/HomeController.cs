@@ -19,6 +19,7 @@ namespace WebEpione.Controllers
         IUserService uus = new ServiceUser();
         IServicePatient sp = new ServicePatient();
         IServiceTreatment st = new ServiceTreatment();
+        Iservicedoc sd = new Serivicedoc();
         public ActionResult Index()
         {
             if (User.Identity.GetUserId() != null)
@@ -91,6 +92,38 @@ namespace WebEpione.Controllers
             listuser.Add(pvm);
         int nb= st.nbTotalTreatment(currentUserId);
             ViewBag.nbtreat = nb;
+
+
+            return PartialView(listuser);
+        }
+        public PartialViewResult DoctorInformations()
+        {
+            int currentUserId = 0;
+            if (User.Identity.GetUserId() != "")
+            {
+                currentUserId = Int32.Parse(User.Identity.GetUserId());
+
+            }
+
+            var cuser = new Doctor();
+            if (sd.GetById(currentUserId) != null) { cuser = sd.GetById(currentUserId); }
+            DoctorViewModel pvm = new DoctorViewModel();
+            pvm.LastName = cuser.LastName;
+            pvm.FirstName = cuser.FirstName;
+            pvm.City = cuser.City;
+            pvm.BirthDate = cuser.BirthDate;
+            pvm.CivilStatus = cuser.CivilStatus;
+            pvm.Gender = cuser.Gender;
+            pvm.HomeAddress = cuser.HomeAddress;
+            pvm.Location = cuser.Location;
+            pvm.RegistrationDate = cuser.RegistrationDate;
+           if(cuser.Surgeon==true )pvm.Surgeon = "Yes";
+            if (cuser.Surgeon == false) pvm.Surgeon = "No";
+            pvm.Speciality = cuser.Speciality;
+            pvm.PhoneNumber = cuser.PhoneNumber;
+            List<DoctorViewModel> listuser = new List<DoctorViewModel>();
+            listuser.Add(pvm);
+            
 
 
             return PartialView(listuser);

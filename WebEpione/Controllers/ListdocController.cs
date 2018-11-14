@@ -65,7 +65,7 @@ namespace WebEpione.Controllers
             foreach (var item in DS.GetAll())
             {
                 DocViewModel PVM = new DocViewModel();
-              //  PVM.Id = item.Id;
+               PVM.Id = item.Id;
                 PVM.firstname = item.FirstName;
                 PVM.lastname = item.LastName;
                 PVM.Speciality = item.Speciality;

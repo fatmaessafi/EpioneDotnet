@@ -25,13 +25,26 @@
                 <span><a href=@Url.Action("Index", "PatientFatma")>Treatments</a></span>
 
             </li>
+            <li>
+                <span><a href=@Url.Action("Index", "Event")>Calendar</a></span>
+
+            </li>
+            <li>
+                <span><a href=@Url.Action("Index", "VisitReason")>Performance</a></span>
+
+            </li>
+
+            <li>
+                <span><a href=@Url.Action("Create", "Event")>Days Off</a></span>
+
+            </li>
             }
             else
             {
+
                 <li>
                     <span><a href=@Url.Action("IndexPatient", "Treatment", new { id = item.Id })>My treatments</a></span>
                   
-
                 </li>
                 <li>
                     <span><a href=@Url.Action("Index", "Listdoc")>Book appointment</a></span>
