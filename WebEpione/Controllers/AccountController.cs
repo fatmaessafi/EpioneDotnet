@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using WebEpione.Models;
 using Domain.Entities;
 using Domain;
+using Service;
 
 namespace WebEpione.Controllers
 {
@@ -75,10 +76,12 @@ namespace WebEpione.Controllers
             {
                 string currentUserId = User.Identity.GetUserId();
 
-
+              
+                
 
                 return View(model);
             }
+            User currentU = await UserManager.FindByEmailAsync(model.Email);
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
@@ -86,7 +89,22 @@ namespace WebEpione.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+
+                    if (currentU.Id == 1003)
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else if (currentU.Enabled==false)
+                    {
+                        return RedirectToAction("NotApproved", "Admin");
+                    }
+                    else
+                    {
+                        return RedirectToLocal(returnUrl);
+                    }
+
+
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -186,7 +204,11 @@ namespace WebEpione.Controllers
             {
                 if (ModelState.IsValid)
                 {
+<<<<<<< HEAD
                     var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress=model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = true, RegistrationDate = DateTime.UtcNow.Date, Speciality=model.Speciality, Location=model.Location };
+=======
+                    var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date, Speciality=model.Speciality, Location=model.Location };
+>>>>>>> origin/Khalil
                     if(model.Surgeon=="Yes")
                     {
                         user.Surgeon = true;
@@ -195,7 +217,11 @@ namespace WebEpione.Controllers
                     {
                         user.Surgeon = false;
                     }
+
                     var result = await UserManager.CreateAsync(user, model.Password);
+
+
+
                     if (result.Succeeded)
                     {
 
