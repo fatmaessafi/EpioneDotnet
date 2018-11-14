@@ -25,9 +25,29 @@ namespace WebEpione.Controllers
             s.var = c;
             s.varp = d;
             s.app = e;
+
                          
             return View(s);       
     }
+        public ActionResult GetData()
+        {
+            StatService ss = new StatService();
+            int pigiste = ss.GetAll().Where(x => x.VisitReason == "Fievre").Count();
+            int employe = ss.GetAll().Where(x => x.VisitReason == "Grippe").Count();
+
+            Type obj = new Type();
+            obj.employe = employe;
+            obj.pigiste = pigiste;
+
+            return Json(obj, JsonRequestBehavior.AllowGet);
+        }
+
+        public class Type
+        {
+            public int employe { get; set; }
+            public int pigiste { get; set; }
+        }
+
 
         // GET: Stat/Details/5
         public ActionResult Details(int id)
@@ -59,6 +79,11 @@ namespace WebEpione.Controllers
 
         // GET: Stat/Edit/5
         public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        public ActionResult Index1()
         {
             return View();
         }

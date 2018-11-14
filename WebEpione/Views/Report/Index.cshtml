@@ -1,9 +1,63 @@
 ﻿@model IEnumerable<WebEpione.Models.ReportViewModels>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Report", "Create")
    
 </p>
+
+
+<div class="col-sm-7">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" id="Search" placeholder="Search" class="form-control" />
+
+        </div>
+    </div>
+
+
+</div>
+
+
+@section Scripts{
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+                   $(document).ready(function () {
+
+                function Contains(text_one,text_two){
+                if(text_one.indexOf(text_two) != -1)
+	                return true;
+                }
+
+
+                $("#Search").keyup(function(){
+
+                var searchText = $("#Search").val().toLowerCase();
+                $(".Search").each(function () {
+
+                if(!Contains($(this).text().toLowerCase(),searchText))
+                     {      $(this).hide();}
+                     else{
+
+                $(this).show();
+                          }
+
+                    });
+
+                    });
+
+                        });
+    </script>
+}
+
+
+
+
+
+
+
+
 <table class="table">
     <tr>
         <th>
@@ -24,29 +78,38 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReportTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReportDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReportDate)
-        </td>
-        @*<td>
-            
-            <img src="@Url.Content("~/Content/Upload/"+item.ReportImage)" width="200" height="100"/>
-        </td>*@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReportId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReportId })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+
+    <div class="Search">
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReportDate)
+            </td>
+            <td>
+
+                <img src="@Url.Content("~/Content/Upload/"+item.ReportImage)" width="200" height="100" />
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReportId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReportId })
+            </td>
+        </tr>
+     
+        </div>  
 }
 
 </table>
 
-<a href="@Url.Action("ExportPDF","Report")"> -  Export PDF</a>
+
+
+
+<a href="@Url.Action("ExportReport","Report")"> -  Export PDF</a>
 <a href="javascript:window.print()"> / -  Print Page </a>  

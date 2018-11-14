@@ -94,7 +94,7 @@ else
                         <nav id="menu" class="main-menu">
                             <ul>
                                 <li>
-                                    <span><a href="#0">Analytics</a></span>
+                                    <span><a href="@Url.Action("Index","Stat")">Analytics</a></span>
                                     <ul>
                                         
                                     </ul>
@@ -103,8 +103,8 @@ else
                                 <li>
                                     <span><a href="#0"> Reports </a></span>
                                     <ul>
-                                        <li><a href="detail-page-working-booking.html">Add report</a></li>
-                                        <li><a href="detail-page-working-booking.html">Display report</a></li>
+                                        <li><a href="@Url.Action("Create","Report")">Add report</a></li>
+                                        <li><a href="@Url.Action("Index","Report")">Display report</a></li>
                                        
                                     </ul>
                                 </li>
@@ -193,7 +193,7 @@ else
     <!-- Back to top button -->
     <!-- COMMON SCRIPTS -->
     @Scripts.Render("~/Content/js")
-
+    @RenderSection("scripts", required: false)
 </body>
 
 

@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebEpione.Models;
 using Rotativa;
-
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace WebEpione.Controllers
 {
@@ -44,6 +44,46 @@ namespace WebEpione.Controllers
 
            
         }
+
+
+        public ActionResult ExportReport()
+        {
+            List<ReportViewModels> lists = new List<ReportViewModels>();
+            foreach (var item in RS.GetAll())
+            {
+                ReportViewModels PVM = new ReportViewModels();
+                PVM.ReportId = item.ReportId;
+                PVM.ReportTitle = item.ReportTitle;
+                PVM.ReportDescription = item.ReportDescription;
+                PVM.ReportImage = item.ReportImage;
+                PVM.ReportDate = item.ReportDate;
+
+                lists.Add(PVM);
+            }
+
+            ReportDocument rd = new ReportDocument();
+            rd.Load(Path.Combine(Server.MapPath("~/Reports"), "Report.rpt"));
+            rd.SetDataSource(RS.GetAll());
+            //rd.SetDataSource("Rania");
+            Response.Buffer = false;
+            Response.ClearContent();
+            Response.ClearHeaders();
+
+            try
+            {
+                Stream stream = rd.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                stream.Seek(0, SeekOrigin.Begin);
+                return File(stream, "application/pdf", "Report.pdf");
+            }
+            catch (Exception ex)
+            {
+                throw;
+                //return View("IndexA","Offer");
+            }
+        }
+
+
+
 
         // GET: Report/Details/5
         public ActionResult Details(int id)
@@ -175,5 +215,29 @@ namespace WebEpione.Controllers
             
            
         }
+
+
+      
+
+       
+       
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
