@@ -212,6 +212,8 @@
     <Compile Include="Controllers\StepController.cs" />
     <Compile Include="Controllers\StepRequestController.cs" />
     <Compile Include="Controllers\TreatmentController.cs" />
+    <Compile Include="Controllers\WSFatmaController.cs" />
+    <Compile Include="Controllers\WSIdentityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -48,7 +48,7 @@ namespace WebEpione.Controllers
             TempData["idTreatment"] = id;
             try
             {
-                var docteurreferant = us.GetUserById(st.GetById(id).DoctorId).Id;
+                var docteurreferant = st.GetById(id).DoctorId;
                 if (Int32.Parse(User.Identity.GetUserId()) == docteurreferant)
                 {
 
@@ -77,11 +77,14 @@ namespace WebEpione.Controllers
                     sr.NewLastModificationBy = Int32.Parse(User.Identity.GetUserId());
                     sr.NewLastModificationDate = DateTime.UtcNow.Date;
                     sr.NewModificationReason = "No modifications yet";
-                    sr.NewStepDate = collection.NewStepDate;
+                    sr.NewStepDate = collection.StepDate;
                     sr.NewStepDescription = collection.StepDescription;
                     sr.NewStepSpeciality = collection.StepSpeciality;
+                    sr.StepId = 0;
                     sr.Type = "Add";
                     sr.NewValidation = false;
+                    ssr.Add(sr);
+                    ssr.Commit();
                     var maildocteur = us.GetUserById(st.GetById(sr.NewTreatmentId).DoctorId).Email;
                     var mailpatient = us.GetUserById(st.GetById(sr.NewTreatmentId).PatientId).Email;
                     var lastmodifbyname = us.GetUserById(sr.NewLastModificationBy).FirstName + " " + us.GetUserById(sr.NewLastModificationBy).LastName;
@@ -97,8 +100,7 @@ namespace WebEpione.Controllers
                     smtpClient.Send(mail);
                     //!MAIL
 
-                    ssr.Add(sr);
-                    ssr.Commit();
+                  
                 }
                 return RedirectToAction("Details", "Treatment", new { id = id });
             }
@@ -169,7 +171,6 @@ namespace WebEpione.Controllers
 
             try
             {
-                //var docteurreferant = us.GetUserById(st.GetById(id).DoctorId).Id;
 
                 var docteurreferant = st.GetById(ss.GetById(id).TreatmentId).DoctorId;
                 if (docteurreferant!=Int32.Parse(User.Identity.GetUserId()))
