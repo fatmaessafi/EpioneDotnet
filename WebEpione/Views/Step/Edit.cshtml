@@ -170,7 +170,7 @@
                                     @Html.LabelFor(model => model.NewStepDate, htmlAttributes: new { @class = "control-label col-md-2" })
                                     <div class="col-md-10">
                                         @Html.TextBoxFor(model => model.NewStepDate,
-                             new { @class = "form-control", @id = "booking_date" })
+                             new { @class = "form-control", type = "date" })
                                          @Html.ValidationMessageFor(model => model.NewStepDate, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
