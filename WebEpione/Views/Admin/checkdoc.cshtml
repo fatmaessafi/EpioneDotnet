@@ -145,7 +145,8 @@
                             <small>@Html.DisplayFor(modelItem => Model.doctolibSpec)</small>
                             <h4>@Html.DisplayFor(modelItem => Model.doctolibName)</h4>
                             <p>@Html.DisplayFor(modelItem => Model.doctolibAdress)<br></p>
-                            <p><a href="#0" class="btn_1 gray"><i class="fa fa-fw fa-user"></i> View profile</a></p>
+                            <p><a href="@Url.Action("Redirect", "Admin", new { add = Model.doctolibADD,  nom = Model.doctolibNOM, spc = Model.doctolibSPC })"
+ class="btn_1 gray"><i class="fa fa-fw fa-user"></i> View profile</a></p>
                             <ul class="buttons">
                             </ul>
                         </li>
@@ -177,7 +178,7 @@
                                     <li><strong>Email</strong>@Html.DisplayFor(modelItem => Model.Email)</li>
                                 </ul>
                                 <ul class="buttons">
-                                    <li><a href="#0" class="btn_1 gray approve"><i class="fa fa-fw fa-check-circle-o"></i> Approve</a></li>
+                                    <li><a href="@Url.Action("Confirmer", "Admin", new { id = Model.Id })" class="btn_1 gray approve"><i class="fa fa-fw fa-check-circle-o"></i> Approve</a></li>
                                     <li><a href="#0" class="btn_1 gray delete"><i class="fa fa-fw fa-times-circle-o"></i> Send Notification</a></li>
                                 </ul>
                             </li>

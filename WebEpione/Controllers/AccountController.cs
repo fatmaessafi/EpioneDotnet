@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using WebEpione.Models;
 using Domain.Entities;
 using Domain;
+using Service;
 
 namespace WebEpione.Controllers
 {
@@ -75,10 +76,12 @@ namespace WebEpione.Controllers
             {
                 string currentUserId = User.Identity.GetUserId();
 
-
+              
+                
 
                 return View(model);
             }
+            User currentU = await UserManager.FindByEmailAsync(model.Email);
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
@@ -86,7 +89,22 @@ namespace WebEpione.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+
+                    if (currentU.Id == 1003)
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else if (currentU.Enabled==false)
+                    {
+                        return RedirectToAction("NotApproved", "Admin");
+                    }
+                    else
+                    {
+                        return RedirectToLocal(returnUrl);
+                    }
+
+
+
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

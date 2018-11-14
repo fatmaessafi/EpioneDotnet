@@ -79,13 +79,6 @@ namespace WebEpione.Controllers
 
                 }
 
-
-
-
-
-
-
-
                 i++;
                 lists.Add(UserViewModl);
             }
@@ -147,11 +140,11 @@ namespace WebEpione.Controllers
         }
 
 
-        public ActionResult DetailsDoc(string add , string nom , string spc)
+        public ActionResult DetailsDoc(string add, string nom, string spc)
         {
             List<DocIndivViewModel> lists = new List<DocIndivViewModel>();
 
-            string adress = "https://www.doctolib.fr/"+spc+"/"+add+"/"+nom;
+            string adress = "https://www.doctolib.fr/" + spc + "/" + add + "/" + nom;
             HtmlAgilityPack.HtmlWeb web = new HtmlAgilityPack.HtmlWeb();
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             Console.WriteLine(adress);
@@ -244,6 +237,7 @@ namespace WebEpione.Controllers
                 var HeaderNames = doc.DocumentNode.SelectNodes("//a[@class='dl-search-result-name js-search-result-path']").ToList();
                 var Headerspec = doc.DocumentNode.SelectNodes("//div[@class='dl-search-result-subtitle']").ToList();
                 var HeaderAdd = doc.DocumentNode.SelectNodes("//div[@class='dl-text dl-text-body']").ToList();
+
                 var alternatePairs = HeaderNames.Select(
                  (item1, index1) => new
                  {
@@ -254,16 +248,23 @@ namespace WebEpione.Controllers
                  });
                 foreach (var item3 in alternatePairs)
                 {
+
                     UserViewModl.doctolibName = item3.name.InnerText;
                     UserViewModl.doctolibAdress = item3.address.InnerText;
                     UserViewModl.doctolibSpec = item3.spec.InnerText;
+
                 }
             }
 
+            //if (UserViewModl.doctolibName != "")
+
+            //{
+
+            //}
 
 
 
-
+            UserViewModl.doctolibURL = "https://www.doctolib.fr/" + UserViewModl.doctolibSPC + "/" + UserViewModl.doctolibADD + "/" + UserViewModl.doctolibNOM;
             UserViewModl.Id = Doc.Id;
             UserViewModl.FirstName = Doc.FirstName;
             UserViewModl.Email = Doc.Email;
@@ -276,8 +277,24 @@ namespace WebEpione.Controllers
 
 
             if (UserViewModl.doctolibName != "")
+            {
+                string[] ADD = UserViewModl.doctolibAdress.ToString().Split(' ');
+                UserViewModl.doctolibADD = ADD[ADD.Length - 1];
+                string[] NOM = UserViewModl.doctolibName.ToString().Split(' ');
+                UserViewModl.doctolibNOM = (NOM[1] + "-" + NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+                string[] SPC = UserViewModl.doctolibSpec.ToString().Split(' ');
+                if (SPC.Length == 2)
+                {
+                    UserViewModl.doctolibSPC = (SPC[0] + "-" + SPC[1]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
 
+                }
+                else
+                {
+                    UserViewModl.doctolibSPC = SPC[0].ToLowerInvariant().Replace("é", "e").Replace("è", "e");
+
+                }
                 UserViewModl.avalib = "Doctor available in doctolib";
+            }
             else
                 UserViewModl.avalib = "Not found in doctolib";
 
@@ -286,6 +303,42 @@ namespace WebEpione.Controllers
         }
 
 
+
+
+        public ActionResult Redirect(string add, string nom, string spc)
+        {
+            string adress = "https://www.doctolib.fr/" + spc + "/" + add + "/" + nom;
+
+            return Redirect(adress);
+        }
+        public ActionResult Confirmer(int id)
+        {
+            var Doc = userservice.GetById(id);
+            Doc.Enabled = true;
+            Doc.Surgeon =false;
+            // SendSMS.Send("test", "+21696174714");
+
+
+
+
+            try
+            {
+                // TODO: Add update logic here
+                userservice.Update(Doc);
+                userservice.Commit();
+
+                return RedirectToAction("ConfirmDocs");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult NotApproved()
+        {
+            return View();
+        }
     }
-}
+    }
 
