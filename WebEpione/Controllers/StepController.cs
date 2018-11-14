@@ -169,8 +169,10 @@ namespace WebEpione.Controllers
 
             try
             {
-                var docteurreferant = us.GetUserById(st.GetById(id).DoctorId).Id;
-                if (Int32.Parse(User.Identity.GetUserId()) != docteurreferant)
+                //var docteurreferant = us.GetUserById(st.GetById(id).DoctorId).Id;
+
+                var docteurreferant = st.GetById(ss.GetById(id).TreatmentId).DoctorId;
+                if (docteurreferant!=Int32.Parse(User.Identity.GetUserId()))
                 {
                     var s = ss.GetById(id);
                     TempData["idTreatment"] = s.TreatmentId;
@@ -197,12 +199,13 @@ namespace WebEpione.Controllers
                     sr.Type = "Update";
                     ssr.Add(sr);
                     ssr.Commit();
+                    //MAIL
                     var maildocteur = us.GetUserById(st.GetById(s.TreatmentId).DoctorId).Email;
                     var mailpatient = us.GetUserById(st.GetById(s.TreatmentId).PatientId).Email;
                     var lastmodifbyname = us.GetUserById(s.LastModificationBy).FirstName + " " + us.GetUserById(s.LastModificationBy).LastName;
                     var illness = st.GetById(s.TreatmentId).Illness;
                     var patient = us.GetUserById(st.GetById(s.TreatmentId).PatientId).FirstName + " " + us.GetUserById(st.GetById(s.TreatmentId).PatientId).LastName;
-                    //MAIL
+
                     MailMessage mail = new MailMessage("EpionePidev@esprit.tn", maildocteur, "Modification request", "The doctor '" + lastmodifbyname + "' sent a request to modify the treatment of '" + illness + "' of the patient '" + patient + "'");
                     mail.IsBodyHtml = true;
                     SmtpClient smtpClient = new SmtpClient("Smtp.gmail.com", 587);
@@ -211,7 +214,7 @@ namespace WebEpione.Controllers
                     smtpClient.Credentials = new System.Net.NetworkCredential("EpionePidev@gmail.com", "epionepidev123");
                     smtpClient.Send(mail);
                     //!MAIL
-                   
+
                     return RedirectToAction("Details", "Treatment", new { id = s.TreatmentId });
 
                 }
@@ -221,16 +224,16 @@ namespace WebEpione.Controllers
                     var s = ss.GetById(id);
                     TempData["idPatient"] = st.GetById(s.TreatmentId).PatientId;
                     TempData["idTreatment"] = s.TreatmentId;
-
+                    s.StepId = s.StepId;
                     s.LastModificationBy = Int32.Parse(User.Identity.GetUserId());
                     s.LastModificationDate = DateTime.UtcNow.Date;
                     s.ModificationReason = collection.NewModificationReason;
-                   
+
                     s.StepDate = collection.NewStepDate;
                     s.StepDescription = collection.NewStepDescription;
                     s.StepSpeciality = collection.NewStepSpeciality;
-                    
-                   s.NbModifications +=1;
+
+                    s.NbModifications += 1;
                     if (collection.NewValidation == "Valid")
                     {
                         s.Validation = true;
@@ -243,10 +246,9 @@ namespace WebEpione.Controllers
                     ss.Commit();
                     return RedirectToAction("Details", "Treatment", new { id = s.TreatmentId });
 
-
                 }
+
             }
-               
             catch
             {
                 return View();
