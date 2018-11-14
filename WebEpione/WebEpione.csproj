@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.8.10.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.10\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -206,6 +210,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -225,6 +230,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppointmentViewModel.cs" />
+    <Compile Include="Models\DocIndivViewModel.cs" />
     <Compile Include="Models\DoctorViewModel.cs" />
     <Compile Include="Models\DocViewModel.cs" />
     <Compile Include="Models\EventViewModel.cs" />
@@ -234,11 +240,65 @@
     <Compile Include="Models\StepRequestViewModel.cs" />
     <Compile Include="Models\StepViewModel.cs" />
     <Compile Include="Models\TreatmentViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\VisitReasonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ContentAdmin\css\admin.css" />
+    <Content Include="ContentAdmin\css\custom.css" />
+    <Content Include="ContentAdmin\img\apple-touch-icon-114x114-precomposed.png" />
+    <Content Include="ContentAdmin\img\apple-touch-icon-144x144-precomposed.png" />
+    <Content Include="ContentAdmin\img\apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="ContentAdmin\img\apple-touch-icon-72x72-precomposed.png" />
+    <Content Include="ContentAdmin\img\avatar1.jpg" />
+    <Content Include="ContentAdmin\img\avatar2.jpg" />
+    <Content Include="ContentAdmin\img\avatar3.jpg" />
+    <Content Include="ContentAdmin\img\avatar4.jpg" />
+    <Content Include="ContentAdmin\img\avatar5.jpg" />
+    <Content Include="ContentAdmin\img\avatar6.jpg" />
+    <Content Include="ContentAdmin\img\doclogo.png" />
+    <Content Include="ContentAdmin\img\favicon.ico" />
+    <Content Include="ContentAdmin\img\logo.png" />
+    <Content Include="ContentAdmin\js\admin-charts-all.js" />
+    <Content Include="ContentAdmin\js\admin-charts.js" />
+    <Content Include="ContentAdmin\js\admin-datatables.js" />
+    <Content Include="ContentAdmin\js\admin.js" />
+    <Content Include="ContentAdmin\js\bootstrap-datepicker.js" />
+    <Content Include="ContentAdmin\js\common_scripts.min.js" />
+    <Content Include="ContentAdmin\js\functions.js" />
+    <Content Include="ContentAdmin\js\infobox.js" />
+    <Content Include="ContentAdmin\js\jquery-2.2.4.min.js" />
+    <Content Include="ContentAdmin\js\jquery.cookiebar.js" />
+    <Content Include="ContentAdmin\js\jquery.selectbox-0.2.js" />
+    <Content Include="ContentAdmin\js\mapmarker.jquery.js" />
+    <Content Include="ContentAdmin\js\mapmarker_contacts_func.js" />
+    <Content Include="ContentAdmin\js\map_listing.js" />
+    <Content Include="ContentAdmin\js\modernizr.js" />
+    <Content Include="ContentAdmin\js\modernizr_tables.js" />
+    <Content Include="ContentAdmin\js\pw_strenght.js" />
+    <Content Include="ContentAdmin\js\tables_func.js" />
+    <Content Include="ContentAdmin\js\tables_func_2.js" />
+    <Content Include="ContentAdmin\js\video_header.js" />
+    <Content Include="ContentAdmin\vendor\animate.min.css" />
+    <Content Include="ContentAdmin\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="ContentAdmin\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="ContentAdmin\vendor\chart.js\Chart.js" />
+    <Content Include="ContentAdmin\vendor\chart.js\Chart.min.js" />
+    <Content Include="ContentAdmin\vendor\datatables\dataTables.bootstrap4.css" />
+    <Content Include="ContentAdmin\vendor\datatables\dataTables.bootstrap4.js" />
+    <Content Include="ContentAdmin\vendor\datatables\jquery.dataTables.js" />
+    <Content Include="ContentAdmin\vendor\dropzone.css" />
+    <Content Include="ContentAdmin\vendor\dropzone.min.js" />
+    <Content Include="ContentAdmin\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="ContentAdmin\vendor\font-awesome\fonts\fontawesome-webfont3e6e.svg" />
+    <Content Include="ContentAdmin\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="ContentAdmin\vendor\jquery.magnific-popup.min.js" />
+    <Content Include="ContentAdmin\vendor\jquery.selectbox-0.2.js" />
+    <Content Include="ContentAdmin\vendor\jquery\jquery.min.js" />
+    <Content Include="ContentAdmin\vendor\magnific-popup.css" />
+    <Content Include="ContentAdmin\vendor\retina-replace.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -249,6 +309,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ContentAdmin\vendor\font-awesome\fonts\fontawesome-webfont3e6e.eot" />
+    <Content Include="ContentAdmin\vendor\font-awesome\fonts\fontawesome-webfont3e6e.ttf" />
+    <Content Include="ContentAdmin\vendor\font-awesome\fonts\fontawesome-webfont3e6e.woff" />
+    <Content Include="ContentAdmin\vendor\font-awesome\fonts\fontawesome-webfont3e6e.woff2" />
+    <Content Include="ContentAdmin\vendor\font-awesome\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -326,6 +391,13 @@
     <Content Include="Views\Event\IndexPatient.cshtml" />
     <Content Include="Views\Home\DoctorInformations.cshtml" />
     <Content Include="Views\Shared\DoctorLayout.cshtml" />
+    <Content Include="Views\Admin\checkdoc.cshtml" />
+    <Content Include="Views\Admin\ConfirmDocs.cshtml" />
+    <Content Include="Views\Admin\DetailsDoc.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\NotApproved.cshtml" />
+    <Content Include="Views\Admin\RecupDoc.cshtml" />
+    <Content Include="Views\Shared\TemplateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

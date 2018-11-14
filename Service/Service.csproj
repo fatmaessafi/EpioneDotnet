@@ -61,6 +61,7 @@
     <Compile Include="EventService.cs" />
     <Compile Include="IserviceAppointment.cs" />
     <Compile Include="Iservicedoc.cs" />
+    <Compile Include="IServiceDoctolib.cs" />
     <Compile Include="IServicePatient.cs" />
     <Compile Include="IServiceStep.cs" />
     <Compile Include="IServiceStepRequest.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serivicedoc.cs" />
     <Compile Include="ServiceAppointment.cs" />
+    <Compile Include="ServiceDoctolib.cs" />
     <Compile Include="ServicePatient.cs" />
     <Compile Include="ServiceStep.cs" />
     <Compile Include="ServiceStepRequest.cs" />

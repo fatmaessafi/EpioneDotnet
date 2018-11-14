@@ -90,7 +90,7 @@ namespace WebEpione.Controllers
             {
                 case SignInStatus.Success:
 
-                    if (currentU.Id == 1003)
+                    if (currentU.Id == 3)
                     {
                         return RedirectToAction("Index", "Admin");
                     }
@@ -204,11 +204,8 @@ namespace WebEpione.Controllers
             {
                 if (ModelState.IsValid)
                 {
-<<<<<<< HEAD
                     var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress=model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = true, RegistrationDate = DateTime.UtcNow.Date, Speciality=model.Speciality, Location=model.Location };
-=======
-                    var user = new Doctor { UserName = model.Email, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName, Password = model.Password, PhoneNumber = model.PhoneNumber, PhoneNumberConfirmed = true, Gender = model.Gender, BirthDate = model.BirthDate, City = model.City, HomeAddress = model.HomeAddress, CivilStatus = model.CivilStatus, Enabled = false, RegistrationDate = DateTime.UtcNow.Date, Speciality=model.Speciality, Location=model.Location };
->>>>>>> origin/Khalil
+
                     if(model.Surgeon=="Yes")
                     {
                         user.Surgeon = true;
