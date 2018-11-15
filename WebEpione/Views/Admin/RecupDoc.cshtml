@@ -5,59 +5,6 @@
 }
 
 <h2>RecupDoc</h2>
-@*<div class="content-wrapper">
-    <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">Tables</li>
-        </ol>
-        <!-- Example DataTables Card-->
-        <div class="card mb-3">
-            <div class="card-header">
-                <i class="fa fa-table"></i> Data Table Example
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Speciality</th>
-                                <th>Adress</th>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Name</th>
-                                <th>Speciality</th>
-                                <th>Adress</th>      
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                            <tr>
-                                <td>@Html.DisplayFor(modelItem => item.doctolibName) </td>
-                                <td>@Html.DisplayFor(modelItem => item.doctolibSpec)</td>
-                                <td>@Html.DisplayFor(modelItem => item.doctolibAdress)</td>
-                             
-                               <td><a href="@Url.Action("DetailsDoc", "Admin", new { add = item.doctolibADD,  nom = item.doctolibNOM, spc = item.doctolibSPC })" class="btn btn-primary btn-xs"></td>
-</tr>
-                            }
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
-        <!-- /tables-->
-    </div>
-    <!-- /container-fluid-->
-</div>*@
-<!-- /container-wrapper-->
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
@@ -65,17 +12,13 @@
             <li class="breadcrumb-item">
                 <a href="#">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Bookmarks</li>
+            <li class="breadcrumb-item active">Doctors from Doctolib.fr</li>
         </ol>
         <div class="box_general">
             <div class="header_box">
-                <h2 class="d-inline-block">Bookmarks List</h2>
+                <h2 class="d-inline-block">Doctors List</h2>
                 <div class="filter">
-                    <select name="orderby" class="selectbox">
-                        <option value="Any time">Any time</option>
-                        <option value="Latest">Latest</option>
-                        <option value="Oldest">Oldest</option>
-                    </select>
+
                 </div>
             </div>
             <div class="list_general">
@@ -87,7 +30,7 @@
                         <small>@Html.DisplayFor(modelItem => item.doctolibSpec)</small>
                         <h4>@Html.DisplayFor(modelItem => item.doctolibName) </h4>
                         <p>@Html.DisplayFor(modelItem => item.doctolibAdress)<br></p>
-                        <p><a href="@Url.Action("DetailsDoc", "Admin", new { add = item.doctolibADD,  nom = item.doctolibNOM, spc = item.doctolibSPC })" class="btn_1 gray"><i class="fa fa-fw fa-user"></i> View profile</a></p>
+                        <p><a href="@Url.Action("Redirect", "Admin", new { add = item.doctolibADD,  nom = item.doctolibNOM, spc = item.doctolibSPC })" class="btn_1 gray"><i class="fa fa-fw fa-user"></i> View profile</a></p>
 
                             
                             </li>
