@@ -67,6 +67,7 @@ namespace WebEpione.Controllers
                 string[] ADD = HeaderAdd[i].InnerText.ToString().Split(' ');
                 UserViewModl.doctolibADD = ADD[ADD.Length - 1];
                 string[] NOM = item3.InnerText.ToString().Split(' ');
+
                 UserViewModl.doctolibNOM = (NOM[1] + "-" + NOM[2]).ToLowerInvariant().Replace("é", "e").Replace("è", "e");
                 string[] SPC = Headerspec[i].InnerText.ToString().Split(' ');
                 if (SPC.Length == 2)
