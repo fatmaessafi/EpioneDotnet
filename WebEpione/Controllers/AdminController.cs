@@ -119,6 +119,7 @@ namespace WebEpione.Controllers
                 UserViewModl.gender = item.Gender;
                 UserViewModl.phoneNumber = item.PhoneNumber;
                 UserViewModl.Id = item.Id;
+                UserViewModl.Enabled = item.Enabled;
 
 
 
@@ -140,6 +141,47 @@ namespace WebEpione.Controllers
 
         }
 
+        public ActionResult Appending()
+        {
+            List<UserViewModel> lists = new List<UserViewModel>();
+
+            foreach (var item in userservice.GetListUser())
+            {
+                if (item.Enabled == false)
+                {
+                    UserViewModel UserViewModl = new UserViewModel();
+
+
+                    UserViewModl.FirstName = item.FirstName;
+                    UserViewModl.Email = item.Email;
+                    UserViewModl.LastName = item.LastName;
+                    UserViewModl.Speciality = item.Speciality;
+                    UserViewModl.Location = item.LastName;
+                    UserViewModl.address = item.HomeAddress;
+                    UserViewModl.birthDate = item.BirthDate;
+                    UserViewModl.gender = item.Gender;
+                    UserViewModl.phoneNumber = item.PhoneNumber;
+                    UserViewModl.Id = item.Id;
+
+
+
+
+                    lists.Add(UserViewModl);
+                }
+
+            }
+
+            try
+            {
+                // TODO: Add insert logic here
+                return View(lists);
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
 
         public ActionResult DetailsDoc(string add, string nom, string spc)
         {

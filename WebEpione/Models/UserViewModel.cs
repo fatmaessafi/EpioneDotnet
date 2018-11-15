@@ -25,6 +25,8 @@ namespace WebEpione.Models
         public String doctolibSPC { get; set; }
         public String avalib { get; set; }
         public String doctolibURL { get; set; }
+        public Boolean Enabled { get; set; }
+
 
 
 

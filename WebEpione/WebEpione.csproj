@@ -398,6 +398,7 @@
     <Content Include="Views\Admin\NotApproved.cshtml" />
     <Content Include="Views\Admin\RecupDoc.cshtml" />
     <Content Include="Views\Shared\TemplateAdmin.cshtml" />
+    <Content Include="Views\Admin\Appending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

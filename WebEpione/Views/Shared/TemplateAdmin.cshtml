@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Ansonika">
-    <title>FINDOCTOR - Admin dashboard</title>
+    <title>Epione - Admin dashboard</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="~/ContentAdmin/img/favicon.ico" type="image/x-icon">
@@ -33,7 +33,7 @@
 <body class="fixed-nav sticky-footer" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-default fixed-top" id="mainNav">
-        <a class="navbar-brand" href="index.html"><img src="~/ContentAdmin/img/logo.png" data-retina="true" alt="" width="163" height="36"></a>
+        <a class="navbar-brand" href="index.html"><img src="~/ContentAdmin/img/apple-touch-icon-114x114-precomposed.png" data-retina="true" alt="" width="163" height="36"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,10 +45,16 @@
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Get Doctors DB">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Get ALL Doctors DB">
                     <a class="nav-link" href="@Url.Action("ConfirmDocs", "Admin")">
                         <i class="fa fa-fw fa-plus-circle"></i>
-                        <span class="nav-link-text">Get Doctors DB</span>
+                        <span class="nav-link-text">Get ALL Doctors DB</span>
+                    </a>
+                </li> 
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Get Appending Doctors DB">
+                    <a class="nav-link" href="@Url.Action("Appending", "Admin")">
+                        <i class="fa fa-fw fa-plus-circle"></i>
+                        <span class="nav-link-text">Get Appending Doctors DB</span>
                     </a>
                 </li>   
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -211,7 +217,7 @@
     <footer class="sticky-footer">
         <div class="container">
             <div class="text-center">
-                <small>Copyright © FinDoctor 2017</small>
+                <small>Copyright © Doctolib 2018</small>
             </div>
         </div>
     </footer>
