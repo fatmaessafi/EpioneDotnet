@@ -223,6 +223,7 @@
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\StatController.cs" />
+    <Compile Include="Controllers\WSFirasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

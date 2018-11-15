@@ -12,10 +12,13 @@ namespace WebEpione.Models
     {
         [Key]
         public int ReportId { get; set; }
+        [Required]
         public string ReportTitle { get; set; }
+        [Required]
         public string ReportDescription { get; set; }
         public DateTime ReportDate { get; set; }
         public Step Step { get; set; }
+        [Required]
         public string ReportImage { get; set; }
     }
 }
