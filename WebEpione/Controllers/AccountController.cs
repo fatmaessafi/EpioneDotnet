@@ -96,6 +96,7 @@ namespace WebEpione.Controllers
                     }
                     else if (currentU.Enabled==false)
                     {
+                        AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
                         return RedirectToAction("NotApproved", "Admin");
                     }
                     else
@@ -490,6 +491,7 @@ namespace WebEpione.Controllers
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }
+
 
         //
         // GET: /Account/ExternalLoginFailure
