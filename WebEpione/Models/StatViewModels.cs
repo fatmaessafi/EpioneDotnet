@@ -16,6 +16,8 @@ namespace WebEpione.Models
         public int var { get; set; }
         public int varp { get; set; }
         public int app { get; set; }
+        public float vart { get; set; }
+        public float varm { get; set; }
 
     }
 }

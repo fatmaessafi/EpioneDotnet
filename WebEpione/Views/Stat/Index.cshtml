@@ -78,9 +78,48 @@
                     </a>
                 </div>
             </div>
-        </div>
 
-        <center><h2><b> Appointments Stats (Chart Model)</b></h2></center> 
+
+        </div>
+        <br />
+        <h3><b>  Rates (percentage)</b></h3>
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card dashboard text-white bg-warning o-hidden h-100">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw fa-star"></i>
+                        </div>
+                        <div class="mr-5"><h5> Annulation Rate : @Html.DisplayFor(model => model.vart) %</h5></div>
+                    </div>
+                    <a class="card-footer text-white clearfix small z-1" href="reviews.html">
+                        <span class="float-left">View Details</span>
+                        <span class="float-right">
+                            <i class="fa fa-angle-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card dashboard text-white bg-warning o-hidden h-100">
+                    <div class="card-body">
+                        <div class="card-body-icon">
+                            <i class="fa fa-fw fa-star"></i>
+                        </div>
+                        <div class="mr-5"><h5> Message Rate per Patients : @Html.DisplayFor(model => model.varm) %</h5></div>
+                    </div>
+                    <a class="card-footer text-white clearfix small z-1" href="reviews.html">
+                        <span class="float-left">View Details</span>
+                        <span class="float-right">
+                            <i class="fa fa-angle-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br />
+       <h3><b> Appointments Stats (Chart Model)</b></h3>
 
 
       
@@ -129,7 +168,7 @@
 
 </div>
 
-<center><h2><b> Appointments Stats (Pie Model)</b></h2></center>
+<h3><b> Appointments Stats (Pie Model)</b></h3>
         <img src="@Url.Action("BillChart")" alt="SimpleChart" />
     
 

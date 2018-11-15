@@ -22,10 +22,17 @@ namespace WebEpione.Controllers
             int c = ss.nbrApp();
             int d = msg.nbrApp();
             int e = apc.nbrApp();
+            var x = (float)e / (float)c;
+            var y = (float)d / (float)c;
+            float taux = x*100;
+            float tauxmsg = y*100;
+
             StatViewModels s = new StatViewModels();
             s.var = c;
             s.varp = d;
             s.app = e;
+            s.vart = taux;
+            s.varm = tauxmsg;
                      
             return View(s);       
     }
